@@ -1,0 +1,90 @@
+    @import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    html {
+        font-family: 'Athiti', sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    
+    body {
+        margin-top: 5rem;
+        text-align: center;
+        
+    }
+    
+    input {
+        padding: 1rem 3rem;
+    }
+    
+    h1 {
+        margin: 1rem;
+    }
+    
+    .loginbg {
+        justify-content: end;
+    }
+    
+    .form-login {
+        padding-top: 10rem;
+        padding-right: 5rem;
+        display: flex;
+        justify-content: end;
+       
+    }
+    
+    .input {
+        display: block;
+    }
+    
+    .form-register {
+        display: flex;
+        padding-left: 5rem;
+    }
+    
+    .success {
+        width: 50%;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #3c763d;
+        color: #3c763d;
+        background: #dff0d8;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .error {
+        width: 50%;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #a94442;
+        color: #a94442;
+        background: #f2dede;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .img {
+        width: 4rem;
+    }
+    
+    #navbarNavDropdown {
+        font-family: 'Athiti', sans-serif;
+        font-size: 1.3rem;
+        padding-right: 4rem;
+        padding-top: 1rem;
+    }
+    
+    h3 {
+        font-family: 'Athiti', sans-serif;
+        padding-top: 2rem;
+        padding-left: 2rem;
+        color: black;
+    }

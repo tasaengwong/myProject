@@ -1,0 +1,11 @@
+body{
+    background-image: url('../img/bglogin.jpg');
+
+}
+.form-login{
+    
+    min-height: 100vh;
+    display: block;
+    /* background-color: #f7f7f7; */
+    padding: 173px 55px 55px 55px;
+}

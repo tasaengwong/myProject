@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap');
+html{
+        font-family: 'Athiti', sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   
+}
+body{
+    background-image: url('./img/bglogin.jpg');
+
+}

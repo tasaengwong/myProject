@@ -106,7 +106,6 @@ session_start();
 
             <div class="bnt col-10">
                 <button class="btn btn-success" type="submit" ><i class="fas fa-plus-circle">&nbsp;</i>บันทึกข้อมูล</button>
-                
             </div><br><hr>
         </form>
 

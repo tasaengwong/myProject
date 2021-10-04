@@ -43,6 +43,8 @@ if (!$_SESSION['userid']) {
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="./infromation.php">รายชื่อนิสิต</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./report.php">รายงาน</a>
             </li>
             <li class="nav-item dropdown">
               <button class="btn btn-info nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -132,7 +134,7 @@ if (!$_SESSION['userid']) {
                     </td>
                     </td>
                     <td>
-                      <a href="#edit<?php echo $data['stu_id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                      <a href="#edit<?php echo $data['stu_id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>เพิ่มเติม</a>
                       <?php include('button.php'); ?>
                     </td>
                   </form>
@@ -143,7 +145,6 @@ if (!$_SESSION['userid']) {
               </table>
             </table>
           </div>
-          <#?php include('add_modal.php'); ?>
         </div>
     </section>
 

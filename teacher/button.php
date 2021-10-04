@@ -7,7 +7,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
             </div>
-            <div class="modal-body  ">
+            <div class="modal-body">
                 <?php
                 $edit = mysqli_query($conn, "select * from students left join company on students.comp_id = company.comp_id where stu_id='" . $data['stu_id'] . "'");
                 $erow = mysqli_fetch_array($edit);

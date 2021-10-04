@@ -43,8 +43,7 @@ if (!$_SESSION['userid']) {
                 นักศึกษา
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="../student/add-company.php">ยื่นข้อมูลสถานประกอบการ</a></li>
-                <li><a class="dropdown-item" href="../student/Regisform.php">ยื่นคำร้องขอฝึกงาน</a></li>
+                
                 <li><a class="dropdown-item" href="../student/Board.php">ติดตามสถานะ</a></li>
                 <li><a class="dropdown-item" href="../student/doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li>
               </ul>
@@ -66,10 +65,7 @@ if (!$_SESSION['userid']) {
     <h1>สถานะการยื่นคำร้อง</h1>
     <hr>
 
-
-
     <section>
-
 
       <div class="container">
         <div class="row">
@@ -80,18 +76,17 @@ if (!$_SESSION['userid']) {
               <table class="table table-striped">
                 <tr>
                   <th>ลำดับ</th>
-                  <th>หมายเหตุ</th>
+                  <th>รายการ</th>
                   <th></th>
                   <th>สถานะ</th>
-                  <th></th>
-                  <th></th>
+                  
+                  
                 </tr>
 
 
                 <form>
-
-                  <td>  <?php echo $_SESSION['userid']; ?></td>
-                  <td>  <?php echo $_SESSION['name']; ?></td>
+                  <td>1</td>
+                  <td>การพิจารณาความเห็นอาจารย์</td>
                   <td></td>
                   <td>
 
@@ -113,14 +108,68 @@ if (!$_SESSION['userid']) {
                                 id=' .$_SESSION['status'] . '&status=2"  class = "text text-danger fa fa-times">
                                 ไม่อนุมัติ</a></p>';
                       }
-                    
                     ?>
                   </td>
-
-
                 </form>
-                </tr>
-           
+
+               <tr>
+               <form>
+                  <td>2</td>
+                  <td>ออกเอกสารขอความอนุเคราะห์ฝึกงาน</td>
+                  <td></td>
+                  <td>
+
+                    <?php
+                   
+                      if ($_SESSION['status'] == 0) 
+                      {
+                        echo '<p><a 
+                                id=' . $_SESSION['status'] . '&status="" " class = "text fa fa-spinner">
+                                กำลังดำเนินการ</a></p>';
+                      } else if ($_SESSION['status'] == 1)
+                       {
+                        echo '<p><a
+                                id=' . $_SESSION['status'] . '&status=0"  class = "text text-success fa fa-check">
+                                อนุมัติ</a></p>';
+                      } else 
+                      {
+                        echo '<p><a
+                                id=' .$_SESSION['status'] . '&status=2"  class = "text text-danger fa fa-times">
+                                ไม่อนุมัติ</a></p>';
+                      }
+                    ?>
+                  </td>
+                </form>
+               </tr>
+               <tr>
+               <form>
+                  <td>3</td>
+                  <td>การตอบรับจากสถานประกอบการ</td>
+                  <td></td>
+                  <td>
+
+                    <?php
+                   
+                      if ($_SESSION['status'] == 0) 
+                      {
+                        echo '<p><a 
+                                id=' . $_SESSION['status'] . '&status="" " class = "text fa fa-spinner">
+                                กำลังดำเนินการ</a></p>';
+                      } else if ($_SESSION['status'] == 1)
+                       {
+                        echo '<p><a
+                                id=' . $_SESSION['status'] . '&status=0"  class = "text text-success fa fa-check">
+                                อนุมัติ</a></p>';
+                      } else 
+                      {
+                        echo '<p><a
+                                id=' .$_SESSION['status'] . '&status=2"  class = "text text-danger fa fa-times">
+                                ไม่อนุมัติ</a></p>';
+                      }
+                    ?>
+                  </td>
+                </form>
+               </tr>
               </table>
             </table>
 

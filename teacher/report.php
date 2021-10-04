@@ -1,0 +1,147 @@
+<?php
+
+session_start();
+
+if (!$_SESSION['userid']) {
+  header("Location: singin.php");
+} else {
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+    
+        #chart-container {
+            width: 50%;
+            height: auto;
+            
+        }
+        
+    </style>
+    
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+      <div class="container-fluid">
+        <img src="../img/ict.png" alt="logoict" class="img">
+        &nbsp;
+        <h3>ระบบสารสนเทศการฝึกงาน</h3>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav col-12 justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../loginuser/admin_page.php">หน้าแรก</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./infromation.php">รายชื่อนิสิต</a>
+            </li>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="btn btn-info nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> <?php echo $_SESSION['name']; ?>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item bi bi-arrow-right-square-fill" href="../loginuser/logout.php">&nbsp;LOG-OUT</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="row justify-content-center">
+    <div id="chart-container">
+        <canvas id="graphCanvas"></canvas>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+   <script>
+        $(document).ready(function() {
+            showGraph();
+        });
+        function showGraph(){
+            {
+                $.post("data.php", function(data) {
+                    console.log(data);
+                    let major = [];
+                    let count = [];
+                    // let count1 = [];
+                    for (let i in data) {
+                        
+                        major.push(data[i].major);
+                        count.push(data[i].count);
+                        // count1.push(data[i].count);
+                    }
+
+                    let chartdata = {
+                        labels: major,
+                        datasets: [
+                          {
+                                label: ['จำนวน'],
+                                
+                                
+                                backgroundColor: [
+                                  
+                                'rgb(255, 92, 88)',
+                            
+                                
+                                ],
+                                //borderColor: '#46d5f1',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: count
+                        }
+                        ]
+                    };
+
+                    let graphTarget = $('#graphCanvas');
+                    let barGraph = new Chart(graphTarget, {
+                      
+                      type: 'bar',
+                      data : chartdata,
+                      options: {
+                        indexAxis: 'y',
+                        // Elements options apply to all of the options unless overridden in a dataset
+                        // In this case, we are setting the border of each horizontal bar to be 2px wide
+                        elements: {
+                          bar: {
+                            borderWidth: 2,
+                          }
+                        },
+                        responsive: true,
+                        plugins: {
+                          legend: {
+                            position: 'right',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Chart.js Horizontal Bar Chart'
+                          }
+                        }
+                      }
+                
+                    })
+                })
+            }
+        }
+    </script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</body>
+</html>
+<?php } ?>

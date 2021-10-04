@@ -51,7 +51,7 @@ if (!$_SESSION['userid']) {
               <li><a class="dropdown-item" href="../student/doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li>
             </ul>
             <li class="nav-item dropdown">
-              <a class="btn btn-success nav-link dropdown-toggle bi bi-person-circle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="btn btn-info nav-link dropdown-toggle bi bi-person-circle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <?php echo $_SESSION['name']; ?>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

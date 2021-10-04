@@ -31,7 +31,7 @@ session_start();
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav col-12 justify-content-end">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../loginuser/user_page.php">หน้าแรก</a>
+            <a class="nav-link active" aria-current="page" href="../index.html">หน้าแรก</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -114,7 +114,7 @@ session_start();
 
             <div class="bnt col-10">
                 <button class="btn btn-success" type="submit" ><i class="fas fa-plus-circle">&nbsp;</i>บันทึกข้อมูล</button>
-                <a href="../loginuser/index.php" class="btn btn-danger  col-sm-4">Go back to Log-in</a>
+                
             </div><br><hr>
         </form>
 

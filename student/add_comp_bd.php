@@ -18,7 +18,7 @@ $sql ="INSERT INTO company ( comp_name, contract_name, comp_address, comp_subdis
 
 if ($result){
         echo "<script type='text/javascript'>";
-        echo"window.location = '../loginuser/index.php';";
+        echo"window.location = 'Regisform.php';";
         echo "</script>";
         }
         else {

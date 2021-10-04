@@ -15,7 +15,7 @@ session_start();
     <title>log-in</title>
 
     <link rel="stylesheet" href="style.css?">
-    <link rel="stylesheet" href="main.css?2">
+    <link rel="stylesheet" href="main.css?8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -39,27 +39,38 @@ session_start();
     <?php endif; ?>
 
     <div class="container">
-        <div class="row">
+        <div class="row  justify-content-xl-center main-content ">
+            <div class="row justify-content-xl-center">
+                <div class="logo">
+                    <img src="../img/uplogo.png" alt="up" id="uplogo">&nbsp;&nbsp;
+                    <img src="../img/ict.png" alt="ict" id="ictlogo">
+                    <img src="../img/ictnext.png" alt="next" id="nextlogo">
+                </div>
+                <div class="text-header sub-text">
+                    <h2>ระบบสารสนเทศด้านการฝึกงานและติดตามผล มหาวิทยาลัยพะเยา</h2>
 
-            <div class="col-sm-8 loginbg">
-                <form action="login.php" method="post" class="form-login">
 
-                    <div class="col-sm-4 row justify-content-center">
-                        <div class="col ">
-                            <!-- <label for="username">ชื่อผู้ใช้</label> -->
+                </div>
+
+            </div>
+            <div class="col-sm-4 ">
+                <form action="login.php" method="post" class="form-login ">
+                    <div class="col-sm-12 row ">
+                        <div class="col-12">
+                            <!-- <label for="username">UserName</label> -->
                             <input type="text" class="form-control" name="username" placeholder="Username" required>
                             <br>
-                            <!-- <label for="password">รหัสผ่าน</label> -->
+                            <!-- <label for="password">Password</label> -->
                             <input type="password" class="form-control " name="password" placeholder="Password" required>
                             <br>
                             <input type="submit" name="submit" value="Login" class="btn btn-primary">
-                            <br>
-                            <a href="../student/Regisform.php" class="btn btn-info">Go to register</a>
-                            <br>
-                            <a href="singin.php" class="btn btn-info">Go to teacher</a>
                         </div>
+                    </div><br>
+                    <div class=" col-12 back-btn">
+                        <a href="../index.html" class="btn btn-light">back</a>
                     </div>
                 </form>
+                
             </div>
         </div>
     </div>

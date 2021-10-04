@@ -19,10 +19,25 @@ html {
     text-align: center;
     background-image: url('./img/bglogin.jpg'); 
    }
-
+   header{
+    padding-top: 20px;
+   }
+   img{
+       width: 100px;
+   }
+   #uplogo{
+       width: 100px;
+   }
    
+   #nextlogo{
+       width: 200px;
+       padding-top: 50px;
+   }
    #navbarNavDropdown{
        display: flex;
-       padding-top: 390px;
+       padding-top: 90px;
    }
+    h2{
+        font-weight: 500;
+    }
   

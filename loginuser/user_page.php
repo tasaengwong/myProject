@@ -35,7 +35,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav col-12 justify-content-end">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./user_page.php">หน้าแรก</a>
+            <a class="nav-link active" aria-current="page" href="../index.html">หน้าแรก</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -43,13 +43,11 @@
               นักศึกษา
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <!-- <li><a class="dropdown-item" href="../student/add-company.php">ยื่นข้อมูลสถานประกอบการ</a></li>
-              <li><a class="dropdown-item" href="../student/Regisform.php">ยื่นคำร้องขอฝึกงาน</a></li> -->
               <li><a class="dropdown-item" href="../student/Board.php?">ติดตามสถานะ</a></li>
               <li><a class="dropdown-item" href="../student/doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li>
             </ul>
             <li class="nav-item dropdown">
-              <a class="btn btn-success nav-link dropdown-toggle bi bi-person-circle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="btn btn-info nav-link dropdown-toggle bi bi-person-circle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <?php echo $_SESSION['name']; ?>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

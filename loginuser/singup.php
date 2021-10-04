@@ -20,10 +20,13 @@
             $_SESSION['userid'] = $row['username']; 
             $_SESSION['name'] = $row['firstname'];
             $_SESSION['lastname'] = $row['lastname'];
-            $_SESSION['username'] = $row['username'];
+            $_SESSION['userlevel'] = $row['userlevel'];
 
-            if ($_SESSION['userid'] ==  $username ) {
+            if ($_SESSION['userlevel'] ==  't' ) {
                 header("Location: admin_page.php");
+            }
+            if ($_SESSION['userlevel'] ==  'o' ) {
+                header("Location: off_page.php");
             }
         } 
 

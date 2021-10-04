@@ -10,6 +10,8 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
     $name = $_POST['firstname'];
     $lastname = $_POST['lastname'];
+    $userlevel = $_POST['userlevel'];
+   
     
    
 
@@ -22,16 +24,16 @@ if (isset($_POST['submit'])) {
     } else {
         $passwordenc = md5($password);
 
-        $query = "INSERT INTO user (username, password, firstname, lastname,  status)
-                        VALUE ('$username', '$passwordenc', '$name', '$lastname', '0')";
+        $query = "INSERT INTO user (username, password, firstname, lastname,  userlevel)
+                        VALUE ('$username', '$passwordenc', '$firstname', '$lastname', '$userlevel')";
         $result = mysqli_query($con, $query);
 
         if ($result) {
             $_SESSION['success'] = "Insert user successfully";
-            header("Location: index.php");
+            header("Location: singin.php");
         } else {
             $_SESSION['error'] = "Something went wrong";
-            header("Location: index.php");
+            header("Location: singin.php");
         }
     }
 }
@@ -62,7 +64,7 @@ if (isset($_POST['submit'])) {
              
             </div>
             <div class="col-auto">
-                <input type="text" name="username" class="form-control " id="stu_id" placeholder="ใช้รหัสนิสิต" required>
+                <input type="text" name="username" class="form-control " id="username" placeholder="ใช้รหัสนิสิต" required>
             
             </div>
             <div class="col-auto">
@@ -79,13 +81,19 @@ if (isset($_POST['submit'])) {
                 <label for="name" class="form-label">ชื่อ</label>
             </div>
             <div class="col-auto">
-                <input type="text" name="name" class="form-control " id="name" placeholder="ชื่อ" required>
+                <input type="text" name="fistname" class="form-control " id="name" placeholder="ชื่อ" required>
             </div>
             <div class="col-auto">
                 <label for="lastname" class="form-label">นามสกุล</label>
             </div>
             <div class="col-auto">
                 <input type="text" name="lastname" class="form-control  " id="lastname" placeholder="นามสกุล" required>
+            </div>
+            <div class="col-auto">
+                <label for="lastname" class="form-label">ระดับผู้ใช้</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" name="userlevel" class="form-control  " id="lastname" placeholder="ระดับผู้ใช้" required>
             </div>
         </div>
 

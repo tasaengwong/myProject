@@ -41,14 +41,7 @@ session_start();
                 <li><a class="dropdown-item" href="./doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li> -->
               </ul>
             </li>
-            <!-- <li class="nav-item dropdown">
-              <a class="btn btn-success nav-link dropdown-toggle bi bi-person-circle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <?php //echo $_SESSION['name']; ?>
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item bi bi-arrow-right-square-fill" href="../loginuser/logout.php">&nbsp;LOG-OUT</a></li>
-              </ul>
-            </li> -->
+           
 
           </ul>
         </div>

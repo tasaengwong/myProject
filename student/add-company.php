@@ -16,7 +16,7 @@ session_start();
     <link rel="stylesheet" href="./css/comp.css">
 </head>
 
-<body ng-controller="Ctrl">
+<body >
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
 
@@ -41,18 +41,10 @@ session_start();
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="../student/add-company.php">ยื่นข้อมูลสถานประกอบการ</a></li>
               <li><a class="dropdown-item" href="../student/Regisform.php">ยื่นคำร้องขอฝึกงาน</a></li>
-              <!-- <li><a class="dropdown-item" href="../student/Board.php">ติดตามสถานะ</a></li>
-              <li><a class="dropdown-item" href="../student/doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li> -->
+             
             </ul>
           
-            <!-- <li class="nav-item dropdown">
-              <a class="btn btn-success nav-link dropdown-toggle bi bi-person-circle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <?php //echo $_SESSION['name']; ?>
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item bi bi-arrow-right-square-fill" href="../loginuser/logout.php">&nbsp;LOG-OUT</a></li>
-              </ul>
-            </li> -->
+            
 
         </ul>
       </div>
@@ -103,13 +95,13 @@ session_start();
 
             <div class="form-inline col-sm-12">
                 <label for="phone">โทรศัพท์มือถือ :</label>&nbsp;
-                <input name="comp_phone" id="person_phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="15" >&nbsp;
+                <input name="comp_phone" id="comp_phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="15" >&nbsp;
             
                 <label for="email">E-mail :</label>&nbsp;
-                <input name="comp_mail" id="person_email" type="text" class="form-control col-sm-3 " placeholder="E-mail" >&nbsp;
+                <input name="comp_mail" id="comp_mail" type="text" class="form-control col-sm-3 " placeholder="E-mail" >&nbsp;
             
                 <label for="FAx">FAX :</label>&nbsp;
-                <input name="comp_Fax" id="FAx" type="text" class="form-control " placeholder="FAX" >
+                <input name="comp_Fax" id="comp_Fax" type="text" class="form-control " placeholder="FAX" >
             </div><br>
 
             <div class="bnt col-10">
@@ -119,10 +111,7 @@ session_start();
         </form>
 
     </section><br>
-    <!-- Footer -->
-    <!-- <footer class="footer card-footer">
-        <div class="col-lg-6 text-lg-right">@ version beta</div>
-    </footer> -->
+    
 
     <!--container script-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" ></script>

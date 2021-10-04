@@ -35,9 +35,13 @@ html {
    }
    #navbarNavDropdown{
        display: flex;
-       padding-top: 90px;
+       padding-top: 50px;
    }
     h2{
         font-weight: 500;
     }
   
+nav{
+    padding-top: 15px;
+    padding-right: 15px;
+}

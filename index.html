@@ -9,11 +9,23 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="master.css?9">
+    <link rel="stylesheet" href="master.css?45">
     <title>Document</title>
 </head>
 
 <body>
+  <nav class="d-flex justify-content-end">
+    <div class="dropdown ">
+      <a class="btn btn-outline-primary nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Sing-in
+       </a>
+    
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li><a class=" dropdown-item"  href="./loginuser/index.php">สำหรับนักศึกษา</a></li>
+              <li><a class=" dropdown-item" href="./loginuser/singin.php">สำหรับอาจารย์และเจ้าหน้าที่ </a></li>
+      </ul>
+    </div>
+  </nav>
   <header class="header-text justify-content-center">
     <div class="text-header">
       
@@ -39,10 +51,10 @@
             <a class="nav-link active" aria-current="page" href="./student/add-company.php">ยื่นข้อมูลสถานประกอบการ</a>
           </li>&nbsp;
           <li class=" btn nav-item btn-warning">
-            <a class="nav-link active" href="#">ยื่นคำร้องขอฝึกงาน</a>
+            <a class="nav-link active" href="./student/Regisform.php">ยื่นคำร้องขอฝึกงาน</a>
           </li>&nbsp;
          
-          <li class="btn nav-item dropdown  btn-primary">
+          <!-- <li class="btn nav-item dropdown  btn-primary">
             <a class="nav-link dropdown-toggle   active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
              Sing-in
             </a>
@@ -51,7 +63,7 @@
               <li><a class=" dropdown-item" href="./loginuser/singin.php">สำหรับอาจารย์และเจ้าหน้าที่ </a></li>
              
             </ul>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

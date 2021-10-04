@@ -15,10 +15,10 @@ $comp_Fax = $_POST['comp_Fax'];
 
 $sql ="INSERT INTO company ( comp_name, contract_name, comp_address, comp_subdis, comp_amphure, comp_province, comp_zipcode, comp_phone, comp_mail, comp_Fax)
         VALUES ('$comp_name', '$contract_name', '$comp_address', '$comp_subdis', '$comp_amphure', '$comp_province', '$comp_zipcode', '$comp_phone', '$comp_mail', '$comp_Fax')";
-
+$result = mysqli_query($conn, $sql);
 if ($result){
         echo "<script type='text/javascript'>";
-        echo"window.location = 'Regisform.php';";
+        echo"window.location = '../index.html';";
         echo "</script>";
         }
         else {

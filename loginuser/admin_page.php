@@ -36,16 +36,10 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="../loginuser/admin_page.php">หน้าแรก</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              อาจารย์
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="../teacher/infromation.php">ข้อมูลนักศึกษา</a></li>
-              <li><a class="dropdown-item" href="#Another">Another action</a></li>
-
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../teacher/infromation.php">รายชื่อนิสิต</a>
+           
+          </li>
           </li>
          
             <li class="nav-item dropdown">

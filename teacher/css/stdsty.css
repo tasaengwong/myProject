@@ -1,8 +1,7 @@
 html {
   font-family: 'Athiti', sans-serif;
     line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
   }
   
   article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -12,7 +11,7 @@ html {
   body {
     margin: 0;
     font-family: 'Athiti', sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.5;
     color: #4e4e4e;
@@ -22,12 +21,13 @@ html {
   
   #mainNav {
     padding-top: 1rem;
-    padding-bottom: 1rem;
+   
     background-color: #212529;
   }
   #mainNav .navbar-toggler {
     padding: 0.75rem;
-  font-family: 'Athiti', sans-serif;  font-size: 1.2rem;
+   font-family: 'Athiti', sans-serif;  
+   font-size: 1rem;
     color: #fff;
     text-transform: uppercase;
     background-color: #212445;
@@ -44,7 +44,7 @@ html {
   }
   #mainNav .navbar-nav .nav-item .nav-link {
     font-family: 'Athiti', sans-serif;
-     font-size: 2rem;
+     font-size: 1.3rem;
     color: #fff;
     letter-spacing: 0.0625em;
   }
@@ -90,9 +90,6 @@ html {
     }
   }
   
-  section{
-    padding-top: 3rem;
-  }
   h4{
     text-align: center;
   }
@@ -103,11 +100,6 @@ html {
     float: right;
   }
   
-  footer{
-    font-family: monospace;
-    text-align: center;
-    font-size: 15px;
-  }
   img{
     width: 5rem;
   }
@@ -120,13 +112,7 @@ html {
   }
   #navbarNavDropdown{
     font-family: 'Athiti', sans-serif;
-    font-size: 2rem;
-    padding-right: 4rem;
-  
-  }
-  .dropdown-item{
-    font-family: 'Athiti', sans-serif;
-    font-size: 2rem;
+    font-size: 1.2rem;
     padding-right: 4rem;
   
   }
@@ -134,5 +120,5 @@ html {
     font-family: 'Athiti', sans-serif;
     padding-top: 2rem;
     padding-left: 2rem;
-    color: #fff;
+    color: aliceblue;
   }

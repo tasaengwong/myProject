@@ -131,9 +131,9 @@ if (!$_SESSION['userid']) {
                       if ($data['status'] == 0) {
                         // echo '<p id=' . $data['stu_id'] . '&status="" " class = "text fa fa-spinner">กำลังดำเนินการ</a></p>';
                       } else if ($data['status'] == 1) {
-                        echo '<p stu_id=' . $data['stu_id'] . '&status=0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
+                        echo '<p stu_id=' . $data['stu_id'] . '&status="0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
                       } else {
-                        echo '<p stu_id=' . $data['stu_id'] . '&status=2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
+                        echo '<p stu_id=' . $data['stu_id'] . '&status="2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
                       }
                       ?>
                     </td>

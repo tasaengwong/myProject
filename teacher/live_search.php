@@ -153,13 +153,13 @@ if (!$_SESSION['userid']) {
                                                 echo '<p><a href="change.php?stu_id=' . $row['stu_id'] . ' &status=1 " class = "btn btn-outline-success">อนุมัติ</a></p>';
                                             }
                                             ?>
-                                        <td>
+                                            <td>
                                             <?php
                                             if ($data['status'] == 0) {
                                                 echo '<p><a href="change.php?stu_id=' . $row['stu_id'] . ' &status=2 "  class = "btn btn-outline-danger">ไม่อนุมัติ</a></p>';
                                             }
                                             ?>
-                                        </td>
+                                            </td>
                                         </td>
                                         <td>
                                             <a href="#edit<?php echo $row['stu_id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>เพิ่มเติม</a>

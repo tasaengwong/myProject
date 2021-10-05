@@ -76,14 +76,22 @@ if (!$_SESSION['userid']) {
             <h4>รายชื่อนิสิต</h4><br>
             <!-- search filter -->
             <form name="search_form" id="search_form" class="d-flex justify-content-end">
-              <select name='select_major' id="categories" class=" btn btn-light select_filter">
-                <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
-                <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
-                <option value="คอมพิวเตอร์ธุรกิจ">คอมพิวเตอร์ธุรกิจ</option>
-                <option value="วิศวกรรมซอฟร์แวร์">วิศวกรรมซอฟร์แวร์</option>
-                <option value="วิศวกรรมคอมพิวเตอร์">วิศวกรรมคอมพิวเตอร์</option>
-                <option value="คอมพิวเตอร์กราฟและมัลติมีเดีย">คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย</option>
-              </select>
+            <select name="major" aria-placeholder="major" id="bo">
+            <option>----major------</option>
+            <?php
+            $sql = "select distinct major from students order by major";
+            $result = $conn->query($sql);
+            while ($row = $result->fetch_assoc()) {
+                if ($row['major'] == $_GET['major']) {
+                    echo "<option selected>";
+                } else {
+                    echo "<option>";
+                }
+
+                echo "{$row['major']}</option>";
+            }
+            ?>
+        </select>
               <button type="submit" class="bi bi-search"></button>
             </form>
             <br>

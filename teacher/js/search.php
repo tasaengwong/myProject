@@ -17,7 +17,7 @@
     $conn->set_charset('utf8');
     ?>
     <form action="" method="get">
-        Choose a major <select name="major" aria-placeholder="major" id="bo">
+        <select name="major" aria-placeholder="major" id="bo">
             <option>----major------</option>
             <?php
             $sql = "select distinct major from students order by major";

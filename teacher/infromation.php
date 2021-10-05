@@ -61,7 +61,6 @@ if (!$_SESSION['userid']) {
     </nav>
 
     <?php
-
     require('connect.php');
     $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id";
     $result = $conn->query($sql);
@@ -76,25 +75,16 @@ if (!$_SESSION['userid']) {
             <br><br>
             <h4>รายชื่อนิสิต</h4><br>
             <!-- search filter -->
-            <!-- <form action="" method="get">
-              <select name="major" aria-placeholder="major" id="major">
-                <option>----สาขา------</option>
-                <#?php
-                $sql = "select distinct major from students order by major";
-                $result = $conn->query($sql);
-                while ($row = $result->fetch_assoc()) {
-                  if ($row['major'] == $_GET['major']) {
-                    echo "<option selected>";
-                  } else {
-                    echo "<option>";
-                  }
-                  echo "{$row['major']}</option>";
-                }
-                ?>
-              </select>
-              <br>
-              <button type="submit" class="btn btn-info">Submit</button>
-            </form> -->
+            <form name="search_form" id="search_form"> 
+            <select name='select_major' id="categories" class="select_filter">
+            <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
+              <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
+              <option value="คอมพิวเตอร์ธุรกิจ">คอมพิวเตอร์ธุรกิจ</option>
+              <option value="วิศวกรรมซอฟร์แวร์">วิศวกรรมซอฟร์แวร์</option>
+              <option value="วิศวกรรมคอมพิวเตอร์">วิศวกรรมคอมพิวเตอร์</option>
+              <option value="คอมพิวเตอร์กราฟและมัลติมีเดีย">คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย</option>
+            </select>
+            </form>
 
             <!-- end form -->
             
@@ -117,12 +107,14 @@ if (!$_SESSION['userid']) {
 
                 </tr>
                 <?php
+                  $i = 0;
+                 
                 while ($data = mysqli_fetch_assoc($result)) {
                   $i++;
                 ?>
 
                   <form>
-                    <td><?php echo $i; ?></td>
+                    <td><?php echo $i ?></td>
                     <td><?php echo $data['stu_id']; ?></td>
                     <td><?php echo $data['name']; ?></td>
                     <td><?php echo $data['lastname']; ?></td>
@@ -176,7 +168,18 @@ if (!$_SESSION['userid']) {
 
 
     <!-- Modal -->
-
+<script>
+   $('.select_filter').on('change',function(){
+      $.ajax({
+           type: "POST",
+           url: "search.php",
+           data: $('#search_form').serialize(), // You will get all the select data..
+            success:function(data){
+                $("#projects").html(data);
+            }
+        });
+  });
+</script>
 
 
 

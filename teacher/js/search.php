@@ -28,15 +28,13 @@
             ?>
         </select>
         <br>
-        <button typw="submit">Submit</button>
+        <button type="submit">Submit</button>
     </form>
 
     <?php
-
     $sql = "SELECT * FROM students LEFT JOIN company ON students.comp_id = company.comp_id WHERE students.major LIKE '{$_GET['major']}' ORDER BY major ;";
-
-    $r = $conn->query($sql);
-    if ($r->num_rows < 1) {
+    $result = $conn->query($sql);
+    if ($result->num_rows < 1) {
         echo "<h4 class='no'> No records found</h4>";
         die();
     }
@@ -60,7 +58,7 @@
      </tr>
     ";
     $i = 0;
-    while ($data = $r->fetch_assoc()) {
+    while ($data = $result->fetch_assoc()) {
         $i++;
         echo "<tr>
             <td>{$i}</td>

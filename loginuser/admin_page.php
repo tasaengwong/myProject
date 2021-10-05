@@ -38,8 +38,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="../teacher/infromation.php">รายชื่อนิสิต</a>
-           
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../teacher/report.php">รายงาน</a>
           </li>
          
             <li class="nav-item dropdown">

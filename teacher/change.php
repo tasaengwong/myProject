@@ -3,7 +3,6 @@
 include('connect.php');
 
 $stu_id = $_GET['stu_id'];
-
 $status= $_GET['status'];
 
 

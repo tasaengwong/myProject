@@ -50,7 +50,8 @@ if (isset($_POST['submit'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css?2">
+    
+    <link rel="stylesheet" href="style.css?5">
 </head>
 
 <body>
@@ -91,55 +92,46 @@ if (isset($_POST['submit'])) {
     <div class="contrainer">
 
 
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="row g-3 form-register ">
-            <div class="row mb-3 g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="usernaem" class="form-label">Username</label>
-
-                </div>
-                <div class="col-auto">
-                    <input type="text" name="username" class="form-control " id="username" placeholder="ใช้รหัสนิสิต" required>
-
-                </div>
-                <div class="col-auto">
-                    <label for="password" class="form-label">Password</label>
-                </div>
-                <div class="col-auto">
-                    <input type="password" name="password" class="form-control  " id="password" placeholder="Enter your password" required>
-                </div>
-            </div>
+        <form class="form-horizontal " action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <fieldset>
+                <div class="control-group">
+                    <label for="username" class="control-label">Username</label>
+                    <div class="control">
+                        <input type="text" name="username" class="input-xlarge" id="username" placeholder="ใช้รหัสนิสิต" required>
+                    </div>
 
 
-            <div class="row mb-3 g-3 align-items-center">
-                <div class="col-auto">
-                    <label for="name" class="form-label">ชื่อ</label>
-                </div>
-                <div class="col-auto">
-                    <input type="text" name="fistname" class="form-control " id="name" placeholder="ชื่อ" required>
-                </div>
-                <div class="col-auto">
-                    <label for="lastname" class="form-label">นามสกุล</label>
-                </div>
-                <div class="col-auto">
-                    <input type="text" name="lastname" class="form-control  " id="lastname" placeholder="นามสกุล" required>
-                </div>
-                <div class="col-auto">
-                    <label for="lastname" class="form-label">ระดับผู้ใช้</label>
-                </div>
-                <div class="col-auto">
-                    <input type="text" name="userlevel" class="form-control  " id="lastname" placeholder="ระดับผู้ใช้" required>
-                </div>
-            </div>
+                    <label for="password" class="control-label">Password</label>
+                    <div class="control">
+                        <input type="password" name="password" class="input-xlarge" id="password" placeholder="Enter your password" required>
+                    </div>
 
+                    <label for="name" class="control-label">ชื่อ</label>
+                    <div class="control">
+                        <input type="text" name="fistname" class="input-xlarge" id="name" placeholder="ชื่อ" required>
+                    </div>
 
+                    <label for="lastname" class="control-label">นามสกุล</label>
+                    <div class="control">
+                        <input type="text" name="lastname" class="input-xlarge" id="lastname" placeholder="นามสกุล" required>
+                    </div>
 
-            <div class="col-12">
-                <input type="submit" name="submit" class="btn btn-primary mb-3" value="Submit">
-            </div>
-            <a href="index.php">Go back to index</a>
-        </form>
+                    <label for="lastname" class="control-label">สถานะผู้ใช้ </label>
+                    <div class="control">
+                        <input type="text" name="userlevel" class="input-xlarge" id="lastname" placeholder="ระดับผู้ใช้" required>
+                    </div>
+                </div>
     </div>
-   
+
+
+
+    <div class="control">
+        <input type="submit" name="submit" class="btn btn-primary mb-3" value="Submit">
+    </div>
+    </fieldset>
+    </form>
+    </div>
+
 
     </div>
 

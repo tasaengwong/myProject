@@ -40,8 +40,14 @@ if (!$_SESSION['userid']) {
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="../loginuser/off_page.php">หน้าแรก</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../officer/detail.php">ข้อมูลนักศึกษา</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                ข้อมูลนักศึกษา
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="../officer/detail.php">รายชื่อนิสิต</a></li>
+
+              </ul>
             </li>
 
             <li class="nav-item dropdown">
@@ -81,11 +87,11 @@ if (!$_SESSION['userid']) {
                   <th>ชื่อ-นามสกุล</th>
                   <th colspan="2">สาขา</th>
                   <th>ปี</th>
-                  <th colspan="2" >สถานประกอบการ</th>
+                  <th colspan="2">สถานประกอบการ</th>
                   <th>ตำแหน่งงาน</th>
                   <th>เพิ่มเตืม</th>
-                  <th >ผลการพิจารณา</th>
-                  <th colspan="3" >การจัดทำเอกสาร</th>
+                  <th>ผลการพิจารณา</th>
+                  <th colspan="3">การจัดทำเอกสาร</th>
                   <th colspan="3">แบบตอบรับสถานประกอบการ</th>
 
 
@@ -122,8 +128,8 @@ if (!$_SESSION['userid']) {
                       }
                       ?>
                     </td>
-<!-- close status -->
-                    <td colspan="3"> 
+                    <!-- close status -->
+                    <td colspan="3">
                       <?php
                       if ($data['Ostatus'] == 0) {
                         // echo '<p id=' . $data['stu_id'] . '&status="" " class = "text fa fa-spinner">กำลังดำเนินการ</a></p>';
@@ -133,20 +139,20 @@ if (!$_SESSION['userid']) {
                         echo '<p stu_id=' . $data['stu_id'] . '&Ostatus=2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
                       }
                       ?>
-                  
+
                       <?php
                       if ($data['Ostatus'] == 0) {
                         echo '<p><a href="changeO.php?stu_id=' . $data['stu_id'] . '&Ostatus=1" class = "btn btn-outline-success">อนุมัติ</a></p>';
                       }
                       ?>
-                   
+
                       <?php
                       if ($data['Ostatus'] == 0) {
                         echo '<p><a href="changeO.php?stu_id=' . $data['stu_id'] . '&Ostatus=2" class = "btn btn-outline-danger">ไม่อนุมัติ</a></p>';
                       }
                       ?>
                     </td>
-<!-- close Officer status -->
+                    <!-- close Officer status -->
 
                     <td colspan="3">
                       <?php
@@ -169,7 +175,7 @@ if (!$_SESSION['userid']) {
                       }
                       ?>
                     </td>
-                  <!-- close Company status -->
+                    <!-- close Company status -->
 
                   </form>
                   </tr>

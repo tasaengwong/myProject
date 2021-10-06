@@ -16,7 +16,7 @@ if (!$_SESSION['userid']) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ติดตามสถานะ</title>
-    <link rel="stylesheet" href="../student/css/master.css?9">
+    <link rel="stylesheet" href="../student/css/master.css?5">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -26,8 +26,8 @@ if (!$_SESSION['userid']) {
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
       <div class="container-fluid">
 
-        <img src="../img/ICT_UP_Logo.png" alt="logoict" class="img">
-        &nbsp;
+        <img src="../img/ict.png" alt="logoict" class="img">
+    
         <h3>ระบบสารสนเทศการฝึกงาน</h3>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -62,7 +62,7 @@ if (!$_SESSION['userid']) {
 
 
 
-    <h1>สถานะการยื่นคำร้อง</h1>
+    <h1 class="text-center">สถานะการยื่นคำร้อง</h1>
     <hr>
 
     <section>
@@ -75,19 +75,18 @@ if (!$_SESSION['userid']) {
             <table>
               <table class="table table-bordered">
                 <tr class="bg-light">
-                  <th>ลำดับ</th>
-                  <th>รายการ</th>
-                  <th>สถานะ</th>
+                  <th class="text-center">ลำดับ</th>
+                  <th class="text-center">รายการ</th>
+                  <th class="text-center">สถานะ</th>
                   
                 </tr>
 
 
                 <form>
-                  <td>1</td>
-                  <td>การพิจารณาความเห็นอาจารย์</td>
-                  <td></td>
-                  <td>
-
+                  <td class="text-center">1</td>
+                  <td class="text-center">การพิจารณาความเห็นอาจารย์</td>
+                  
+                  <td class="text-center">
                     <?php
                    
                       if ($_SESSION['status'] == 0) 
@@ -112,10 +111,10 @@ if (!$_SESSION['userid']) {
 
                <tr>
                <form>
-                  <td>2</td>
-                  <td>ออกเอกสารขอความอนุเคราะห์ฝึกงาน</td>
-                  <td></td>
-                  <td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">ออกเอกสารขอความอนุเคราะห์ฝึกงาน</td>
+                  
+                  <td class="text-center">
 
                     <?php
                    
@@ -138,17 +137,14 @@ if (!$_SESSION['userid']) {
                <tr>
 
                <form>
-                  <td>3</td>
-                  <td>การตอบรับจากสถานประกอบการ</td>
-                  <td></td>
-                  <td>
-
+                  <td class="text-center">3</td>
+                  <td class="text-center">การตอบรับจากสถานประกอบการ</td>
+                  
+                  <td class="text-center">
                      <?php
                       if ($_SESSION['C_status'] == 0) 
                       {
-                        // echo '<p><a 
-                        //         id=' . $_SESSION['C_status'] . '&Cstatus="" " class = "text fa fa-spinner">
-                        //         กำลังดำเนินการ</a></p>';
+                       
                       } else if ($_SESSION['C_status'] == 1)
                        {
                         echo '<p><a
@@ -161,7 +157,6 @@ if (!$_SESSION['userid']) {
                                 ไม่อนุมัติ</a></p>';
                       }
                     ?>
-
                   </td>
                 </form>
                </tr>

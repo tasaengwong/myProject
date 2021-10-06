@@ -17,8 +17,8 @@ if (!$_SESSION['userid']) {
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/docstyle.css?4">
-    <title>dev.Document</title>
+    <link rel="stylesheet" href="./css/docstyle.css?9">
+    <title>เอกสารที่เกี่ยวข้อง</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 
@@ -26,8 +26,8 @@ if (!$_SESSION['userid']) {
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
 
-      <img src="../img/ICT_UP_Logo.png" alt="logoict" class="img"> 
-      &nbsp;
+      <img src="../img/ict.png" alt="logoict" class="img"> 
+   
       <h3>ระบบสารสนเทศการฝึกงาน</h3>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User Page</title>
-    <link rel="stylesheet" href="style.css?">
+    <link rel="stylesheet" href="style.css?8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   </head>
@@ -24,8 +24,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
 
-      <!-- <img src="" alt="logoict" class="img">  -->
-      &nbsp;
+      <img src="../img/ict.png" alt="logoict" class="img"> 
+   
       <h3>ระบบสารสนเทศการฝึกงาน</h3>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

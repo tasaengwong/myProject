@@ -13,18 +13,18 @@ if (!$_SESSION['userid']) {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>studenlist</title>
+    <title>ข้อมูลนักศึกษา</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?4">
 
   </head>
 
-  <body ng-controller="Ctrl">
+  <body >
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
       <div class="container-fluid">
 
@@ -67,7 +67,6 @@ if (!$_SESSION['userid']) {
     ?>
 
     <section>
-
       <div class="container">
         <div class="row">
           <div class="col-sm student-detail">
@@ -75,31 +74,36 @@ if (!$_SESSION['userid']) {
             <br><br>
             <h4>รายชื่อนิสิต</h4><br>
             <!-- search filter -->
+            
             <form name="search_form" id="search_form" class="d-flex justify-content-end">
-            <select name="major" aria-placeholder="major" id="bo">
-            <option>----major------</option>
-            <?php
-            $sql = "select distinct major from students order by major";
-            $result = $conn->query($sql);
-            while ($row = $result->fetch_assoc()) {
-                if ($row['major'] == $_GET['major']) {
+              <select name="major" aria-placeholder="major" id="major" class="btn btn-light" onchange="showCustomer(this.value)">
+                <option>สาขา</option>
+                <?php
+                $sql = "select distinct major from students order by major";
+                $result = $conn->query($sql);
+                while ($data = $result->fetch_assoc()) {
+                  if ($data['major'] == $_GET['major']) {
                     echo "<option selected>";
-                } else {
+                  } else {
                     echo "<option>";
-                }
+                  }
 
-                echo "{$row['major']}</option>";
-            }
-            ?>
-        </select>
-              <button type="submit" class="bi bi-search"></button>
+                  echo "{$data['major']}</option>";
+                }
+                ?>
+              </select>
+              <button type="submit" class="btn btn-light bi bi-search"></button>
             </form>
             <br>
             <!-- end form -->
+            <?php
+            $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id WHERE major = '{$_GET['major']}' ORDER BY major ;";
+            $result = $conn->query($sql);
+            ?>
 
-            <table class="table"> 
-              <table class="table table-striped">
-                <tr>
+            <table class="table" id="txtHint">
+              <table class="table table-hover">
+                <tr class="bg-light">
                   <th>ลำดับ</th>
                   <th>รหัสนิสิต</th>
                   <th>ชื่อ</th>
@@ -108,17 +112,15 @@ if (!$_SESSION['userid']) {
                   <th>ชั้นปี</th>
                   <th>สถานประกอบการ</th>
                   <th>ตำแหน่งงาน</th>
-                  <th></th>
-                  <th>สถานะ</th>
-                  <th></th>
-                  <th></th>
                   <th>หมายเหตุ</th>
-
+                  <th colspan="5">สถานะ</th>
+                  <th><th>
+                 
                 </tr>
                 <?php
                 $i = 0;
                 while ($data = mysqli_fetch_assoc($result)) {
-                $i++;
+                  $i++;
                 ?>
 
                   <form>
@@ -131,7 +133,8 @@ if (!$_SESSION['userid']) {
                     <td><?php echo $data['comp_name']; ?></td>
                     <td><?php echo $data['Job']; ?></td>
                     <td>
-
+                      <a href="#edit<?php echo $data['stu_id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>เพิ่มเติม</a>
+                      <?php include('button.php'); ?>
                     </td>
 
                     <td>
@@ -159,10 +162,7 @@ if (!$_SESSION['userid']) {
                       ?>
                     </td>
                     </td>
-                    <td>
-                      <a href="#edit<?php echo $data['stu_id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>เพิ่มเติม</a>
-                      <?php include('button.php'); ?>
-                    </td>
+
                   </form>
                   </tr>
                 <?php
@@ -174,22 +174,20 @@ if (!$_SESSION['userid']) {
         </div>
     </section>
 
-
-    <!-- Modal -->
-    <!-- <script>
-      $('.select_filter').on('change', function() {
-        $.ajax({
-          type: "POST",
-          url: "search.php",
-          data: $('#search_form').serialize(), // You will get all the select data..
-          success: function(data) {
-            $("#projects").html(data);
-          }
-        });
-      });
-    </script> -->
-
-
+    <script>
+      function showdetail(str) {
+        if (str == "") {
+          document.getElementById("txtHint").innerHTML = "";
+          return;
+        }
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+          document.getElementById("txtHint").innerHTML = this.responseText;
+        }
+        xhttp.open("GET" + str);
+        xhttp.send();
+      }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

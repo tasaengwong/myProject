@@ -22,8 +22,8 @@ if (!$_SESSION['userid']) {
     <style>
     
         #chart-container {
-            width: 50%;
-            height: auto;
+            width: 60%;
+           
             
         }
         
@@ -48,6 +48,9 @@ if (!$_SESSION['userid']) {
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="./infromation.php">รายชื่อนิสิต</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./report.php">รายงาน</a>
+            </li>
             </li>
             <li class="nav-item dropdown">
               <button class="btn btn-info nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,6 +65,7 @@ if (!$_SESSION['userid']) {
         </div>
       </div>
     </nav>
+
     <div class="row justify-content-center">
     <div id="chart-container">
         <canvas id="graphCanvas"></canvas>
@@ -130,7 +134,7 @@ if (!$_SESSION['userid']) {
                           },
                           title: {
                             display: true,
-                            text: 'Chart.js Horizontal Bar Chart'
+                            text: 'กราฟแสดงข้อมูลนิสิต'
                           }
                         }
                       }

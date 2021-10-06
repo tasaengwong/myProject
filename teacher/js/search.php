@@ -13,14 +13,14 @@
 
 <body>
     <?php
-    $conn = new mysqli("localhost", "root", "", "project102");
+    $conn = new mysqli("localhost", "root", "", "project103");
     $conn->set_charset('utf8');
     ?>
     <form action="" method="get">
-        <select name="major" aria-placeholder="major" id="bo">
-            <option>----major------</option>
+        <select name="major" aria-placeholder="major" id="major" onchange="showCustomer(this.value)">
+            <option>สาขา</option>
             <?php
-            $sql = "select distinct major from students order by major";
+            $sql = "select * from students order by major";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
                 if ($row['major'] == $_GET['major']) {
@@ -46,7 +46,7 @@
         die();
     }
     ?>
-    <table class="table">
+    <table class="table" id="txtHint">
         <table class="table table-striped">
             <tr>
                 <th>ลำดับ</th>
@@ -114,7 +114,20 @@
         </table>
     </table>
 
-
+<script>
+    function showCustomer(str) {
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("txtHint").innerHTML = this.responseText;
+  }
+  xhttp.open("GET", "getcustomer.php?q="+str);
+  xhttp.send();
+}
+</script>
 
 
 

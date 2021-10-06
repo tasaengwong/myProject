@@ -18,8 +18,7 @@ html {
     color: #4e4e4e;
     text-align: left;
     background-color: rgb(241, 238, 238);
-  }
-  
+  }  
   #mainNav {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -89,10 +88,10 @@ html {
       margin-right: 0;
     }
   }
-  
-  section{
-    padding-top: 3rem;
+  .container{
+    padding-bottom: 5%;
   }
+  
   h4{
     text-align: center;
   }

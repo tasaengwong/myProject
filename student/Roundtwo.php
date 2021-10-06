@@ -39,8 +39,9 @@ if (!$_SESSION['userid']) {
                                 นักศึกษา
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="../student/add-company.php">ยื่นข้อมูลสถานประกอบการ</a></li>
-                                <li><a class="dropdown-item" href="../student/Regisform.php">ยื่นคำร้องขอฝึกงาน</a></li>
+                            <li><a class="dropdown-item" href="../student/Board.php">ติดตามสถานะ</a></li>
+                <li><a class="dropdown-item" href="../student/Roundtwo.php">ยื่นคำร้องขอฝึกงาน(รอบ 2)</a></li>
+                <li><a class="dropdown-item" href="../student/doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

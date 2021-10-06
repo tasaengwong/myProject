@@ -2,7 +2,7 @@
 
 include "connec.php";
 
-// $stu_id = $_POST['stu_id'];
+$stu_id = $_POST['stu_id'];
 $name = $_POST['name'];
 $lastname = $_POST['lastname'];
 // $major = $_POST['major'];

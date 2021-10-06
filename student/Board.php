@@ -150,7 +150,7 @@ if (!$_SESSION['userid']) {
                         // echo '<p><a 
                         //         id=' . $_SESSION['C_status'] . '&Cstatus="" " class = "text fa fa-spinner">
                         //         กำลังดำเนินการ</a></p>';
-                      } else if ($_SESSION['Cstatus'] == 1)
+                      } else if ($_SESSION['C_status'] == 1)
                        {
                         echo '<p><a
                                 id=' . $_SESSION['C_status'] . '&Cstatus=0"  class = "text text-success fa fa-check">

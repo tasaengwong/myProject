@@ -13,14 +13,14 @@ if (!$_SESSION['userid']) {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>studenlist</title>
-   
+    <title>ข้อมูลนักศึกษา</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css?3">
+    <link rel="stylesheet" href="../officer/style.css?2">
 
   </head>
 
@@ -41,11 +41,9 @@ if (!$_SESSION['userid']) {
               <a class="nav-link active" aria-current="page" href="../loginuser/off_page.php">หน้าแรก</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../officer/detail.php">รายชื่อนิสิต</a>
+              <a class="nav-link active" aria-current="page" href="../officer/detail.php">ข้อมูลนักศึกษา</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../teacher/report.php">รายงาน</a>
-            </li>
+
             <li class="nav-item dropdown">
               <button class="btn btn-info nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-person-circle"></i> <?php echo $_SESSION['name']; ?>
@@ -74,58 +72,40 @@ if (!$_SESSION['userid']) {
             <!-- select information -->
             <br><br>
             <h4>รายชื่อนิสิต</h4><br>
-            <!-- search filter -->
-            <form name="search_form" id="search_form" class="d-flex justify-content-end">
-              <select name='select_major' id="categories" class=" btn btn-light select_filter">
-                <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
-                <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
-                <option value="คอมพิวเตอร์ธุรกิจ">คอมพิวเตอร์ธุรกิจ</option>
-                <option value="วิศวกรรมซอฟร์แวร์">วิศวกรรมซอฟร์แวร์</option>
-                <option value="วิศวกรรมคอมพิวเตอร์">วิศวกรรมคอมพิวเตอร์</option>
-                <option value="คอมพิวเตอร์กราฟและมัลติมีเดีย">คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย</option>
-              </select>
-              <button type="submit" class="bi bi-search"></button>
-            </form>
-            <br>
-            <!-- end form -->
 
-            <table class="table"> 
-              <table class="table table-bordered ">
-                <tr >
-                  <th>ลำดับ</th>
+            <table class="table">
+              <table class="table  table-bordered">
+                <tr class="bg-light">
+                  <th>NO.</th>
                   <th>รหัสนิสิต</th>
-                  <th>ชื่อ</th>
-                  <th>นามสกุล</th>
-                  <th>สาขา</th>
-                  <th>ชั้นปี</th>
-                  <th>สถานประกอบการ</th>
+                  <th>ชื่อ-นามสกุล</th>
+                  <th colspan="2">สาขา</th>
+                  <th>ปี</th>
+                  <th colspan="2" >สถานประกอบการ</th>
                   <th>ตำแหน่งงาน</th>
-
                   <th>เพิ่มเตืม</th>
-                  <th>ผลการพิจารณา</th>
-                  <th colspan="3"> ออกเอกสารขอความอนุเคราะห์ฝึกงาน</th>
-                
-                  <th colspan="3">การตอบรับจากสถานประกอบการ</th>
-     
+                  <th >ผลการพิจารณา</th>
+                  <th colspan="3" >การจัดทำเอกสาร</th>
+                  <th colspan="3">แบบตอบรับสถานประกอบการ</th>
+
 
                 </tr>
                 <?php
                 $i = 0;
                 while ($data = mysqli_fetch_assoc($result)) {
-                $i++;
+                  $i++;
                 ?>
 
                   <form>
                     <td><?php echo $i ?></td>
                     <td><?php echo $data['stu_id']; ?></td>
-                    <td><?php echo $data['name']; ?></td>
-                    <td><?php echo $data['lastname']; ?></td>
-                    <td><?php echo $data['major']; ?></td>
+                    <td><?php echo $data['name']; ?>&nbsp;<?php echo $data['lastname']; ?></td>
+                    <td colspan="2"><?php echo $data['major']; ?></td>
                     <td><?php echo $data['year']; ?></td>
-                    <td><?php echo $data['comp_name']; ?></td>
+                    <td colspan="2"><?php echo $data['comp_name']; ?></td>
                     <td><?php echo $data['Job']; ?></td>
 
-                    
+
                     <td>
                       <a href="#edit<?php echo $data['stu_id']; ?>" data-toggle="modal" class="btn btn-light bi bi-file-earmark-text"><span class="glyphicon glyphicon-edit"></span></a>
                       <?php include('button.php'); ?>
@@ -142,8 +122,8 @@ if (!$_SESSION['userid']) {
                       }
                       ?>
                     </td>
-
-                    <td>
+<!-- close status -->
+                    <td colspan="3"> 
                       <?php
                       if ($data['Ostatus'] == 0) {
                         // echo '<p id=' . $data['stu_id'] . '&status="" " class = "text fa fa-spinner">กำลังดำเนินการ</a></p>';
@@ -153,26 +133,22 @@ if (!$_SESSION['userid']) {
                         echo '<p stu_id=' . $data['stu_id'] . '&Ostatus=2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
                       }
                       ?>
-                    </td>
-
-
-                    <td>
+                  
                       <?php
                       if ($data['Ostatus'] == 0) {
-                        echo '<p><a href="changeO.php?stu_id='.$data['stu_id'].'&Ostatus=1" class = "btn btn-outline-success">อนุมัติ</a></p>';
+                        echo '<p><a href="changeO.php?stu_id=' . $data['stu_id'] . '&Ostatus=1" class = "btn btn-outline-success">อนุมัติ</a></p>';
+                      }
+                      ?>
+                   
+                      <?php
+                      if ($data['Ostatus'] == 0) {
+                        echo '<p><a href="changeO.php?stu_id=' . $data['stu_id'] . '&Ostatus=2" class = "btn btn-outline-danger">ไม่อนุมัติ</a></p>';
                       }
                       ?>
                     </td>
-                    <td>
-                      <?php
-                      if ($data['Ostatus'] == 0) {
-                        echo '<p><a href="changeO.php?stu_id='.$data['stu_id'].'&Ostatus=2" class = "btn btn-outline-danger">ไม่อนุมัติ</a></p>';
-                      }
-                      ?>
-                    </td>
-                    
+<!-- close Officer status -->
 
-                    <td>
+                    <td colspan="3">
                       <?php
                       if ($data['Cstatus'] == 0) {
                         // echo '<p id=' . $data['stu_id'] . '&status="" " class = "text fa fa-spinner">กำลังดำเนินการ</a></p>';
@@ -182,25 +158,19 @@ if (!$_SESSION['userid']) {
                         echo '<p stu_id=' . $data['stu_id'] . '&Cstatus=2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
                       }
                       ?>
-                    </td>
-
-
-                    <td>
                       <?php
                       if ($data['Cstatus'] == 0) {
-                        echo '<p><a href="changeC.php?stu_id='.$data['stu_id'].'&Cstatus=1" class = "btn btn-outline-success">อนุมัติ</a></p>';
+                        echo '<p><a href="changeC.php?stu_id=' . $data['stu_id'] . '&Cstatus=1" class = "btn btn-outline-success">อนุมัติ</a></p>';
+                      }
+                      ?>
+                      <?php
+                      if ($data['Cstatus'] == 0) {
+                        echo '<p><a href="changeC.php?stu_id=' . $data['stu_id'] . '&Cstatus=2" class = "btn btn-outline-danger">ไม่อนุมัติ</a></p>';
                       }
                       ?>
                     </td>
-                    <td>
-                      <?php
-                      if ($data['Cstatus'] == 0) {
-                        echo '<p><a href="changeC.php?stu_id='.$data['stu_id'].'&Cstatus=2" class = "btn btn-outline-danger">ไม่อนุมัติ</a></p>';
-                      }
-                      ?>
-                    </td>
-                    </td>
-                    
+                  <!-- close Company status -->
+
                   </form>
                   </tr>
                 <?php

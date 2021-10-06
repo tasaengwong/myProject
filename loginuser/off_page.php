@@ -16,7 +16,8 @@ if (!$_SESSION['userid']) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>User Page</title>
-        <link rel="stylesheet" href="style.css?2">
+        <link rel="stylesheet" href="./style.css?5">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
 
@@ -24,7 +25,7 @@ if (!$_SESSION['userid']) {
         <nav class="navbar navbar-expand-lg navbar-light bg-warning">
             <div class="container-fluid">
 
-                <!-- <img src="" alt="logoict" class="img">  -->
+                <img src="../img/ict.png" alt="logoict" class="img" > 
                 &nbsp;
                 <h3>ระบบสารสนเทศการฝึกงาน</h3>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,11 +39,12 @@ if (!$_SESSION['userid']) {
                         </li>
 
                         <li class="nav-item dropdown">
-                            <ul class=" nav-link dropdown-togglewwwwwwwwww" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <a href="#">มูลนักศึกษา</a>
-                            </ul>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                ข้อมูลนักศึกษา
+                            </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item " href="#">&nbsp;รายชื่อนักศึกษา</a></li>
+                                <li><a class="dropdown-item" href="../officer/detail.php">รายชื่อนิสิต</a></li>
+                            
                             </ul>
                         </li>
 

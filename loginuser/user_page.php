@@ -37,6 +37,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./user_page.php">หน้าแรก</a>
           </li>
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,6 +47,7 @@
               <li><a class="dropdown-item" href="../student/Board.php?">ติดตามสถานะ</a></li>
               <li><a class="dropdown-item" href="../student/doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li>
             </ul>
+          </li>
             <li class="nav-item dropdown">
               <a class="btn btn-info nav-link dropdown-toggle bi bi-person-circle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <?php echo $_SESSION['name']; ?>

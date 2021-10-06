@@ -20,6 +20,15 @@
             $_SESSION['userid'] = $row['stu_id']; 
             $_SESSION['name'] = $row['name'];
             $_SESSION['lastname'] = $row['lastname'];
+            $_SESSION['major'] = $row['major'];
+            $_SESSION['year'] = $row['year'];
+            $_SESSION['address'] = $row['address'];
+            $_SESSION['province'] = $row['province'];
+            $_SESSION['amphures'] = $row['amphures'];
+            $_SESSION['district'] = $row['district'];
+            $_SESSION['zipcode'] = $row['zipcode'];
+            $_SESSION['phone'] = $row['phone'];
+            $_SESSION['email'] = $row['mail'];
             $_SESSION['status'] = $row['status'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['Ostatus'] = $row['Ostatus'];

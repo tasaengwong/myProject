@@ -2,8 +2,7 @@
 html {
   font-family: 'Athiti', sans-serif;
     line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   
   }
   
   article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -17,6 +16,7 @@ html {
     font-weight: 400;
     line-height: 1.5;
     color: #4e4e4e;
+    
     background-color: rgb(255, 255, 255);
   }
   
@@ -101,13 +101,6 @@ html {
   button{
     float: right;
   }
-  
-  footer{
-    font-family: monospace;
-    text-align: center;
-    font-size: 15px;
-  }
-
   
   a:hover{
     color: #67ebfa;

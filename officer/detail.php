@@ -20,16 +20,16 @@ if (!$_SESSION['userid']) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="../officer/style.css?2">
+    <link rel="stylesheet" href="../officer/style.css?6">
 
   </head>
 
-  <body ng-controller="Ctrl">
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
       <div class="container-fluid">
 
         <img src="../img/ict.png" alt="logoict" class="img">
-        &nbsp;
+    
         <h3>ระบบสารสนเทศการฝึกงาน</h3>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

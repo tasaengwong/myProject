@@ -17,8 +17,7 @@ html {
     font-weight: 400;
     line-height: 1.5;
     color: #4e4e4e;
-    text-align: left;
-    background-color: rgb(241, 238, 238);
+    background-color: rgb(255, 255, 255);
   }
   
   #mainNav {
@@ -124,7 +123,7 @@ html {
   }
   h3{
     font-family: 'Athiti', sans-serif;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-left: 2rem;
-    color: aliceblue;
+    color: #fff;
   }

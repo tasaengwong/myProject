@@ -26,12 +26,12 @@ html {
     background-color: #212529;
   }
   #mainNav .navbar-toggler {
-    padding: 0.75rem;
+  padding: 0.75rem;
   font-family: 'Athiti', sans-serif;  font-size: 0.75rem;
-    color: #fff;
-    text-transform: uppercase;
-    background-color: #212445;
-    border: 0;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #212445;
+  border: 0;
   }
   #mainNav .navbar-brand {
     color: #fed136;
@@ -128,7 +128,7 @@ html {
     font-family: 'Athiti', sans-serif;
     padding-top: 1rem;
     padding-left: 2rem;
-    color: aliceblue;
+    color: #fff;
   }
 
 

@@ -35,7 +35,7 @@ if (!$_SESSION['userid']) {
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav col-12 justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../loginuser/admin_page.php">หน้าแรก</a>
+                            <a class="nav-link active" aria-current="page" href="../loginuser/off_page.php">หน้าแรก</a>
                         </li>
 
                         <li class="nav-item dropdown">

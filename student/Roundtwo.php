@@ -186,7 +186,7 @@ if (!$_SESSION['userid']) {
           <div class="bnt col-10">
 
             <button class="btn btn-success" type="submit"><i class="fas fa-plus-circle">&nbsp;</i>บันทึกข้อมูล</button>
-            <a href="../index.html" class="btn btn-light col-sm-4">ย้อนกลับ</a>
+           
           </div><br>
       </div>
 

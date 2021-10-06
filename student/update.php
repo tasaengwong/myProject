@@ -2,7 +2,7 @@
 
 include "connec.php";
 
-$stu_id = $_POST['stu_id'];
+// $stu_id = $_POST['stu_id'];
 $name = $_POST['name'];
 $lastname = $_POST['lastname'];
 // $major = $_POST['major'];
@@ -32,3 +32,4 @@ $sql = "UPDATE students SET stu_id ='$stu_id' , name ='$name' , lastname='$lastn
 $conn->close();
 ?>
 
+<!-- stu_id ='$stu_id' -->

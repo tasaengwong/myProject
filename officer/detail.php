@@ -29,10 +29,7 @@ if (!$_SESSION['userid']) {
       <div class="container-fluid">
 
         <img src="../img/ict.png" alt="logoict" class="img">
-<<<<<<< HEAD
-
-=======
->>>>>>> 8afc2280c4b7741aeeb693278a62770f2a80db53
+        
         <h3>ระบบสารสนเทศการฝึกงาน</h3>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

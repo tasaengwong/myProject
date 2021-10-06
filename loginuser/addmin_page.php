@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Intern.teacher</title>
-    <link rel="stylesheet" href="style.css?2">
+    <link rel="stylesheet" href="style.css?5">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -23,8 +23,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
 
-      <!-- <img src="" alt="logoict" class="img">  -->
-      &nbsp;
+      <img src="../img/ict.png" alt="logoict" class="img"> 
+
       <h3>ระบบสารสนเทศการฝึกงาน</h3>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,14 +34,12 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav col-12 justify-content-end">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../loginuser/admin_page.php">หน้าแรก</a>
+            <a class="nav-link active" aria-current="page" href="../loginuser/teacher_page.php">หน้าแรก</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../teacher/infromation.php">รายชื่อนิสิต</a>
+            <a class="nav-link active" aria-current="page" href="../teacher/infromation.php">รายชื่อ Account</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../teacher/report.php">รายงาน</a>
-          </li>
+          
          
             <li class="nav-item dropdown">
               <button class="btn btn-info nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,6 +54,53 @@
       </div>
     </div>
   </nav>
+
+
+  <?php
+    require('connection.php');
+    $sql = "SELECT * from user ";
+    $result = $con->query($sql);
+    ?>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm student-detail">
+            <!-- select information -->
+            <br><br>
+            <h4>ข้อมูลแอดมิน</h4><br>
+            <!-- search filter -->
+            
+            <br>
+            <!-- end form -->
+
+            <table class="table" id="txtHint">
+              <table class="table table-bordered">
+                <tr class="bg-light">
+    
+                  <th>ชื่อ</th>
+                  <th>นามสกุล</th>
+
+                </tr>
+                <?php
+                  {
+                ?>
+                  <form>
+                               
+                    <td><?php echo $_SESSION['name']; ?></td>
+                    <td><?php echo $_SESSION['lastname']; ?></td>
+                    
+  
+                  </form>
+                  </tr>
+                <?php
+                  }
+                ?>
+              </table>
+            </table>
+          </div>
+        </div>
+    </section>
 
       
        

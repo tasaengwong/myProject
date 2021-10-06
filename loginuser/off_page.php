@@ -63,7 +63,51 @@ if (!$_SESSION['userid']) {
         </nav>
 
 
+    <?php
+    require('connection.php');
+    $sql = "SELECT * from user ";
+    $result = $con->query($sql);
+    ?>
 
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm student-detail">
+            <!-- select information -->
+            <br><br>
+            <h4>ข้อมูลเจ้าหน้าที่</h4><br>
+            <!-- search filter -->
+            
+            <br>
+            <!-- end form -->
+
+            <table class="table" id="txtHint">
+              <table class="table table-bordered">
+                <tr class="bg-light">
+    
+                  <th>ชื่อ</th>
+                  <th>นามสกุล</th>
+
+                </tr>
+                <?php
+                  {
+                ?>
+                  <form>
+                               
+                    <td><?php echo $_SESSION['name']; ?></td>
+                    <td><?php echo $_SESSION['lastname']; ?></td>
+                    
+  
+                  </form>
+                  </tr>
+                <?php
+                  }
+                ?>
+              </table>
+            </table>
+          </div>
+        </div>
+    </section>
 
 
 

@@ -23,10 +23,13 @@
             $_SESSION['userlevel'] = $row['userlevel'];
 
             if ($_SESSION['userlevel'] ==  't' ) {
-                header("Location: admin_page.php");
+                header("Location: teacher_page.php");
             }
             if ($_SESSION['userlevel'] ==  'o' ) {
                 header("Location: off_page.php");
+            }
+            if ($_SESSION['userlevel'] ==  'a' ) {
+                header("Location: addmin_page.php");
             }
         } 
 

@@ -5,6 +5,10 @@
         box-sizing: border-box;
     }
     
+    th{
+      width: 10px;
+    }
+
     html {
         font-family: 'Athiti', sans-serif;
         line-height: 1.15;
@@ -30,7 +34,15 @@
     img{
       width: 4rem;
     }
-  
+    #uplogo{
+        width: 100px;
+    }
+    
+    #nextlogo{
+        width: 200px;
+        padding-top: 50px;
+    }
+   
     .sub-text{
         font-family:'Athiti', sans-serif ;
         /* padding-top: 10px; */

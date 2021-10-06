@@ -3,7 +3,7 @@
     session_start();
 
     if (!$_SESSION['userid']) {
-        header("Location: index.php");
+        header("Location: singin.php");
     } else {
 
 ?>
@@ -14,18 +14,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Page</title>
+    <title>Intern.teacher</title>
     <link rel="stylesheet" href="style.css?5">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  </head>
+</head>
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
     <div class="container-fluid">
 
       <img src="../img/ict.png" alt="logoict" class="img"> 
-   
+
       <h3>ระบบสารสนเทศการฝึกงาน</h3>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,24 +34,19 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav col-12 justify-content-end">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./user_page.php">หน้าแรก</a>
+            <a class="nav-link active" aria-current="page" href="../loginuser/teacher_page.php">หน้าแรก</a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              นักศึกษา
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="../student/Board.php?">ติดตามสถานะ</a></li>
-              <li><a class="dropdown-item" href="../student/Roundtwo.php">ยื่นคำร้องขอฝึกงาน(รอบ 2)</a></li>
-              <li><a class="dropdown-item" href="../student/doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../teacher/infromation.php">รายชื่อนิสิต</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../teacher/report.php">รายงาน</a>
+          </li>
+         
             <li class="nav-item dropdown">
-              <a class="btn btn-info nav-link dropdown-toggle bi bi-person-circle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <?php echo $_SESSION['name']; ?>
-              </a>
+              <button class="btn btn-info nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <i class="bi bi-person-circle"></i> <?php echo $_SESSION['name']; ?>
+              </button>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item bi bi-arrow-right-square-fill" href="../loginuser/logout.php">&nbsp;LOG-OUT</a></li>
               </ul>
@@ -63,9 +57,10 @@
     </div>
   </nav>
 
+
   <?php
     require('connection.php');
-    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id";
+    $sql = "SELECT * from user ";
     $result = $con->query($sql);
     ?>
 
@@ -75,7 +70,7 @@
           <div class="col-sm student-detail">
             <!-- select information -->
             <br><br>
-            <h4>ข้อมูลนักศึกษา</h4><br>
+            <h4>ข้อมูลอาจารย์</h4><br>
             <!-- search filter -->
             
             <br>
@@ -87,11 +82,7 @@
     
                   <th>ชื่อ</th>
                   <th>นามสกุล</th>
-                  <th>รหัสนิสิต</th>
-                  <th>สาขา</th>
-                  <th>ชั้นปี</th>
-  
-                 
+
                 </tr>
                 <?php
                   {
@@ -100,9 +91,7 @@
                                
                     <td><?php echo $_SESSION['name']; ?></td>
                     <td><?php echo $_SESSION['lastname']; ?></td>
-                    <td><?php echo $_SESSION['userid']; ?></td>
-                    <td><?php echo $_SESSION['major']; ?></td>
-                    <td><?php echo $_SESSION['year']; ?></td>
+                    
   
                   </form>
                   </tr>
@@ -114,6 +103,11 @@
           </div>
         </div>
     </section>
+
+      
+       
+
+      
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >

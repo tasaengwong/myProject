@@ -26,6 +26,7 @@ $sql = "UPDATE students SET stu_id ='$stu_id' , name ='$name' , lastname='$lastn
   $result = mysqli_query($conn, $sql);
   if($conn->query($sql) === TRUE){
     echo "success";
+    header("Location: ../loginuser/user_page.php");
 }else{
         echo "Error: ".$sql."<br>".$conn->error;
 }

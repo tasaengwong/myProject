@@ -34,10 +34,10 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav col-12 justify-content-end">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../loginuser/teacher_page.php">หน้าแรก</a>
+            <a class="nav-link active" aria-current="page" href="../loginuser/addmin_page.php">หน้าแรก</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../teacher/infromation.php">รายชื่อ Account</a>
+            <a class="nav-link active" aria-current="page" href="../admin/add_acount.php">Account ผู้ใช้</a>
           </li>
           
          

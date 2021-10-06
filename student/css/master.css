@@ -89,8 +89,9 @@ html {
         margin-right: 0;
       }
     }
-    h1{
+    h4{
       font-family:'Athiti', sans-serif;;
+      padding-top: 20px;
     }
    
     .form-inline{

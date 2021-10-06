@@ -15,7 +15,7 @@ if (!$_SESSION['userid']) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ติดตามสถานะ</title>
     <link rel="stylesheet" href="../student/css/master.css?9">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -73,11 +73,10 @@ if (!$_SESSION['userid']) {
             <!-- select information -->
 
             <table>
-              <table class="table table-hover">
+              <table class="table table-bordered">
                 <tr class="bg-light">
                   <th>ลำดับ</th>
                   <th>รายการ</th>
-                  <th></th>
                   <th>สถานะ</th>
                   
                 </tr>

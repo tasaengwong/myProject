@@ -73,13 +73,12 @@ if (!$_SESSION['userid']) {
             <!-- select information -->
 
             <table>
-              <table class="table table-striped">
-                <tr>
+              <table class="table table-hover">
+                <tr class="bg-light">
                   <th>ลำดับ</th>
                   <th>รายการ</th>
                   <th></th>
                   <th>สถานะ</th>
-                  
                   
                 </tr>
 
@@ -121,52 +120,49 @@ if (!$_SESSION['userid']) {
 
                     <?php
                    
-                      if ($_SESSION['status'] == 0) 
+                      if ($_SESSION['Ostatus'] == 0) 
                       {
-                        echo '<p><a 
-                                id=' . $_SESSION['status'] . '&status="" " class = "text fa fa-spinner">
-                                กำลังดำเนินการ</a></p>';
-                      } else if ($_SESSION['status'] == 1)
+                        // echo '<p><a id=' . $_SESSION['Ostatus'] . '&Ostatus="" " class = "text fa fa-spinner">
+                        //         กำลังดำเนินการ</a></p>';
+                      } else if ($_SESSION['Ostatus'] == 1)
                        {
-                        echo '<p><a
-                                id=' . $_SESSION['status'] . '&status=0"  class = "text text-success fa fa-check">
-                                อนุมัติ</a></p>';
+                        echo '<p><a id=' . $_SESSION['Ostatus'] . '&Ostatus=0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
                       } else 
                       {
-                        echo '<p><a
-                                id=' .$_SESSION['status'] . '&status=2"  class = "text text-danger fa fa-times">
-                                ไม่อนุมัติ</a></p>';
+                        echo '<p><a id=' .$_SESSION['Ostatus'] . '&Ostatus=2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</a></p>';
                       }
                     ?>
+
                   </td>
                 </form>
                </tr>
                <tr>
+
                <form>
                   <td>3</td>
                   <td>การตอบรับจากสถานประกอบการ</td>
                   <td></td>
                   <td>
 
-                    <?php
-                   
-                      if ($_SESSION['status'] == 0) 
+                     <?php
+                      if ($_SESSION['C_status'] == 0) 
                       {
-                        echo '<p><a 
-                                id=' . $_SESSION['status'] . '&status="" " class = "text fa fa-spinner">
-                                กำลังดำเนินการ</a></p>';
-                      } else if ($_SESSION['status'] == 1)
+                        // echo '<p><a 
+                        //         id=' . $_SESSION['C_status'] . '&Cstatus="" " class = "text fa fa-spinner">
+                        //         กำลังดำเนินการ</a></p>';
+                      } else if ($_SESSION['Cstatus'] == 1)
                        {
                         echo '<p><a
-                                id=' . $_SESSION['status'] . '&status=0"  class = "text text-success fa fa-check">
+                                id=' . $_SESSION['C_status'] . '&Cstatus=0"  class = "text text-success fa fa-check">
                                 อนุมัติ</a></p>';
                       } else 
                       {
                         echo '<p><a
-                                id=' .$_SESSION['status'] . '&status=2"  class = "text text-danger fa fa-times">
+                                id=' .$_SESSION['C_status'] . '&Cstatus=2"  class = "text text-danger fa fa-times">
                                 ไม่อนุมัติ</a></p>';
                       }
                     ?>
+
                   </td>
                 </form>
                </tr>

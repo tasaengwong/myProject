@@ -22,6 +22,8 @@
             $_SESSION['lastname'] = $row['lastname'];
             $_SESSION['status'] = $row['status'];
             $_SESSION['username'] = $row['username'];
+            $_SESSION['Ostatus'] = $row['Ostatus'];
+            $_SESSION['C_status'] = $row['Cstatus'];
 
             if ($_SESSION['userid'] ==  $username ) {
                 header("Location: user_page.php");

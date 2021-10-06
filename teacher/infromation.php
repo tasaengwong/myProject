@@ -95,7 +95,7 @@ if (!$_SESSION['userid']) {
               <button type="submit" class="btn btn-light bi bi-search"></button>
             </form>
             <br>
-            <!-- end form -->
+          
             <?php
             $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id WHERE major = '{$_GET['major']}' ORDER BY major ;";
             $result = $conn->query($sql);

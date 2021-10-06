@@ -17,7 +17,7 @@ html {
     line-height: 1.5;
     color: #4e4e4e;
     text-align: left;
-    background-color: rgb(241, 238, 238);
+    background-color: rgb(255, 255, 255);
   }  
   #mainNav {
     padding-top: 1rem;
@@ -107,9 +107,7 @@ html {
     text-align: center;
     font-size: 15px;
   }
-  img{
-    width: 5rem;
-  }
+  
   
   a:hover{
     color: #67ebfa;
@@ -125,7 +123,7 @@ html {
   }
   h3{
     font-family: 'Athiti', sans-serif;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-left: 2rem;
-    color: aliceblue;
+    color: #fff;
   }

@@ -1,29 +1,34 @@
 <?php
-include "header.php";
+
 include "connec.php";
 
-$stu_id = $_GET['stu_id'];
-$comp_id = $_POST['comp_id'];
+$stu_id = $_POST['stu_id'];
+$name = $_POST['name'];
+$lastname = $_POST['lastname'];
+// $major = $_POST['major'];
+// $year = $_POST['year'];
+// $address = $_POST['address'];
+// $province = $_POST['province'];
+// $amphures = $_POST['amphures'];
+// $district = $_POST['district'];
+// $zipcode = $_POST['zipcode'];
+$phone = $_POST['phone'];
+$mail = $_POST['mail'];
 $Job = $_POST['Job'];
 $description = $_POST['description'];
+$comp_id = $_POST['comp_id'];
 $study = $_POST['study'];
 $sent = $_POST['sent'];
 $sentmail = $_POST['sentmail'];
 
-
-$sql ="UPDATE students set comp_id = '$comp_id', Job = '$Job', description ='$description', study = '$study', sent ='$sent' , sentmail ='$sentmail' where stu_id = '$stu_id';";
-        
-$result = mysqli_query($conn, $sql);
-if ($result){
-        echo "<script type='text/javascript'>";
-        echo"window.location = '../index.html';";
-        echo "</script>";
-        }
-        else {
-        //กำหนดเงื่อนไขว่าถ้าไม่สำเร็จให้ขึ้นข้อความและกลับไปหน้าเพิ่ม
-        echo "<script type='text/javascript'>";
-        echo "alert('error!');";
-        echo"window.location = 'add-company.php'; ";
-        echo"</script>";
-        }
+$sql = "UPDATE students SET stu_id ='$stu_id' , name ='$name' , lastname='$lastname' , phone='$phone' , mail='$mail' , description='$description' , Job ='$Job' , comp_id ='$comp_id' , study='$study' , sent='$sent' , sentmail='$sentmail' WHERE stu_id ='$stu_id';";
+       
+  $result = mysqli_query($conn, $sql);
+  if($conn->query($sql) === TRUE){
+    echo "success";
+}else{
+        echo "Error: ".$sql."<br>".$conn->error;
+}
 $conn->close();
+?>
+

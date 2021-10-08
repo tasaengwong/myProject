@@ -39,9 +39,15 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="../teacher/infromation.php">รายชื่อนิสิต</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../teacher/report.php">รายงาน</a>
-          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              รายงาน
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="../teacher/report.php">ข้อมูลนักศึกษา</a></li>
+              </ul>
+            </li>
+       
          
             <li class="nav-item dropdown">
               <button class="btn btn-info nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

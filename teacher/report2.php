@@ -103,7 +103,8 @@ if (!$_SESSION['userid']) {
 
             let chartdata = {
               labels: comp_name,
-              datasets: [{
+              datasets: [
+                {
                 label: ['จำนวน'],
 
 
@@ -130,7 +131,9 @@ if (!$_SESSION['userid']) {
                 hoverBackgroundColor: '#CCCCCC',
                 hoverBorderColor: '#666666',
                 data: count
-              }]
+              },
+              
+            ]
             };
 
             let graphTarget = $('#graphCanvas');

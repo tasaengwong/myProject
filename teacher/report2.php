@@ -89,20 +89,20 @@ if (!$_SESSION['userid']) {
 
       function showGraph() {
         {
-          $.post("data.php", function(data) {
+          $.post("data2.php", function(data) {
             console.log(data);
-            let major = [];
-            let count = [];
+            let comp_name = [];
+            let count = ['count'];
             // let count1 = [];
             for (let i in data) {
 
-              major.push(data[i].major);
+              comp_name.push(data[i].comp_name);
               count.push(data[i].count);
               // count1.push(data[i].count);
             }
 
             let chartdata = {
-              labels: major,
+              labels: comp_name,
               datasets: [{
                 label: ['จำนวน'],
 
@@ -136,7 +136,7 @@ if (!$_SESSION['userid']) {
             let graphTarget = $('#graphCanvas');
             let barGraph = new Chart(graphTarget, {
 
-              type: 'bar',
+              type: 'pie',
               data: chartdata,
               options: {
                 indexAxis: 'y',

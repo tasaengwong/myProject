@@ -78,6 +78,32 @@ if (!$_SESSION['userid']) {
             <br><br>
             <h4>รายชื่อนิสิต</h4><br>
 
+            <form name="search_form" id="search_form" class="d-flex justify-content-end">
+              <select name="major" aria-placeholder="major" id="major" class="btn btn-light" onchange="showCustomer(this.value)">
+                <option>สาขา</option>
+                <?php
+                $sql = "select distinct major from students order by major";
+                $result = $conn->query($sql);
+                error_reporting(0);
+                while ($data = $result->fetch_assoc()) {
+                 
+                  if ($data['major'] == $_GET['major']) {
+                    echo "<option selected>";
+                  } else {
+                    echo "<option>";
+                  }
+                   echo "{$data['major']}</option>";
+                }
+                ?>
+              </select>
+              <button type="submit" class="btn btn-light bi bi-search"></button>
+            </form>
+            
+            <?php
+            $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id WHERE major = '{$_GET['major']}';";
+            $result = $conn->query($sql);
+            ?>
+
             <table class="table">
               <table class="table  table-bordered">
                 <tr class="bg-light">

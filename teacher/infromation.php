@@ -82,6 +82,7 @@ if (!$_SESSION['userid']) {
                 <?php
                 $sql = "select distinct major from students order by major";
                 $result = $conn->query($sql);
+                error_reporting(0);
                 while ($data = $result->fetch_assoc()) {
                   if ($data['major'] == $_GET['major']) {
                     echo "<option selected>";
@@ -98,7 +99,7 @@ if (!$_SESSION['userid']) {
             <br>
           
             <?php
-            $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id WHERE major = '{$_GET['major']}' ORDER BY major ;";
+            $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id WHERE major = '{$_GET['major']}';";
             $result = $conn->query($sql);
             ?>
 

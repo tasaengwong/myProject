@@ -1,8 +1,7 @@
-<title> SQL INSERT 2 Tables by.devtai.com  </title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/style.css" rel="stylesheet" />
 
- 
 <!-- Latest compiled and minified CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" > 
 <!-- Optional theme -->

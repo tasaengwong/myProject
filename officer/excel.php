@@ -1,58 +1,64 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "project103");
-$sql = "SELECT * FROM students LEFT JOIN company on students.comp_id = company.comp_id";
-$result = mysqli_query($connect, $sql);
+    /*กำหนด username password และ database name ของ mysql */
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "project103";
+
+    /*------เชื่อมต่อ Database----*/
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    if ($conn->connect_error) {
+      die("Connection Error: " . $conn->connect_error);
+    }
+
+ /*สร้างปุ่มสำหรับ Download ไฟล์ excel โดยกำหนดว่าเมื่อกดปุ่ม Downlaod แล้วจะทำงานที่ javascript function ชื่อว่า ExcelReport()*/
+     echo "<a href='#' id='download_link' onClick='javascript:ExcelReport();''>Download</a>";
+
+    echo "<table id='myTable'>";
+         echo "<tr>";
+                echo "<td>Name</td>";
+                echo "<td>Last</td>";
+        echo "</tr>";
+    /*นำข้อมูลจากตาราง food มาแสดง*/
+    $sql = "SELECT * FROM students";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc())
+    {
+        echo "<tr>";
+            echo "<td>$row[name]</td>";
+            echo "<td>$row[lastname]</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+
+    $conn->close();
+
 ?>
-<html>
+<!-- เรียกใช้ javascript สำหรับ export ไฟล์ excel  -->
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"  ></script>
+<script src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"  ></script>
 
-<head>
-    <title>Export  Excel </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css" />
-    <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+<script>
+function ExcelReport()//function สำหรับสร้าง ไฟล์ excel จากตาราง
+{
+    var sheet_name="excel_sheet";/* กำหหนดชื่อ sheet ให้กับ excel โดยต้องไม่เกิน 31 ตัวอักษร */
+    var elt = document.getElementById('myTable');/*กำหนดสร้างไฟล์ excel จาก table element ที่มี id ชื่อว่า myTable*/
 
-</head>
+    /*------สร้างไฟล์ excel------*/
+    var wb = XLSX.utils.table_to_book(elt, {sheet: sheet_name});
+    XLSX.writeFile(wb,'report.xlsx');//Download ไฟล์ excel จากตาราง html โดยใช้ชื่อว่า report.xlsx
+}
+</script>
+<style type="text/css">
 
-<body>
-    <div class="container">
-        <br />
-        <br />
-        <br />
-        <div class="table-responsive">
-            <h2 align="center">Export MySQL data to Excel in PHP</h2><br />
-            <table class="table table-bordered" id="excel">
-                <tr>
-                    <th>Name</th>
-                    <th>lastName</th>
-                    <th>address</th>
-                    <th>major</th>
-                    <th>year</th>
-                    <th>CompanyName</th>
-                </tr>
-                <?php
-                while ($row = mysqli_fetch_array($result)) {
-                    echo '  
-       <tr>  
-         <td>' . $row["name"] . '</td> 
-         <td>' . $row["lastname"] . '</td>   
-         <td>' . $row["address"] . '</td>  
-         <td>' . $row["major"] . '</td>  
-         <td>' . $row["year"] . '</td>  
-         <td>' . $row["comp_name"] . '</td>
-       </tr>  
-        ';
-                }
-                ?>
-            </table>
-            <br />
-            <form method="post" action="export.php">
-                <input type="submit" name="export" class="btn btn-success" value="Export" />
-            </form>
-        </div>
-    </div>
-</body>
+table {
+  border-collapse: collapse;
+  width:40%;
+}
 
-</html>
+table, th, td {
+  border: 1px solid black;
+}
+
+</style>

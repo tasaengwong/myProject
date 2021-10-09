@@ -30,7 +30,7 @@ if (isset($_POST["export"])) {
    ';
         }
         $output .= '</table>';
-        header('Content-Type: application/xls');
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition: attachment; filename=download.xls');
         echo $output;
     }

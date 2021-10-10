@@ -13,21 +13,78 @@
     }
 
  /*สร้างปุ่มสำหรับ Download ไฟล์ excel โดยกำหนดว่าเมื่อกดปุ่ม Downlaod แล้วจะทำงานที่ javascript function ชื่อว่า ExcelReport()*/
-     echo "<a href='#' id='download_link' onClick='javascript:ExcelReport();''>Download</a>";
+     echo "<a href='#' id='download_link' type='button'  onClick='javascript:ExcelReport();''>Download</a>";
 
     echo "<table id='myTable'>";
          echo "<tr>";
-                echo "<td>Name</td>";
-                echo "<td>Last</td>";
+                echo "<td>รหัสนิสิต</td>";
+                echo "<td>ชื่อ</td>";
+                echo "<td>นามสกุล</td>";
+                echo "<td>สาขา</td>";
+                echo "<td>ชั้นปี</td>";
+                // echo "<td>ที่อยู่</td>";
+                // echo "<td>ตำบล</td>";
+                // echo "<td>อำเภอ</td>";
+                // echo "<td>จังหวัด</td>";
+                // echo "<td>รหัสไปรษณีย์</td>";
+                echo "<td>เบอร์โทรศัพท์</td>";
+                echo "<td>E-mail</td>";
+                echo "<td>ตำแหน่งที่ฝึก</td>";
+                echo "<td>รายละเอียด</td>";
+
+                echo "<td>ชื่อสถานประกอบการ</td>";
+                echo "<td>ติอต่อ</td>";
+                echo "<td>ที่อยู่</td>";
+                echo "<td>ตำบล/แขวง</td>";
+                echo "<td>อำเภอ</td>";
+                echo "<td>จังหวัด</td>";
+                echo "<td>รหัสไปรษณีย์</td>";
+                echo "<td>เบอร์โทรศัพท์</td>";
+                echo "<td>E-mail</td>";
+                echo "<td>โทรสาร</td>";
+
+                echo "<td>การลงทะเบียนเรียน</td>";
+                echo "<td>การจัดส่ง</td>";
+                echo "<td>E-mail สำหรับจัดส่ง</td>";
+
         echo "</tr>";
-    /*นำข้อมูลจากตาราง food มาแสดง*/
-    $sql = "SELECT * FROM students";
+    /*นำข้อมูลจากตาราง มาแสดง*/
+    $sql = "SELECT * FROM students left join company on students.comp_id = company.comp_id";
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc())
     {
         echo "<tr>";
+            echo "<td>$row[stu_id]</td>";
             echo "<td>$row[name]</td>";
             echo "<td>$row[lastname]</td>";
+            echo "<td>$row[major]</td>";
+            echo "<td>$row[year]</td>";
+            echo "<td>$row[address]</td>";
+            echo "<td>$row[district]</td>";
+            echo "<td>$row[amphures]</td>";
+            echo "<td>$row[province]</td>";
+            echo "<td>$row[zipcode]</td>";
+            echo "<td>$row[phone]</td>";
+            echo "<td>$row[mail]</td>";
+            echo "<td>$row[Job]</td>";
+            echo "<td>$row[description]</td>";
+           
+            echo "<td>$row[comp_name]</td>";
+            echo "<td>$row[contract_name]</td>";
+            echo "<td>$row[comp_address]</td>";
+            echo "<td>$row[comp_subdis]</td>";
+            echo "<td>$row[comp_amphure]</td>";
+            echo "<td>$row[comp_province]</td>";
+            echo "<td>$row[comp_zipcode]</td>";
+            echo "<td>$row[comp_phone]</td>";
+            echo "<td>$row[comp_mail]</td>";
+            echo "<td>$row[comp_Fax]</td>";
+
+            echo "<td>$row[study]</td>";
+            echo "<td>$row[sent]</td>";
+            echo "<td>$row[sentmail]</td>";
+        
+
         echo "</tr>";
     }
     echo "</table>";
@@ -54,7 +111,7 @@ function ExcelReport()//function สำหรับสร้าง ไฟล์ 
 
 table {
   border-collapse: collapse;
-  width:40%;
+  width:60%;
 }
 
 table, th, td {

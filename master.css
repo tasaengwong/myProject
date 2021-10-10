@@ -17,16 +17,19 @@ html {
     line-height: 1.5;
     color: #4e4e4e;
     text-align: center;
-    background-image: url('./img/bglogin.jpg') ; 
+    /* background-image: url('./img/bglogin.jpg') ;  */
     background-size: 130%;
    
    }
-   header{
-    padding-top: 20px;
-   }
+   /* header{
+    padding-top: 10px;
+   } */
    img{
        width: 100px;
    }
+   #ictlogo{
+    width: 100px;
+}
    #uplogo{
        width: 100px;
    }

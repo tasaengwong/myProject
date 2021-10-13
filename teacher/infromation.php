@@ -25,12 +25,12 @@ if (!$_SESSION['userid']) {
 
   </head>
 
-  <body >
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
       <div class="container-fluid">
 
         <img src="../img/ict.png" alt="logoict" class="img">
-     
+
         <h3>ระบบสารสนเทศการฝึกงาน</h3>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -82,7 +82,7 @@ if (!$_SESSION['userid']) {
             <br><br>
             <h4>รายชื่อนิสิต</h4><br>
             <!-- search filter -->
-            
+
             <form name="search_form" id="search_form" class="d-flex justify-content-end">
               <select name="major" aria-placeholder="major" id="major" class="btn btn-light" onchange="showCustomer(this.value)">
                 <option>สาขา</option>
@@ -104,7 +104,7 @@ if (!$_SESSION['userid']) {
               <button type="submit" class="btn btn-light bi bi-search"></button>
             </form>
             <br>
-          
+
             <?php
             $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id WHERE major = '{$_GET['major']}';";
             $result = $conn->query($sql);
@@ -122,9 +122,9 @@ if (!$_SESSION['userid']) {
                   <th>สถานประกอบการ</th>
                   <th>ตำแหน่งงาน</th>
                   <th>หมายเหตุ</th>
-                  <th colspan="5">สถานะ</th>
-                  <th><th>
-                 
+                  <th colspan="4">สถานะ</th>
+
+
                 </tr>
                 <?php
                 $i = 0;
@@ -146,6 +146,8 @@ if (!$_SESSION['userid']) {
                       <?php include('button.php'); ?>
                     </td>
 
+                  
+
                     <td>
                       <?php
                       if ($data['status'] == 0) {
@@ -157,7 +159,8 @@ if (!$_SESSION['userid']) {
                       }
                       ?>
                     </td>
-                    <td><td><td>
+                    
+
                     <td>
                       <?php
                       if ($data['status'] == 0) {
@@ -172,7 +175,7 @@ if (!$_SESSION['userid']) {
                       }
                       ?>
                     </td>
-                    
+
 
                   </form>
                   </tr>

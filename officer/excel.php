@@ -1,121 +1,59 @@
-<?php
-    /*กำหนด username password และ database name ของ mysql */
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "project103";
+<html>
+ <head>
+  <title>Export Excel</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
 
-    /*------เชื่อมต่อ Database----*/
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    
-    if ($conn->connect_error) {
-      die("Connection Error: " . $conn->connect_error);
-    }
+  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+ </head>
+ <body>
+  <div class="container box">
+   <h3 align="center">Export  Excel</h3>
+   <br />
+   <div class="table-responsive">
+     
+    <table id="customer_data" class="table table-bordered table-striped">
+     <thead>
+      <tr>
+       <th>stu_id</th>
+       <th>name</th>
+       <th>lastname</th>
+       <th>major</th>
+       <th>year</th>
+       <th>companyName</th>
+      </tr>
+     </thead>
+     <div class="dt-buttons"><a class="dt-button buttons-excel buttons-html5" tabindex="0" aria-controls="customer_data"><span>Excel</span></a></div>
+    </table>
+   </div>
+  </div>
+  <br />
+  <br />
+  <script type="text/javascript" language="javascript" >
+ $(document).ready(function(){
 
- /*สร้างปุ่มสำหรับ Download ไฟล์ excel โดยกำหนดว่าเมื่อกดปุ่ม Downlaod แล้วจะทำงานที่ javascript function ชื่อว่า ExcelReport()*/
-     echo "<a href='#' id='download_link' type='button'  onClick='javascript:ExcelReport();''>Download</a>";
-
-    echo "<table id='myTable'>";
-         echo "<tr>";
-                echo "<td>รหัสนิสิต</td>";
-                echo "<td>ชื่อ</td>";
-                echo "<td>นามสกุล</td>";
-                echo "<td>สาขา</td>";
-                echo "<td>ชั้นปี</td>";
-                // echo "<td>ที่อยู่</td>";
-                // echo "<td>ตำบล</td>";
-                // echo "<td>อำเภอ</td>";
-                // echo "<td>จังหวัด</td>";
-                // echo "<td>รหัสไปรษณีย์</td>";
-                echo "<td>เบอร์โทรศัพท์</td>";
-                echo "<td>E-mail</td>";
-                echo "<td>ตำแหน่งที่ฝึก</td>";
-                echo "<td>รายละเอียด</td>";
-
-                echo "<td>ชื่อสถานประกอบการ</td>";
-                echo "<td>ติอต่อ</td>";
-                echo "<td>ที่อยู่</td>";
-                echo "<td>ตำบล/แขวง</td>";
-                echo "<td>อำเภอ</td>";
-                echo "<td>จังหวัด</td>";
-                echo "<td>รหัสไปรษณีย์</td>";
-                echo "<td>เบอร์โทรศัพท์</td>";
-                echo "<td>E-mail</td>";
-                echo "<td>โทรสาร</td>";
-
-                echo "<td>การลงทะเบียนเรียน</td>";
-                echo "<td>การจัดส่ง</td>";
-                echo "<td>E-mail สำหรับจัดส่ง</td>";
-
-        echo "</tr>";
-    /*นำข้อมูลจากตาราง มาแสดง*/
-    $sql = "SELECT * FROM students left join company on students.comp_id = company.comp_id";
-    $result = $conn->query($sql);
-    while($row = $result->fetch_assoc())
-    {
-        echo "<tr>";
-            echo "<td>$row[stu_id]</td>";
-            echo "<td>$row[name]</td>";
-            echo "<td>$row[lastname]</td>";
-            echo "<td>$row[major]</td>";
-            echo "<td>$row[year]</td>";
-            echo "<td>$row[address]</td>";
-            echo "<td>$row[district]</td>";
-            echo "<td>$row[amphures]</td>";
-            echo "<td>$row[province]</td>";
-            echo "<td>$row[zipcode]</td>";
-            echo "<td>$row[phone]</td>";
-            echo "<td>$row[mail]</td>";
-            echo "<td>$row[Job]</td>";
-            echo "<td>$row[description]</td>";
-           
-            echo "<td>$row[comp_name]</td>";
-            echo "<td>$row[contract_name]</td>";
-            echo "<td>$row[comp_address]</td>";
-            echo "<td>$row[comp_subdis]</td>";
-            echo "<td>$row[comp_amphure]</td>";
-            echo "<td>$row[comp_province]</td>";
-            echo "<td>$row[comp_zipcode]</td>";
-            echo "<td>$row[comp_phone]</td>";
-            echo "<td>$row[comp_mail]</td>";
-            echo "<td>$row[comp_Fax]</td>";
-
-            echo "<td>$row[study]</td>";
-            echo "<td>$row[sent]</td>";
-            echo "<td>$row[sentmail]</td>";
-        
-
-        echo "</tr>";
-    }
-    echo "</table>";
-
-    $conn->close();
-
-?>
-<!-- เรียกใช้ javascript สำหรับ export ไฟล์ excel  -->
-<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"  ></script>
-<script src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"  ></script>
-
-<script>
-function ExcelReport()//function สำหรับสร้าง ไฟล์ excel จากตาราง
-{
-    var sheet_name="excel_sheet";/* กำหหนดชื่อ sheet ให้กับ excel โดยต้องไม่เกิน 31 ตัวอักษร */
-    var elt = document.getElementById('myTable');/*กำหนดสร้างไฟล์ excel จาก table element ที่มี id ชื่อว่า myTable*/
-
-    /*------สร้างไฟล์ excel------*/
-    var wb = XLSX.utils.table_to_book(elt, {sheet: sheet_name});
-    XLSX.writeFile(wb,'report.xlsx');//Download ไฟล์ excel จากตาราง html โดยใช้ชื่อว่า report.xlsx
-}
+  $('#customer_data').DataTable({
+   "processing" : true,
+   "serverSide" : true,
+   "ajax" : {
+    url:"export.php",
+    type:"POST"
+   },
+   dom: 'lBfrtip',
+   buttons: [
+    'excel'
+   ],
+   "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
+  });
+  
+ });
+ 
 </script>
-<style type="text/css">
+ </body>
+</html>
 
-table {
-  border-collapse: collapse;
-  width:60%;
-}
 
-table, th, td {
-  border: 1px solid black;
-}
-
-</style>

@@ -3,9 +3,9 @@
  
 	$firstname=$_POST['firstname'];
 	$lastname=$_POST['lastname'];
-	$address=$_POST['address'];
+	$address=$_POST['userlevel'];
  
-	mysqli_query($conn,"insert into user (firstname, lastname, address) values ('$firstname', '$lastname', '$address')");
+	mysqli_query($conn,"insert into user (firstname, lastname, userlevel) values ('$firstname', '$lastname', '$userlevel')");
 	header('location:index.php');
  
 ?>

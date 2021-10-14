@@ -30,10 +30,10 @@
 					<tr>
 						<td><?php echo ucwords($row['firstname']); ?></td>
 						<td><?php echo ucwords($row['lastname']); ?></td>
-						<td><?php echo $row['address']; ?></td>
+						<td><?php echo $row['userlevel']; ?></td>
 						<td>
-							<a href="#edit<?php echo $row['userid']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> || 
-							<a href="#del<?php echo $row['userid']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+							<a href="#edit<?php echo $row['username']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> || 
+							<a href="#del<?php echo $row['username']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
 							<?php include('button.php'); ?>
 						</td>
 					</tr>

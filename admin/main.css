@@ -16,26 +16,23 @@ html {
 }
 
 body {
-    font-family: 'Athiti', sans-serif;
+
     text-align: center;
-    /* background-image: url(../img/bglogin.jpg); */
-    background-size: 100%;
-
-}
-h3{
-    font-family: 'Athiti', sans-serif;
-    color: #fff;
-    padding-left: 1rem;
-    padding-top: 2rem;
-}
-
+    color: #4e4e4e;
    
+}
+.main-content{
+    padding-top: 50px;
+    background-color: rgb(255, 255, 255, 0.5);
+    min-height: 100vh;
+   
+}
 input {
     padding: 1rem 3rem;
 }
      
 img{
-  width: 4rem;
+  width: 80px;
 }
 #uplogo{
     width: 100px;
@@ -46,41 +43,13 @@ img{
     padding-top: 50px;
 }
 
-/* .input {
+.input {
     display: block;
-} */
+}
 
 .form-register {
-    justify-content: center;
-    width: 50%;
+    display: flex;
     padding-left: 5rem;
-    padding-top: 20px;
-    background-color: rgba(255, 255, 255, 0.4);
-    min-height: 100vh;
-}
-
-.success {
-    width: 50%;
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #3c763d;
-    color: #3c763d;
-    background: #dff0d8;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.error {
-    width: 50%;
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #a94442;
-    color: #a94442;
-    background: #f2dede;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 .back-btn{
@@ -95,7 +64,7 @@ img{
   }
   #mainNav .navbar-toggler {
     padding: 0.75rem;
-  font-family: 'Athiti', sans-serif;  font-size: 0.75rem;
+     font-family: 'Athiti', sans-serif;  font-size: 0.75rem;
     color: #fff;
     text-transform: uppercase;
     background-color: #212445;
@@ -112,7 +81,7 @@ img{
   }
   #mainNav .navbar-nav .nav-item .nav-link {
     font-family: 'Athiti', sans-serif;
-     font-size: 1.3rem;
+
     color: #fff;
     letter-spacing: 0.0625em;
   }
@@ -129,7 +98,7 @@ img{
       transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
     }
     #mainNav .navbar-brand {
-      font-size: 1.5em;
+ 
       transition: font-size 0.3s ease-in-out;
     }
     #mainNav .navbar-brand img {
@@ -141,9 +110,7 @@ img{
       padding-bottom: 1rem;
       background-color: #212529;
     }
-    #mainNav.navbar-shrink .navbar-brand {
-      font-size: 1.25em;
-    }
+   
     #mainNav.navbar-shrink .navbar-brand svg,
   #mainNav.navbar-shrink .navbar-brand img {
       height: 5rem;
@@ -157,10 +124,23 @@ img{
       margin-right: 0;
     }
   }
+  button{
+    float: right;
+  }
  
+  a:hover{
+    color: #67ebfa;
+  }
+
   #navbarNavDropdown{
     font-family: 'Athiti', sans-serif;
-    font-size: 1.2rem;
     padding-right: 4rem;
   
+  }
+  h3{
+    font-family: 'Athiti', sans-serif;
+    font: size 60px;;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    color: #fff;
   }

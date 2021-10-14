@@ -6,8 +6,8 @@
 	$firstname=$_POST['firstname'];
 	$lastname=$_POST['lastname'];
 	$userlevel=$_POST['userlevel'];
- 
-	mysqli_query($con,"insert into user (username,firstname, lastname, userlevel) values ('$username','$firstname', '$lastname', '$userlevel')");
+    $passwordenc = md5($password);
+	mysqli_query($con,"insert into user (username,password,firstname, lastname, userlevel) values ('$username','$passwordenc','$firstname', '$lastname', '$userlevel')");
 	header('location:index.php');
  
 ?>

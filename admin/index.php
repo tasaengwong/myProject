@@ -20,9 +20,9 @@
             <table class="table table-striped table-bordered table-hover">
                 <thead> 
                     <th>username</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Address</th>
+                    <th>ชื่อ</th>
+                    <th>นามสกุล</th>
+                    <th>สถานะ</th>
                     <th>Action</th>
                 </thead>
                 <tbody>

@@ -17,7 +17,7 @@
 				</div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                    <a href="delete.php?id=<?php echo $row['username']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                    <a href="delete.php?username=<?php echo $row['username']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
                 </div>
  
             </div>
@@ -39,10 +39,12 @@
 					$erow=mysqli_fetch_array($edit);
 				?>
 				<div class="container-fluid">
-				<form method="POST" action="edit.php?id=<?php echo $erow['username']; ?>">
+				<form method="POST" action="edit.php?username=<?php echo $erow['username']; ?>">
+                <div class="row">
+					
 					<div class="row">
 						<div class="col-lg-2">
-							<label style="position:relative; top:7px;">Firstname:</label>
+							<label style="position:relative; top:7px;">ชื่อ:</label>
 						</div>
 						<div class="col-lg-10">
 							<input type="text" name="firstname" class="form-control" value="<?php echo $erow['firstname']; ?>">
@@ -51,7 +53,7 @@
 					<div style="height:10px;"></div>
 					<div class="row">
 						<div class="col-lg-2">
-							<label style="position:relative; top:7px;">Lastname:</label>
+							<label style="position:relative; top:7px;">นามสกุล:</label>
 						</div>
 						<div class="col-lg-10">
 							<input type="text" name="lastname" class="form-control" value="<?php echo $erow['lastname']; ?>">
@@ -60,7 +62,7 @@
 					<div style="height:10px;"></div>
 					<div class="row">
 						<div class="col-lg-2">
-							<label style="position:relative; top:7px;">userlevel:</label>
+							<label style="position:relative; top:7px;">สถานะ:</label>
 						</div>
 						<div class="col-lg-10">
 							<input type="text" name="userlevel" class="form-control" value="<?php echo $erow['userlevel']; ?>">

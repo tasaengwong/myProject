@@ -8,6 +8,6 @@
 	$userlevel=$_POST['userlevel'];
     $passwordenc = md5($password);
 	mysqli_query($con,"insert into user (username,password,firstname, lastname, userlevel) values ('$username','$passwordenc','$firstname', '$lastname', '$userlevel')");
-	header('location:index.php');
+	header('location:add_acount.php');
  
 ?>

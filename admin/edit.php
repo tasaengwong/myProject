@@ -8,6 +8,6 @@
 	$userlevel=$_POST['userlevel'];
  
 	mysqli_query($con,"update user set firstname='$firstname', lastname='$lastname', userlevel='$userlevel' where username='$username'");
-	header('location:index.php');
+	header('location:add_acount.php');
  
 ?>

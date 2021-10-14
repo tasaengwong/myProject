@@ -127,7 +127,7 @@
           transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
         }
         #mainNav .navbar-brand {
-          font-size: 1.5em;
+          font-size: 50px;
           transition: font-size 0.3s ease-in-out;
         }
         #mainNav .navbar-brand img {
@@ -136,11 +136,12 @@
         }
         #mainNav.navbar-shrink {
           padding-top: 1rem;
+          font-size: 50px;
           padding-bottom: 1rem;
           background-color: #212529;
         }
         #mainNav.navbar-shrink .navbar-brand {
-          font-size: 1.25em;
+          font-size: 50px;
         }
         #mainNav.navbar-shrink .navbar-brand svg,
       #mainNav.navbar-shrink .navbar-brand img {
@@ -148,11 +149,13 @@
         }
         #mainNav .navbar-nav .nav-item {
           color: #495057;
+          font-size: 50px;
           margin-right: 1rem;
         }
         #mainNav .navbar-nav .nav-item:last-child {
           color: #495057;
           margin-right: 0;
+          font-size: 50px;
         }
       }
   

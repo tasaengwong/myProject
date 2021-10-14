@@ -1,41 +1,9 @@
 <?php
 
 session_start();
-
-require_once "connection.php";
-
-if (isset($_POST['submit'])) {
-
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $name = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $userlevel = $_POST['userlevel'];
-
-    $user_check = "SELECT * FROM user WHERE username = '$username' LIMIT 1";
-    $result = mysqli_query($con, $user_check);
-    $user = mysqli_fetch_assoc($result);
-
-    if ($user['username'] === $username) {
-        echo "<script>alert('Username already exists');</script>";
-    } else {
-        $passwordenc = md5($password);
-
-        $query = "INSERT INTO user (username, password, firstname, lastname,  userlevel)
-                        VALUE ('$username', '$passwordenc', '$firstname', '$lastname', '$userlevel')";
-        $result = mysqli_query($con, $query);
-
-        if ($result) {
-            $_SESSION['success'] = "Insert user successfully";
-            header("Location: singin.php");
-        } else {
-            $_SESSION['error'] = "Something went wrong";
-            header("Location: singin.php");
-        }
-    }
-}
-
-
+if (!$_SESSION['userid']) {
+    header("Location: singin.php");
+} else {
 ?>
 
 
@@ -50,8 +18,11 @@ if (isset($_POST['submit'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <link rel="stylesheet" href="style.css?5">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css?7">
 </head>
 
 <body>
@@ -89,56 +60,48 @@ if (isset($_POST['submit'])) {
         </div>
     </nav>
 
-    <div class="contrainer">
+    <div class="container">
+        <div style="height:50px;"></div>
+        <div class="well" style="margin:auto; padding:auto; width:80%;">
+            <span class="pull-left"><a href="#addnew" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a></span>
+            <div style="height:50px;"></div>
+            <table class="table table-striped table-bordered table-hover bg-white">
+                <thead> 
+                    <th>username</th>
+                    <th>ชื่อ</th>
+                    <th>นามสกุล</th>
+                    <th>สถานะ</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <?php
+                    include('connection.php');
 
+                    $query = mysqli_query($con, "select * from `user`");
+                    while ($row = mysqli_fetch_array($query)) {
+                    ?>
+                        <tr>
+                        <td><?php echo ucwords($row['username']); ?></td>
+                            <td><?php echo ucwords($row['firstname']); ?></td>
+                            <td><?php echo ucwords($row['lastname']); ?></td>
+                            <td><?php echo $row['userlevel']; ?></td>
+                            <td>
+                                <a href="#edit<?php echo $row['username']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> ||
+                                <a href="#del<?php echo $row['username']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                <?php include('button.php'); ?>
+                            </td>
+                        </tr>
+                    <?php
+                    }
 
-        <form class="form-horizontal " action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <fieldset>
-                <div class="control-group">
-                    <label for="username" class="control-label">Username</label>
-                    <div class="control">
-                        <input type="text" name="username" class="input-xlarge" id="username" placeholder="ใช้รหัสนิสิต" required>
-                    </div>
-
-
-                    <label for="password" class="control-label">Password</label>
-                    <div class="control">
-                        <input type="password" name="password" class="input-xlarge" id="password" placeholder="Enter your password" required>
-                    </div>
-
-                    <label for="name" class="control-label">ชื่อ</label>
-                    <div class="control">
-                        <input type="text" name="fistname" class="input-xlarge" id="name" placeholder="ชื่อ" required>
-                    </div>
-
-                    <label for="lastname" class="control-label">นามสกุล</label>
-                    <div class="control">
-                        <input type="text" name="lastname" class="input-xlarge" id="lastname" placeholder="นามสกุล" required>
-                    </div>
-
-                    <label for="lastname" class="control-label">สถานะผู้ใช้ </label>
-                    <div class="control">
-                        <input type="text" name="userlevel" class="input-xlarge" id="lastname" placeholder="ระดับผู้ใช้" required>
-                    </div>
-                </div>
+                    ?>
+                </tbody>
+            </table>
+        </div>
+        <?php include('add_modal.php'); ?>
     </div>
-
-
-
-    <div class="control">
-        <input type="submit" name="submit" class="btn btn-primary mb-3" value="Submit">
-    </div>
-    </fieldset>
-    </form>
-    </div>
-
-
-    </div>
-
-
-
-
-
 </body>
 
 </html>
+<?php }
+?>

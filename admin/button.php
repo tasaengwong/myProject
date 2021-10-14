@@ -8,7 +8,7 @@
                 </div>
                 <div class="modal-body">
 				<?php
-					$del=mysqli_query($conn,"select * from user where username='".$row['username']."'");
+					$del=mysqli_query($con,"select * from user where username='".$row['username']."'");
 					$drow=mysqli_fetch_array($del);
 				?>
 				<div class="container-fluid">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="modal-body">
 				<?php
-					$edit=mysqli_query($conn,"select * from user where username='".$row['username']."'");
+					$edit=mysqli_query($con,"select * from user where username='".$row['username']."'");
 					$erow=mysqli_fetch_array($edit);
 				?>
 				<div class="container-fluid">

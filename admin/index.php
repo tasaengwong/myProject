@@ -13,12 +13,13 @@
         <div style="height:50px;"></div>
         <div class="well" style="margin:auto; padding:auto; width:80%;">
             <span style="font-size:25px; color:blue">
-                <center><strong>PHP/MySQLi CRUD Operation using Bootstrap</strong></center>
+               
             </span>
             <span class="pull-left"><a href="#addnew" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a></span>
             <div style="height:50px;"></div>
             <table class="table table-striped table-bordered table-hover">
-                <thead>
+                <thead> 
+                    <th>username</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Address</th>
@@ -33,6 +34,7 @@
                     while ($row = mysqli_fetch_array($query)) {
                     ?>
                         <tr>
+                        <td><?php echo ucwords($row['username']); ?></td>
                             <td><?php echo ucwords($row['firstname']); ?></td>
                             <td><?php echo ucwords($row['lastname']); ?></td>
                             <td><?php echo $row['userlevel']; ?></td>

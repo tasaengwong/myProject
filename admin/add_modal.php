@@ -9,6 +9,24 @@
                 <div class="modal-body">
 				<div class="container-fluid">
 				<form method="POST" action="addnew.php">
+                <div class="row">
+						<div class="col-lg-2">
+							<label class="control-label" style="position:relative; top:7px;">Username:</label>
+						</div>
+						<div class="col-lg-10">
+							<input type="text" class="form-control" name="username">
+						</div>
+					</div>
+					<div style="height:10px;"></div>
+                    <div class="row">
+						<div class="col-lg-2">
+							<label class="control-label" style="position:relative; top:7px;">password:</label>
+						</div>
+						<div class="col-lg-10">
+							<input type="text" class="form-control" name="password">
+						</div>
+					</div>
+					<div style="height:10px;"></div>
 					<div class="row">
 						<div class="col-lg-2">
 							<label class="control-label" style="position:relative; top:7px;">Firstname:</label>

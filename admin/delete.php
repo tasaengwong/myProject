@@ -1,7 +1,7 @@
 <?php
 	include('connection.php');
-	$id=$_GET['username'];
-	mysqli_query($conn,"delete from user where username='$id'");
+	$username=$_GET['username'];
+	mysqli_query($con,"delete from user where username='$username'");
 	header('location:index.php');
  
 ?>

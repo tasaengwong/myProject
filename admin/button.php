@@ -60,10 +60,10 @@
 					<div style="height:10px;"></div>
 					<div class="row">
 						<div class="col-lg-2">
-							<label style="position:relative; top:7px;">Address:</label>
+							<label style="position:relative; top:7px;">userlevel:</label>
 						</div>
 						<div class="col-lg-10">
-							<input type="text" name="address" class="form-control" value="<?php echo $erow['userlevel']; ?>">
+							<input type="text" name="userlevel" class="form-control" value="<?php echo $erow['userlevel']; ?>">
 						</div>
 					</div>
                 </div> 

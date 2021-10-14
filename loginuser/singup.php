@@ -22,13 +22,13 @@
             $_SESSION['lastname'] = $row['lastname'];
             $_SESSION['userlevel'] = $row['userlevel'];
 
-            if ($_SESSION['userlevel'] ==  't' ) {
+            if ($_SESSION['userlevel'] ==  'teacher' ) {
                 header("Location: teacher_page.php");
             }
-            if ($_SESSION['userlevel'] ==  'o' ) {
+            if ($_SESSION['userlevel'] ==  'officer' ) {
                 header("Location: off_page.php");
             }
-            if ($_SESSION['userlevel'] ==  'a' ) {
+            if ($_SESSION['userlevel'] ==  'admin' ) {
                 header("Location: addmin_page.php");
             }
         } 

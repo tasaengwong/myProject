@@ -66,37 +66,69 @@ if (!$_SESSION['userid']) {
     </nav>
 
     <?php
-    require('connect.php');
-    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id";
-    $result = $conn->query($sql);
+      ini_set('display_errors', 1);
+      error_reporting(~0);
+
+      $strKeyword = null;
+
+      if(isset($_POST["txtKeyword"]))
+      {
+        $strKeyword = $_POST["txtKeyword"];
+      }
+    ?>
+
+<?php
+    $serverName = "localhost";
+    $userName = "root";
+    $userPassword = "";
+    $dbName = "project103";
+    $conn = mysqli_connect($serverName,$userName,$userPassword,$dbName);
+
+    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id 
+    WHERE stu_id LIKE '%".$strKeyword."%' 
+    OR name LIKE '%".$strKeyword."%' 
+    OR lastname LIKE '%".$strKeyword."%' 
+    OR major LIKE '%".$strKeyword."%' 
+    OR year LIKE '%".$strKeyword."%'";
+
+    $query = mysqli_query($conn,$sql);
     ?>
 
     <section>
-
       <div class="container">
         <div class="row">
           <div class="col-sm student-detail">
-            <!-- select information -->
+           
             <br><br>
             <h4>รายชื่อนิสิต</h4><br>
 
-            <form name="search_form" id="search_form" class="d-flex justify-content-end">
-              <div id="customer_data_filter" class="dataTables_filter">
-                <label>Search:
-                  <input type="search" class="" placeholder="" aria-controls="customer_data" name="search"></label>
-              </div>
-              <div id="customer_data_processing" class="dataTables_processing __web-inspector-hide-shortcut__" style="display: none;">Processing...</div><!-- <button type="submit" class="btn btn-light bi bi-search"></button> -->
-            </form>
-            <div class="dt-buttons">
-              <a class="dt-button buttons-excel buttons-html5" tabindex="0" aria-controls="customer_data">
-                <span>Excel</span></a>
-            </div>
-            <!-- <๒?php
-            $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id WHERE major = '{$_GET['major']}';";
-            $result = $conn->query($sql);
-            ?> -->
+<!-- search filter -->
+            <form name="frmSearch" method="post" action="<?php echo $_SERVER['SCRIPT_NAME'];?>">
+            <table class="float-right"  width="" border="1">
+              <tr>
+                <th>ค้นหา
+                <input name="txtKeyword" type="text" id="txtKeyword" value="<?php echo $strKeyword;?>">
+                <input type="submit" value="Search"></th>
+              </tr>
+            </table>
+           </form>
+           <br><br>
 
-           
+           <?php
+            $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id 
+            WHERE stu_id LIKE '%".$strKeyword."%' 
+            OR name LIKE '%".$strKeyword."%' 
+            OR lastname LIKE '%".$strKeyword."%' 
+            OR major LIKE '%".$strKeyword."%' 
+            OR year LIKE '%".$strKeyword."%'
+            OR date LIKE '%".$strKeyword."%'
+            OR time LIKE '%".$strKeyword."%'
+            OR comp_name LIKE '%".$strKeyword."%'
+            ";
+
+            $query = mysqli_query($conn,$sql);
+            ?>
+
               <table class="table  table-bordered" id="customer_data">
                 <tr class="bg-light">
                   <th>NO.</th>
@@ -106,7 +138,7 @@ if (!$_SESSION['userid']) {
                   <th>ปี</th>
                   <th colspan="2">สถานประกอบการ</th>
                   <th>ตำแหน่งงาน</th>
-                  <th>เพิ่มเตืม</th>
+                  <th>เพิ่มเติม</th>
                   <th>ผลการพิจารณา</th>
                   <th colspan="3">การจัดทำเอกสาร</th>
                   <th colspan="3">แบบตอบรับสถานประกอบการ</th>
@@ -115,7 +147,7 @@ if (!$_SESSION['userid']) {
                 </tr>
                 <?php
                 $i = 0;
-                while ($data = mysqli_fetch_assoc($result)) {
+                while($data=mysqli_fetch_array($query,MYSQLI_ASSOC)) {
                   $i++;
                 ?>
 
@@ -205,29 +237,6 @@ if (!$_SESSION['userid']) {
         </div>
     </section>
 
-    <script type="text/javascript" language="javascript">
-      $(document).ready(function() {
-
-        $('#customer_data').DataTable({
-          "processing": true,
-          "serverSide": true,
-          "ajax": {
-            url: "export.php",
-            type: "POST"
-          },
-          dom: 'lBfrtip',
-          buttons: [
-            'excel'
-          ],
-          "lengthMenu": [
-            [10, 25, 50, -1],
-            [10, 25, 50, "All"]
-          ]
-        });
-
-      });
-    </script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
@@ -243,9 +252,10 @@ if (!$_SESSION['userid']) {
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-
+    <?php 
+mysqli_close($conn);
+} ?>
 
   </body>
 
   </html>
-<?php } ?>

@@ -50,6 +50,9 @@ $result = $statement->fetchAll();
 
 $data = array();
 
+
+                     
+                      
 foreach($result as $row)
 {
  $sub_array = array();
@@ -57,10 +60,37 @@ foreach($result as $row)
  $sub_array[] = $row['name'];
  $sub_array[] = $row['lastname'];
  $sub_array[] = $row['major'];
-
  $sub_array[] = $row['year'];
+ $sub_array[] = $row['date'];
+ $sub_array[] = $row['time'];
  $sub_array[] = $row['address'];
+ $sub_array[] = $row['province'];
+ $sub_array[] = $row['amphures'];
+ $sub_array[] = $row['district'];
+ $sub_array[] = $row['zipcode'];
+ $sub_array[] = $row['phone'];
+ $sub_array[] = $row['mail'];
+ $sub_array[] = $row['Job'];
+ $sub_array[] = $row['description'];
+//  $sub_array[] = $row['comp_id '];
+ $sub_array[] = $row['study'];
+ $sub_array[] = $row['sent'];
+ $sub_array[] = $row['sentmail'];
+
+
  $sub_array[] = $row['comp_name'];
+ $sub_array[] = $row['contract_name'];
+ $sub_array[] = $row['comp_address'];
+ $sub_array[] = $row['comp_subdis'];
+ $sub_array[] = $row['comp_amphure'];
+ $sub_array[] = $row['comp_province'];
+ $sub_array[] = $row['comp_zipcode'];
+ $sub_array[] = $row['comp_phone'];
+ $sub_array[] = $row['comp_mail'];
+ $sub_array[] = $row['comp_Fax'];
+
+ $sub_array[] = $row['status'];
+
  $data[] = $sub_array;
 }
 
@@ -82,3 +112,4 @@ $output = array(
 echo json_encode($output);
 
 ?>
+

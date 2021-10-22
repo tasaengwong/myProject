@@ -19,15 +19,44 @@
     <table id="customer_data" class="table table-bordered table-striped">
      <thead>
       <tr>
-       <th>stu_id</th>
-       <th>name</th>
-       <th>lastname</th>
-       <th>major</th>
-       <th>year</th>
-       <th>companyName</th>
+       <th>รหัสนิสิต</th>
+       <th>ชื่อ</th>
+       <th>นามสกุล</th>
+       <th>สาขา</th>
+       <th>ชั้นปี</th>
+       <th>ปีการศึกษา</th>
+       <th>ยื่นคำร้องเมื่อ</th>
+       <th>ที่อยู่</th>
+       <th>จังหวัด</th>
+       <th>อำเภอ</th>
+       <th>ตำบล</th>
+       <th>รหัสไปรษณี</th>
+       <th>เบอร์โทร</th>
+       <th>Email</th>
+       <th>ตำแหน่งงาน</th>
+       <th>รายละเอียดงาน</th>
+       <th>สถานะการลงทะเบียนเรียน</th>
+       <th>รูปแบบการส่งเอกสาร</th>
+       <th>Email สถานประกอบการ</th>
+  
+
+       <th>ชื่อสถานประกอบการ</th>
+       <th>เรียนถึง</th>
+       <th>ที่อยู่</th>
+       <th>ตำบล</th>
+       <th>อำเภอ</th>
+       <th>จังหวัด</th>
+       <th>รหัสไปรษณี</th>
+       <th>เบอร์โทร</th>
+       <th>Email สถานประกอบการ</th>
+       <th>FAX</th>
+       
+       <th>สถานะ 0=รอ 1=ผ่าน 2=ไม่ผ่าน</th>
+
+
       </tr>
      </thead>
-     <div class="dt-buttons"><a class="dt-button buttons-excel buttons-html5" tabindex="0" aria-controls="customer_data"><span>Excel</span></a></div>
+     
     </table>
    </div>
   </div>

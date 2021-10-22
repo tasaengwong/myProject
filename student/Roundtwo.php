@@ -42,6 +42,7 @@ if (!$_SESSION['userid']) {
                 <li><a class="dropdown-item" href="../student/Board.php">ติดตามสถานะ</a></li>
                 <li><a class="dropdown-item" href="../student/Roundtwo.php">ยื่นคำร้องขอฝึกงาน(รอบ 2)</a></li>
                 <li><a class="dropdown-item" href="../student/doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li>
+                <li><a class="dropdown-item" href="../student/form_asses.php">แบบสอบถามนิสิตฝึกงาน</a></li>
               </ul>
             <li class="nav-item dropdown">
               <a class="btn btn-info nav-link dropdown-toggle bi bi-person-circle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -81,11 +82,11 @@ if (!$_SESSION['userid']) {
               $result = $conn->query($sql);
               while ($row = $result->fetch_assoc()) {
                 if ($row['comp_id'] == $_GET['selectcompany']) {
-                  echo "{$row['comp_id']}&nbsp;{$row['comp_name']}<option selected>";
+                  echo "{$row['comp_name']}<option selected>";
                 } else {
                   echo "<option>";
                 }
-                echo "{$row['comp_id']}&nbsp;{$row['comp_name']}</option>";
+                echo "{$row['comp_name']}</option>";
               }
               ?>
             </select>

@@ -11,6 +11,7 @@ $name = $_POST['name'];
 $lastname = $_POST['lastname'];
 $major = $_POST['major'];
 $year = $_POST['year'];
+$date = $_POST['date'];
 $address = $_POST['address'];
 $province = $_POST['province'];
 $amphures = $_POST['amphures'];
@@ -34,8 +35,8 @@ if ($user['stu_id'] === $stu_id) {
 } else {
     $passwordenc = md5($password);
 
-$query = " INSERT INTO students (stu_id, password, name, lastname, major, year, address, province, amphures, district, zipcode, phone, mail, Job, description, comp_id, study, sent, sentmail)
-        VALUES('$stu_id','$passwordenc','$name', '$lastname','$major','$year',' $address' , '$province', '$amphures', '$district', '$zipcode',
+$query = " INSERT INTO students (stu_id, password, name, lastname, major, year, date, address, province, amphures, district, zipcode, phone, mail, Job, description, comp_id, study, sent, sentmail)
+        VALUES('$stu_id','$passwordenc','$name', '$lastname','$major','$year','$date',' $address' , '$province', '$amphures', '$district', '$zipcode',
         '$phone', '$mail', '$Job', '$description', '$comp_id', '$study', '$sent', '$sentmail')";
   $result = mysqli_query($conn, $query);
 

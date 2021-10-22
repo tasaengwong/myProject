@@ -27,7 +27,7 @@
        <th>companyName</th>
       </tr>
      </thead>
-     <div class="dt-buttons"><a class="dt-button buttons-excel buttons-html5" tabindex="0" aria-controls="customer_data"><span>Excel</span></a></div>
+
     </table>
    </div>
   </div>

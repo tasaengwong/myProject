@@ -82,11 +82,11 @@ if (!$_SESSION['userid']) {
               $result = $conn->query($sql);
               while ($row = $result->fetch_assoc()) {
                 if ($row['comp_id'] == $_GET['selectcompany']) {
-                  echo "{$row['comp_name']}<option selected>";
+                  echo "{$row['comp_id']}&nbsp;{$row['comp_name']}<option selected>";
                 } else {
                   echo "<option>";
                 }
-                echo "{$row['comp_name']}</option>";
+                echo "{$row['comp_id']}&nbsp;{$row['comp_name']}</option>";
               }
               ?>
             </select>

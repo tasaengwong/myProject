@@ -20,7 +20,9 @@ if (!$_SESSION['userid']) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="../officer/style.css?6">
+
+<link rel="stylesheet" href="../officer/style.css?6">
+
 
   </head>
 
@@ -79,33 +81,23 @@ if (!$_SESSION['userid']) {
             <h4>รายชื่อนิสิต</h4><br>
 
             <form name="search_form" id="search_form" class="d-flex justify-content-end">
-              <select name="major" aria-placeholder="major" id="major" class="btn btn-light" onchange="showCustomer(this.value)">
-                <option>--กรุณาสาขา--</option>
-                <?php
-                $sql = "select distinct major from students order by major";
-                $result = $conn->query($sql);
-                error_reporting(0);
-                while ($data = $result->fetch_assoc()) {
-                 
-                  if ($data['major'] == $_GET['major']) {
-                    echo "<option selected>";
-                  } else {
-                    echo "<option>";
-                  }
-                   echo "{$data['major']}</option>";
-                }
-                ?>
-              </select>
-              <button type="submit" class="btn btn-light bi bi-search"></button>
+              <div id="customer_data_filter" class="dataTables_filter">
+                <label>Search:
+                  <input type="search" class="" placeholder="" aria-controls="customer_data" name="search"></label>
+              </div>
+              <div id="customer_data_processing" class="dataTables_processing __web-inspector-hide-shortcut__" style="display: none;">Processing...</div><!-- <button type="submit" class="btn btn-light bi bi-search"></button> -->
             </form>
-            
-            <?php
+            <div class="dt-buttons">
+              <a class="dt-button buttons-excel buttons-html5" tabindex="0" aria-controls="customer_data">
+                <span>Excel</span></a>
+            </div>
+            <!-- <๒?php
             $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id WHERE major = '{$_GET['major']}';";
             $result = $conn->query($sql);
-            ?>
+            ?> -->
 
-            <table class="table">
-              <table class="table  table-bordered">
+           
+              <table class="table  table-bordered" id="customer_data">
                 <tr class="bg-light">
                   <th>NO.</th>
                   <th>รหัสนิสิต</th>
@@ -147,7 +139,7 @@ if (!$_SESSION['userid']) {
                       if ($data['status'] == 0) {
                         // echo '<p id=' . $data['stu_id'] . '&status="" " class = "text fa fa-spinner">กำลังดำเนินการ</a></p>';
                       } else if ($data['status'] == 1) {
-                        echo '<p stu_id=' . $data['stu_id'] . '&status=0"  class = "text text-success fa fa-check">ดำเนินการเรียบร้อย</a></p>';
+                        echo '<p stu_id=' . $data['stu_id'] . '&status=0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
                       } else {
                         echo '<p stu_id=' . $data['stu_id'] . '&status=2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
                       }
@@ -159,7 +151,7 @@ if (!$_SESSION['userid']) {
                       if ($data['Ostatus'] == 0) {
                         // echo '<p id=' . $data['stu_id'] . '&status="" " class = "text fa fa-spinner">กำลังดำเนินการ</a></p>';
                       } else if ($data['Ostatus'] == 1) {
-                        echo '<p stu_id=' . $data['stu_id'] . '&Ostatus=0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
+                        echo '<p stu_id=' . $data['stu_id'] . '&Ostatus=0"  class = "text text-success fa fa-check">ดำเนินการเรียบร้อย</a></p>';
                       } else {
                         echo '<p stu_id=' . $data['stu_id'] . '&Ostatus=2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
                       }
@@ -208,27 +200,33 @@ if (!$_SESSION['userid']) {
                 }
                 ?>
               </table>
-            </table>
+            
           </div>
         </div>
     </section>
 
+    <script type="text/javascript" language="javascript">
+      $(document).ready(function() {
 
-    <!-- Modal -->
-    <!-- <script>
-      $('.select_filter').on('change', function() {
-        $.ajax({
-          type: "POST",
-          url: "search.php",
-          data: $('#search_form').serialize(), // You will get all the select data..
-          success: function(data) {
-            $("#projects").html(data);
-          }
+        $('#customer_data').DataTable({
+          "processing": true,
+          "serverSide": true,
+          "ajax": {
+            url: "export.php",
+            type: "POST"
+          },
+          dom: 'lBfrtip',
+          buttons: [
+            'excel'
+          ],
+          "lengthMenu": [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+          ]
         });
+
       });
-    </script> -->
-
-
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

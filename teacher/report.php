@@ -20,7 +20,7 @@ if (!$_SESSION['userid']) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css?6">
+    <link rel="stylesheet" href="./css/style.css?8">
 
     <style>
       #chart-container {
@@ -56,7 +56,7 @@ if (!$_SESSION['userid']) {
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="../teacher/report.php">ข้อมูลนักศึกษา</a></li>
-                <li><a class="dropdown-item" href="../teacher/report2.php">ข้อมูลสถานประกอบการ</a></li>
+                <li><a class="dropdown-item" href="../officer/excel.php">Excel</a></li>
               </ul>
             </li>
             </li>

@@ -40,7 +40,7 @@ if (!$_SESSION['userid']) {
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
 
   <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
  <body>
 
@@ -57,18 +57,19 @@ if (!$_SESSION['userid']) {
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
           <ul class="navbar-nav col-12 justify-content-end">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../loginuser/off_page.php">หน้าแรก</a>
+              <a class="nav-link active" aria-current="page" href="../loginuser/teacher_page.php">หน้าแรก</a>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../teacher/infromation.php">รายชื่อนิสิต</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                ข้อมูลนักศึกษา
+                รายงาน
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="../officer/detail.php">รายชื่อนิสิต</a></li>
-                <li><a class="dropdown-item" href="../officer/excel.php">Excel ข้อมูลนิสิต</a></li>
-                <li><a class="dropdown-item" href="#">Excel แบบประเมิณนิสิต</a></li>
-                <li><a class="dropdown-item" href="#">Excel แบบประเมิณสถานประกอบการ</a></li>              </ul>
+                <li><a class="dropdown-item" href="../teacher/report.php">ข้อมูลนักศึกษา</a></li>
+                <li><a class="dropdown-item" href="../officer/excel.php">Excel</a></li>
+              </ul>
             </li>
 
 

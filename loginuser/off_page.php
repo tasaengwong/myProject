@@ -37,14 +37,16 @@ if (!$_SESSION['userid']) {
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="../loginuser/off_page.php">หน้าแรก</a>
                         </li>
-
+                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 ข้อมูลนักศึกษา
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="../officer/detail.php">รายชื่อนิสิต</a></li>
-                                <li><a class="dropdown-item" href="../officer/excel.php">ดาวน์โหลดข้อมูล</a></li>
+                                <li><a class="dropdown-item" href="../officer/excel.php">Excel ข้อมูลนิสิต</a></li>
+                                <li><a class="dropdown-item" href="#">Excel แบบประเมิณนิสิต</a></li>
+                                <li><a class="dropdown-item" href="#">Excel แบบประเมิณสถานประกอบการ</a></li>
                             </ul>
                         </li>
 

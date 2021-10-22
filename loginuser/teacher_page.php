@@ -17,6 +17,7 @@ if (!$_SESSION['userid']) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Intern.teacher</title>
     <link rel="stylesheet" href="style.css?5">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
 
@@ -45,7 +46,7 @@ if (!$_SESSION['userid']) {
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="../teacher/report.php">ข้อมูลนักศึกษา</a></li>
-                <li><a class="dropdown-item" href="../teacher/report2.php">ข้อมูลนักศึกษา</a></li>
+                <li><a class="dropdown-item" href="../teacher/excel.php">Excel</a></li>
               </ul>
             </li>
 

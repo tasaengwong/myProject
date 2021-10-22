@@ -42,7 +42,7 @@ if (!$_SESSION['userid']) {
                         <a class="nav-link active" aria-current="page" href="../loginuser/addmin_page.php">หน้าแรก</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../admin/add_acount.php">Account ผู้ใช้</a>
+                        <a class="nav-link active" aria-current="page" href="../admin/add_acount.php">บัญชีผู้ใช้</a>
                     </li>
 
 

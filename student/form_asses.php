@@ -82,9 +82,8 @@ if (!$_SESSION['userid']) {
                                 <p><strong>คำชี้แจง :</strong> แบบสำรวจนี้จัดทำขึ้นเพื่อสอบถามข้อมูลการฝึกงานของนิสิตฝึกงาน คณะเทคโนโลยีสารสนเทศและการสื่อสาร
                                     ความคิดเห็นของท่านมีประโยชน์อย่างยิ่งในการปรับปรุงและพัฒนาคุณภาพการจัดฝึกงานของนิสิตในรุ่นต่อ ๆ ไป</p>
                                 
-                                    
                                 <label for="company">สถานประกอบการ:</label>&nbsp;
-                                <select name="comp_id" class="custom-select col-sm-6" ng-optin=" x for x in comp_id">
+                                <select name="comp_name" class="custom-select col-sm-6" ng-optin=" x for x in comp_id">
                                     <option default>----สถานประกอบการ------</option>
                                     <?php
                                     $sql = "select * from company ";

@@ -21,7 +21,8 @@ if (!$_SESSION['userid']) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css?6">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/style.css?5">
 
   </head>
 
@@ -166,14 +167,10 @@ if (!$_SESSION['userid']) {
                     <td><?php echo $data['date']; ?></td>
                     <td><?php echo $data['comp_name']; ?></td>
                     <td><?php echo $data['Job']; ?></td>
-<<<<<<< HEAD
-                    <td>
-                      <a href="#edit<?php echo $data['stu_id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>เพิ่มเติม</a>
-=======
                     <td><?php echo $data['time']; ?></td>
                     <td>
                     <a href="#edit<?php echo $data['stu_id']; ?>" data-toggle="modal" class="btn btn-light bi bi-file-earmark-text"><span class="glyphicon glyphicon-edit"></span></a>
->>>>>>> bc8dadaf927795091ce71c940f3496885caecb03
+
                       <?php include('button.php'); ?>
                     </td>
 

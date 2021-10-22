@@ -69,9 +69,31 @@ if (!$_SESSION['userid']) {
     </nav>
 
     <?php
-    require('connect.php');
-    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id";
-    $result = $conn->query($sql);
+      ini_set('display_errors', 1);
+      error_reporting(~0);
+
+      $strKeyword = null;
+
+      if(isset($_POST["txtKeyword"]))
+      {
+        $strKeyword = $_POST["txtKeyword"];
+      }
+    ?>
+    <?php
+    $serverName = "localhost";
+    $userName = "root";
+    $userPassword = "";
+    $dbName = "project103";
+    $conn = mysqli_connect($serverName,$userName,$userPassword,$dbName);
+
+    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id 
+    WHERE stu_id LIKE '%".$strKeyword."%' 
+    OR name LIKE '%".$strKeyword."%' 
+    OR lastname LIKE '%".$strKeyword."%' 
+    OR major LIKE '%".$strKeyword."%' 
+    OR year LIKE '%".$strKeyword."%'";
+
+    $query = mysqli_query($conn,$sql);
     ?>
 
     <section>
@@ -83,35 +105,31 @@ if (!$_SESSION['userid']) {
             <h4>รายชื่อนิสิต</h4><br>
             <!-- search filter -->
 
-            <form name="search_form" id="search_form" class="d-flex justify-content-end">
-              <select name="major" aria-placeholder="major" id="major" class="btn btn-light" onchange="showCustomer(this.value)">
-                <option>สาขา</option>
-                <?php
-                $sql = "select distinct major from students order by major";
-                $result = $conn->query($sql);
-                error_reporting(0);
-                while ($data = $result->fetch_assoc()) {
-                  if ($data['major'] == $_GET['major']) {
-                    echo "<option selected>";
-                  } else {
-                    echo "<option>";
-                  }
+            <form name="frmSearch" method="post" action="<?php echo $_SERVER['SCRIPT_NAME'];?>">
+            <table class="float-right"  width="" border="1">
+              <tr>
+                <th>ค้นหา
+                <input name="txtKeyword" type="text" id="txtKeyword" value="<?php echo $strKeyword;?>">
+                <input type="submit" value="Search"></th>
+              </tr>
+            </table>
+           </form>
 
-                  echo "{$data['major']}</option>";
-                }
-                ?>
-              </select>
-              <button type="submit" class="btn btn-light bi bi-search"></button>
-            </form>
             <br>
 
             <?php
-            $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id WHERE major = '{$_GET['major']}';";
-            $result = $conn->query($sql);
+            $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id 
+            WHERE stu_id LIKE '%".$strKeyword."%' 
+            OR name LIKE '%".$strKeyword."%' 
+            OR lastname LIKE '%".$strKeyword."%' 
+            OR major LIKE '%".$strKeyword."%' 
+            OR year LIKE '%".$strKeyword."%'";
+
+            $query = mysqli_query($conn,$sql);
             ?>
 
             <table class="table" id="txtHint">
-              <table class="table table-hover">
+              <table class="table table-bordered">
                 <tr class="bg-light">
                   <th>ลำดับ</th>
                   <th>รหัสนิสิต</th>
@@ -122,13 +140,13 @@ if (!$_SESSION['userid']) {
                   <th>สถานประกอบการ</th>
                   <th>ตำแหน่งงาน</th>
                   <th>หมายเหตุ</th>
-                  <th colspan="4">สถานะ</th>
+                  <th colspan="6">สถานะ</th>
 
 
                 </tr>
                 <?php
                 $i = 0;
-                while ($data = mysqli_fetch_assoc($result)) {
+                while($data=mysqli_fetch_array($query,MYSQLI_ASSOC)) {
                   $i++;
                 ?>
 
@@ -158,17 +176,17 @@ if (!$_SESSION['userid']) {
                         echo '<p stu_id=' . $data['stu_id'] . '&status="2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
                       }
                       ?>
-                    </td>
+                   
                     
 
-                    <td>
+                   
                       <?php
                       if ($data['status'] == 0) {
                         echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=1 " class = "btn btn-outline-success">อนุมัติ</a></p>';
                       }
                       ?>
-                    </td>
-                    <td>
+                   
+                  
                       <?php
                       if ($data['status'] == 0) {
                         echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=2 "  class = "btn btn-outline-danger">ไม่อนุมัติ</a></p>';
@@ -218,9 +236,10 @@ if (!$_SESSION['userid']) {
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-
+<?php 
+mysqli_close($conn);
+} ?>
 
   </body>
 
   </html>
-<?php } ?>

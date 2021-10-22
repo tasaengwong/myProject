@@ -159,7 +159,7 @@ if (!$_SESSION['userid']) {
                     <td><?php echo $data['year']; ?></td>
                     <td><?php echo $data['comp_name']; ?></td>
                     <td><?php echo $data['Job']; ?></td>
-                    <td>
+                    <td><td>
                       <a href="#edit<?php echo $data['stu_id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>เพิ่มเติม</a>
                       <?php include('button.php'); ?>
                     </td>

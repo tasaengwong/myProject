@@ -45,8 +45,8 @@ if (!$_SESSION['userid']) {
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="../officer/detail.php">รายชื่อนิสิต</a></li>
                                 <li><a class="dropdown-item" href="../officer/excel.php">Excel ข้อมูลนิสิต</a></li>
-                                <li><a class="dropdown-item" href="../officer/excel2.php">Excel แบบประเมิณนิสิต</a></li>
-                                <li><a class="dropdown-item" href="#">Excel แบบประเมิณสถานประกอบการ</a></li>
+                                <li><a class="dropdown-item" href="../officer/excel2.php">Excel แบบประเมินนิสิต</a></li>
+                                <li><a class="dropdown-item" href="../officer/excel3.php">Excel แบบประเมินสถานประกอบการ</a></li>
                             </ul>
                         </li>
 

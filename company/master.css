@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap');
 html {
   font-family: 'Athiti', sans-serif;
     line-height: 1.15;
@@ -129,5 +130,5 @@ html {
     font-family: 'Athiti', sans-serif;
     padding-top: 2rem;
     padding-left: 2rem;
-    color: aliceblue;
+    color: #fff;
   }

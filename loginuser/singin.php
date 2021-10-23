@@ -66,7 +66,6 @@ session_start();
                         </div>
                     </div><br>
                     <div class=" col-12 back-btn">
-                        <p><a href="./register.php" >Register</a></p>
                         <a href="../index.html" class="btn btn-light">back</a>
                     </div>
                 </form>

@@ -15,10 +15,10 @@ if (!$_SESSION['userid']) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>แบบสอบถามนิสิตฝึกงาน</title>
-        <link rel="stylesheet" href="./css/style.css?65">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="./css/master.css?7">
     </head>
 
     <body>
@@ -35,7 +35,7 @@ if (!$_SESSION['userid']) {
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav col-12 justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./user_page.php">หน้าแรก</a>
+                            <a class="nav-link active" aria-current="page" href="../loginuser/user_page.php">หน้าแรก</a>
                         </li>
 
                         <li class="nav-item dropdown">
@@ -57,7 +57,6 @@ if (!$_SESSION['userid']) {
                                 <li><a class="dropdown-item bi bi-arrow-right-square-fill" href="../loginuser/logout.php">&nbsp;LOG-OUT</a></li>
                             </ul>
                         </li>
-
                     </ul>
                 </div>
             </div>

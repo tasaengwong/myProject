@@ -27,7 +27,7 @@ html {
     }
     #mainNav .navbar-toggler {
       padding: 0.75rem;
-    font-family: 'Athiti', sans-serif;  font-size: 0.75rem;
+      font-family: 'Athiti', sans-serif;  font-size: 0.75rem;
       color: #fff;
       text-transform: uppercase;
       background-color: #212445;
@@ -35,7 +35,7 @@ html {
     }
     #mainNav .navbar-brand {
       color: #fed136;
-    font-family: 'Athiti', sans-serif;  font-weight: 700;
+      font-family: 'Athiti', sans-serif;  font-weight: 700;
       letter-spacing: 0.0625em;
       text-transform: uppercase;
     }
@@ -44,7 +44,7 @@ html {
     }
     #mainNav .navbar-nav .nav-item .nav-link {
       font-family: 'Athiti', sans-serif;
-       font-size: 1.3rem;
+      font-size: 1.3rem;
       color: #fff;
       letter-spacing: 0.0625em;
     }
@@ -77,7 +77,7 @@ html {
         font-size: 1.25em;
       }
       #mainNav.navbar-shrink .navbar-brand svg,
-    #mainNav.navbar-shrink .navbar-brand img {
+      #mainNav.navbar-shrink .navbar-brand img {
         height: 5rem;
       }
       #mainNav .navbar-nav .nav-item {
@@ -90,7 +90,7 @@ html {
       }
     }
     h4{
-      font-family:'Athiti', sans-serif;;
+      font-family:'Athiti', sans-serif;
       padding-top: 20px;
     }
    

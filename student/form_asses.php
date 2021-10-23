@@ -81,24 +81,25 @@ if (!$_SESSION['userid']) {
                                 <p><strong>คำชี้แจง :</strong> แบบสำรวจนี้จัดทำขึ้นเพื่อสอบถามข้อมูลการฝึกงานของนิสิตฝึกงาน คณะเทคโนโลยีสารสนเทศและการสื่อสาร
                                     ความคิดเห็นของท่านมีประโยชน์อย่างยิ่งในการปรับปรุงและพัฒนาคุณภาพการจัดฝึกงานของนิสิตในรุ่นต่อ ๆ ไป</p>
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
 
                                     <label for="student_id">รหัสนิสิต :</label>&nbsp;
                                     <input name="stu_id" id="stu_id" stype="text" class="form-control " placeholder="รหัสนิสิต" required>
-
-                                    <div class="form-inline">
+                                </div><br>
+                                <div class="row">
+                                    <div class="col">
                                         <label for="name">ชื่อ:</label>&nbsp;
-                                        <input name="name" id="name" type="text" class="form-control " placeholder="ชื่อ">
-                                        &nbsp;
-
-                                        <label for="lastname">นามสกุล:</label>&nbsp;
-                                        <input name="lastname" id="lastname" type="text" class="form-control " placeholder="นามสกุล">
+                                        <input name="name" id="name" type="text" class="form-control col-md-3" placeholder="ชื่อ">
                                     </div>
-
+                                    <div class="col">
+                                        <label for="lastname">นามสกุล:</label>&nbsp;
+                                        <input name="lastname" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล">
+                                    </div>
                                 </div>
-                                <br>
-                                <label for="company">สถานประกอบการ:</label>&nbsp;
-                                <select name="comp_name" class="custom-select col-sm-6" ng-optin=" x for x in comp_id">
+                             
+                                <div class="col-sm-6">
+                                <label for="company" class="visually-hidden">สถานประกอบการ:</label>&nbsp;
+                                <select name="comp_name" class="custom-select col-4 form-select " ng-optin=" x for x in comp_id">
                                     <option default>----สถานประกอบการ------</option>
                                     <?php
                                     $sql = "select * from company ";
@@ -113,6 +114,7 @@ if (!$_SESSION['userid']) {
                                     }
                                     ?>
                                 </select>
+                                </div>
                             </div><br>
 
                             <table class="table table-bordered table-hover" cellpadding="0" cellspacing="0">

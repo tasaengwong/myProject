@@ -20,8 +20,9 @@ $comp_id = $_POST['comp_id'];
 $study = $_POST['study'];
 $sent = $_POST['sent'];
 $sentmail = $_POST['sentmail'];
+$status = $_POST['status'];
 
-$sql = "UPDATE students SET stu_id ='$stu_id' , name ='$name' , lastname='$lastname' , phone='$phone' , mail='$mail' , description='$description' , Job ='$Job' , comp_id ='$comp_id' , study='$study' , sent='$sent' , sentmail='$sentmail' WHERE stu_id ='$stu_id';";
+$sql = "UPDATE students SET stu_id ='$stu_id' , name ='$name' , lastname='$lastname' , phone='$phone' , mail='$mail' , description='$description' , Job ='$Job' , comp_id ='$comp_id' , study='$study' , sent='$sent' , sentmail='$sentmail', status='0' WHERE stu_id ='$stu_id';";
        
   $result = mysqli_query($conn, $sql);
   if($conn->query($sql) === TRUE){

@@ -67,8 +67,8 @@ if (!$_SESSION['userid']) {
                 รายงาน
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="../teacher/report.php">ข้อมูลนักศึกษา</a></li>
-                <li><a class="dropdown-item" href="../officer/excel.php">Excel</a></li>
+                <li><a class="dropdown-item" href="report.php">ข้อมูลนักศึกษา</a></li>
+                <li><a class="dropdown-item" href="excel.php">Excel</a></li>
               </ul>
             </li>
 
@@ -152,7 +152,7 @@ if (!$_SESSION['userid']) {
    buttons: [
     'excel'
    ],
-   "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
+   "lengthMenu": [ [5, 10, 25, 50, -1], [5, 10, 25, 50, "All"] ]
   });
   
  });

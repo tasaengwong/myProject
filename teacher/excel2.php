@@ -71,7 +71,6 @@ if (!$_SESSION['userid']) {
                 <li><a class="dropdown-item" href="excel.php">Excel ข้อมูลนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel2.php">Excel แบบประเมิณนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel3.php">Excel แบบประเมิณสถานประกอบการ </a></li>
-
               </ul>
             </li>
 
@@ -97,42 +96,27 @@ if (!$_SESSION['userid']) {
      
     <table id="customer_data" class="table table-bordered table-striped">
      <thead>
-      <tr>
+      <tr> 
+       <!-- <th>qsID</th> -->
        <th>รหัสนิสิต</th>
        <th>ชื่อ</th>
        <th>นามสกุล</th>
-       <th>สาขา</th>
-       <th>ชั้นปี</th>
-       <th>ปีการศึกษา</th>
-       <th>ยื่นคำร้องเมื่อ</th>
-       <th>ที่อยู่</th>
-       <th>จังหวัด</th>
-       <th>อำเภอ</th>
-       <th>ตำบล</th>
-       <th>รหัสไปรษณี</th>
-       <th>เบอร์โทร</th>
-       <th>Email</th>
-       <th>ตำแหน่งงาน</th>
-       <th>รายละเอียดงาน</th>
-       <th>สถานะการลงทะเบียนเรียน</th>
-       <th>รูปแบบการส่งเอกสาร</th>
-       <th>Email สถานประกอบการ</th>
-  
 
-       <th>ชื่อสถานประกอบการ</th>
-       <th>เรียนถึง</th>
-       <th>ที่อยู่</th>
-       <th>ตำบล</th>
-       <th>อำเภอ</th>
-       <th>จังหวัด</th>
-       <th>รหัสไปรษณี</th>
-       <th>เบอร์โทร</th>
-       <th>Email สถานประกอบการ</th>
-       <th>FAX</th>
+       <th>สถานประกอบการ</th>
+       <th>คำถาม1</th>
+       <th>คำถาม2</th>
+       <th>คำถาม3</th>
+       <th>คำถาม4</th>
+       <th>คำถาม5</th>
+       <th>คำถาม6</th>
+       <th>คำถาม7</th>
+       <th>คำถาม8</th>
+       <th>คำถาม9</th>
+       <th>คำถาม10</th>
+       <th>คำถาม11</th>
+       <th>คำถาม12</th>
 
-       <th>สถานะ 0=รอ 1=ผ่าน 2=ไม่ผ่าน</th>
-
-
+      
       </tr>
      </thead>
 
@@ -148,7 +132,7 @@ if (!$_SESSION['userid']) {
    "processing" : true,
    "serverSide" : true,
    "ajax" : {
-    url:"export.php",
+    url:"export2.php",
     type:"POST"
    },
    dom: 'lBfrtip',

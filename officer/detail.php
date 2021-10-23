@@ -46,10 +46,10 @@ if (!$_SESSION['userid']) {
                 ข้อมูลนักศึกษา
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="../officer/detail.php">รายชื่อนิสิต</a></li>
-                <li><a class="dropdown-item" href="../officer/excel.php">Excel ข้อมูลนิสิต</a></li>
-                <li><a class="dropdown-item" href="#">Excel แบบประเมิณนิสิต</a></li>
-                <li><a class="dropdown-item" href="#">Excel แบบประเมิณสถานประกอบการ</a></li>
+                <li><a class="dropdown-item" href="detail.php">รายชื่อนิสิต</a></li>
+                <li><a class="dropdown-item" href="excel.php">Excel ข้อมูลนิสิต</a></li>
+                <li><a class="dropdown-item" href="excel2.php">Excel แบบประเมิณนิสิต</a></li>
+                <li><a class="dropdown-item" href="excel3.php">Excel แบบประเมิณสถานประกอบการ</a></li>
               </ul>
             </li>
 

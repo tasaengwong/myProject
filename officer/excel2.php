@@ -40,7 +40,7 @@ if (!$_SESSION['userid']) {
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
 
   <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
  <body>
 
@@ -57,21 +57,17 @@ if (!$_SESSION['userid']) {
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
           <ul class="navbar-nav col-12 justify-content-end">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../loginuser/teacher_page.php">หน้าแรก</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../teacher/infromation.php">รายชื่อนิสิต</a>
+              <a class="nav-link active" aria-current="page" href="../loginuser/off_page.php">หน้าแรก</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                รายงาน
+                ข้อมูลนักศึกษา
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="report.php">ข้อมูลนักศึกษา</a></li>
+                <li><a class="dropdown-item" href="detail.php">รายชื่อนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel.php">Excel ข้อมูลนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel2.php">Excel แบบประเมิณนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel3.php">Excel แบบประเมิณสถานประกอบการ </a></li>
-
               </ul>
             </li>
 
@@ -97,42 +93,27 @@ if (!$_SESSION['userid']) {
      
     <table id="customer_data" class="table table-bordered table-striped">
      <thead>
-      <tr>
+      <tr> 
+       <!-- <th>qsID</th> -->
        <th>รหัสนิสิต</th>
        <th>ชื่อ</th>
        <th>นามสกุล</th>
-       <th>สาขา</th>
-       <th>ชั้นปี</th>
-       <th>ปีการศึกษา</th>
-       <th>ยื่นคำร้องเมื่อ</th>
-       <th>ที่อยู่</th>
-       <th>จังหวัด</th>
-       <th>อำเภอ</th>
-       <th>ตำบล</th>
-       <th>รหัสไปรษณี</th>
-       <th>เบอร์โทร</th>
-       <th>Email</th>
-       <th>ตำแหน่งงาน</th>
-       <th>รายละเอียดงาน</th>
-       <th>สถานะการลงทะเบียนเรียน</th>
-       <th>รูปแบบการส่งเอกสาร</th>
-       <th>Email สถานประกอบการ</th>
-  
 
-       <th>ชื่อสถานประกอบการ</th>
-       <th>เรียนถึง</th>
-       <th>ที่อยู่</th>
-       <th>ตำบล</th>
-       <th>อำเภอ</th>
-       <th>จังหวัด</th>
-       <th>รหัสไปรษณี</th>
-       <th>เบอร์โทร</th>
-       <th>Email สถานประกอบการ</th>
-       <th>FAX</th>
+       <th>สถานประกอบการ</th>
+       <th>คำถาม1</th>
+       <th>คำถาม2</th>
+       <th>คำถาม3</th>
+       <th>คำถาม4</th>
+       <th>คำถาม5</th>
+       <th>คำถาม6</th>
+       <th>คำถาม7</th>
+       <th>คำถาม8</th>
+       <th>คำถาม9</th>
+       <th>คำถาม10</th>
+       <th>คำถาม11</th>
+       <th>คำถาม12</th>
 
-       <th>สถานะ 0=รอ 1=ผ่าน 2=ไม่ผ่าน</th>
-
-
+      
       </tr>
      </thead>
 
@@ -148,7 +129,7 @@ if (!$_SESSION['userid']) {
    "processing" : true,
    "serverSide" : true,
    "ajax" : {
-    url:"export.php",
+    url:"export2.php",
     type:"POST"
    },
    dom: 'lBfrtip',

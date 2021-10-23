@@ -16,6 +16,10 @@ if (!$_SESSION['userid']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Intern.teacher</title>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1db2e5b132c4b84ac183792530375056ca25a2d5
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css?6">

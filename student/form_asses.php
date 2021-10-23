@@ -15,6 +15,7 @@ if (!$_SESSION['userid']) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>แบบสอบถามนิสิตฝึกงาน</title>
+
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -115,6 +116,8 @@ if (!$_SESSION['userid']) {
                                     ?>
                                 </select>
                                 </div>
+                                <p>*** ระดับความพึงพอใจ : 5 = มากที่สุด 4 = มาก 3 = ปานกลาง 2 = น้อย 1 = ควรปรับปรุง ***</p>
+
                             </div><br>
 
                             <table class="table table-bordered table-hover" cellpadding="0" cellspacing="0">

@@ -28,7 +28,7 @@ session_start();
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav col-12 justify-content-end">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../loginuser/user_page.php">หน้าแรก</a>
+            <a class="nav-link active" aria-current="page" href="../index.html">หน้าแรก</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

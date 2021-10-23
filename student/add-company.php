@@ -59,7 +59,7 @@ session_start();
       </div>
       <hr><br>
       <div class="form-inline">
-        <h6>ข้อมูลสถานประกอบการ</h6>
+        <h5><strong>ข้อมูลสถานประกอบการ</strong></h5>
       </div><br>
       <div class="form-inline col-sm-10">
         <label for="name">ชื่อสถานประกอบการ:</label>&nbsp;

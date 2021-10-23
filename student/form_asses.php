@@ -15,10 +15,10 @@ if (!$_SESSION['userid']) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>แบบสอบถามนิสิตฝึกงาน</title>
-<<<<<<< HEAD
+
         <link rel="stylesheet" href="./css/style.css?68">
-=======
->>>>>>> d4d1a3e4fcbf48ea96ec553aa425c48654b54d98
+
+
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -85,24 +85,25 @@ if (!$_SESSION['userid']) {
                                 <p><strong>คำชี้แจง :</strong> แบบสำรวจนี้จัดทำขึ้นเพื่อสอบถามข้อมูลการฝึกงานของนิสิตฝึกงาน คณะเทคโนโลยีสารสนเทศและการสื่อสาร
                                     ความคิดเห็นของท่านมีประโยชน์อย่างยิ่งในการปรับปรุงและพัฒนาคุณภาพการจัดฝึกงานของนิสิตในรุ่นต่อ ๆ ไป</p>
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
 
                                     <label for="student_id">รหัสนิสิต :</label>&nbsp;
                                     <input name="stu_id" id="stu_id" stype="text" class="form-control " placeholder="รหัสนิสิต" required>
-
-                                    <div class="form-inline">
+                                </div><br>
+                                <div class="row">
+                                    <div class="col">
                                         <label for="name">ชื่อ:</label>&nbsp;
-                                        <input name="name" id="name" type="text" class="form-control " placeholder="ชื่อ">
-                                        &nbsp;
-
-                                        <label for="lastname">นามสกุล:</label>&nbsp;
-                                        <input name="lastname" id="lastname" type="text" class="form-control " placeholder="นามสกุล">
+                                        <input name="name" id="name" type="text" class="form-control col-md-3" placeholder="ชื่อ">
                                     </div>
-
+                                    <div class="col">
+                                        <label for="lastname">นามสกุล:</label>&nbsp;
+                                        <input name="lastname" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล">
+                                    </div>
                                 </div>
-                                <br>
-                                <label for="company">สถานประกอบการ:</label>&nbsp;
-                                <select name="comp_name" class="custom-select col-sm-6" ng-optin=" x for x in comp_id">
+                             
+                                <div class="col-sm-6">
+                                <label for="company" class="visually-hidden">สถานประกอบการ:</label>&nbsp;
+                                <select name="comp_name" class="custom-select col-4 form-select " ng-optin=" x for x in comp_id">
                                     <option default>----สถานประกอบการ------</option>
                                     <?php
                                     $sql = "select * from company ";
@@ -117,6 +118,7 @@ if (!$_SESSION['userid']) {
                                     }
                                     ?>
                                 </select>
+                                </div>
                             </div><br>
 
                             <table class="table table-bordered table-hover" cellpadding="0" cellspacing="0">

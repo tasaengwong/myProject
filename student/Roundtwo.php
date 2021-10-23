@@ -16,7 +16,7 @@ if (!$_SESSION['userid']) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/style.css?65">
+    <link rel="stylesheet" href="./css/master.css?65">
   </head>
 
   <body >
@@ -59,7 +59,7 @@ if (!$_SESSION['userid']) {
 
     <section>
       <div class="container ">
-        <h4>แบบขอข้อมูลเบื้องต้นการฝึกประสบการณ์วิชาชีพ นักศึกษา<br>คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยพะเยา
+        <h4 class = "text-center">แบบขอข้อมูลเบื้องต้นการฝึกประสบการณ์วิชาชีพ นักศึกษา<br>คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยพะเยา
         </h4>
         <hr><br>
         <h6>คำชี้แจง : แบบฟอร์มนี้จัดทำขึ้นเพื่อขอข้อมูลเบื้องต้นการฝึกประสบการณ์วิชาชีพ นักศึกษา</h6><br>
@@ -195,9 +195,7 @@ if (!$_SESSION['userid']) {
       <?php } ?>
     </section><br>
     <!-- Footer -->
-    <footer class="footer card-footer">
-      <div class="col-lg-6 text-lg-right">@ version beta</div>
-    </footer>
+  
 
     <!--container script-->
     <!-- sweetalert -->

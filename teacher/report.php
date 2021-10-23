@@ -56,7 +56,7 @@ if (!$_SESSION['userid']) {
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="../teacher/report.php">ข้อมูลนักศึกษา</a></li>
-                <li><a class="dropdown-item" href="../officer/excel.php">Excel</a></li>
+                <li><a class="dropdown-item" href="excel.php">Excel</a></li>
               </ul>
             </li>
             </li>

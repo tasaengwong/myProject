@@ -116,6 +116,8 @@ if (!$_SESSION['userid']) {
                                     ?>
                                 </select>
                                 </div>
+                                <p>*** ระดับความพึงพอใจ : 5 = มากที่สุด 4 = มาก 3 = ปานกลาง 2 = น้อย 1 = ควรปรับปรุง ***</p>
+
                             </div><br>
 
                             <table class="table table-bordered table-hover" cellpadding="0" cellspacing="0">

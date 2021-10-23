@@ -15,7 +15,7 @@ if (!$_SESSION['userid']) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>แบบสอบถามนิสิตฝึกงาน</title>
-        <link rel="stylesheet" href="./css/style.css?65">
+        <link rel="stylesheet" href="./css/style.css?68">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -76,12 +76,28 @@ if (!$_SESSION['userid']) {
                         <h2 class="text-center">แบบสอบถามนิสิตฝึกงาน</h2>
                         <hr>
                     </div>
-                    <div class="col-md-10"><br>
+                    <div class="col-md-10 "><br>
                         <form action="save.php" name="form_asses" method="post" class="justify-content-center">
                             <div class="description">
                                 <p><strong>คำชี้แจง :</strong> แบบสำรวจนี้จัดทำขึ้นเพื่อสอบถามข้อมูลการฝึกงานของนิสิตฝึกงาน คณะเทคโนโลยีสารสนเทศและการสื่อสาร
                                     ความคิดเห็นของท่านมีประโยชน์อย่างยิ่งในการปรับปรุงและพัฒนาคุณภาพการจัดฝึกงานของนิสิตในรุ่นต่อ ๆ ไป</p>
-                                
+
+                                <div class="col-md-6">
+
+                                    <label for="student_id">รหัสนิสิต :</label>&nbsp;
+                                    <input name="stu_id" id="stu_id" stype="text" class="form-control " placeholder="รหัสนิสิต" required>
+
+                                    <div class="form-inline">
+                                        <label for="name">ชื่อ:</label>&nbsp;
+                                        <input name="name" id="name" type="text" class="form-control " placeholder="ชื่อ">
+                                        &nbsp;
+
+                                        <label for="lastname">นามสกุล:</label>&nbsp;
+                                        <input name="lastname" id="lastname" type="text" class="form-control " placeholder="นามสกุล">
+                                    </div>
+
+                                </div>
+                                <br>
                                 <label for="company">สถานประกอบการ:</label>&nbsp;
                                 <select name="comp_name" class="custom-select col-sm-6" ng-optin=" x for x in comp_id">
                                     <option default>----สถานประกอบการ------</option>
@@ -118,7 +134,7 @@ if (!$_SESSION['userid']) {
                                 <th colspan="7">ด้านความเหมาะสมของสถานที่ในการฝึกงาน</th>
                                 <tr>
                                     <td height="30">&nbsp; 1. ทำเลที่ตั้งของสถานที่ฝึกงาน</td>
-                                    <td height="30" ><input class="form-check-input" type="radio" name="es_id1" value="5" required /></td>
+                                    <td height="30"><input class="form-check-input" type="radio" name="es_id1" value="5" required /></td>
                                     <td height="30"><input class="form-check-input" type="radio" name="es_id1" value="4" /></td>
                                     <td height="30"><input class="form-check-input" type="radio" name="es_id1" value="3" /></td>
                                     <td height="30"><input class="form-check-input" type="radio" name="es_id1" value="2" /></td>

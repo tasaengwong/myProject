@@ -1,4 +1,5 @@
-    @import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap');
+  
+ @import url('https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap');
     * {
         margin: 0;
         padding: 0;
@@ -9,24 +10,22 @@
       width: 10px;
     }
 
-    html {
+    /* html {
         font-family: 'Athiti', sans-serif;
         line-height: 1.15;
         
-    }
+    } */
 
     body {
+        font-family: 'Athiti', sans-serif;
         margin-top: 5rem;
         text-align: center;
-        color: #4e4e4e;
+        color: #d61717;
        
     }
-    .main-content{
-        padding-top: 50px;
-        background-color: rgb(255, 255, 255, 0.5);
-        min-height: 100vh;
+   
        
-    }
+   
     input {
         padding: 1rem 3rem;
     }
@@ -93,7 +92,7 @@
       }
       #mainNav .navbar-toggler {
         padding: 0.75rem;
-      font-family: 'Athiti', sans-serif;  font-size: 0.75rem;
+        font-family: 'Athiti', sans-serif;  font-size: 0.75rem;
         color: #fff;
         text-transform: uppercase;
         background-color: #212445;
@@ -101,7 +100,7 @@
       }
       #mainNav .navbar-brand {
         color: #fed136;
-      font-family: 'Athiti', sans-serif;  font-weight: 700;
+        font-family: 'Athiti', sans-serif;  font-weight: 700;
         letter-spacing: 0.0625em;
         text-transform: uppercase;
       }
@@ -109,7 +108,7 @@
         height: 1rem;
       }
       #mainNav .navbar-nav .nav-item .nav-link {
-        font-family: 'Athiti', sans-serif;
+          font-family: 'Athiti', sans-serif;
          font-size: 1.3rem;
         color: #fff;
         letter-spacing: 0.0625em;

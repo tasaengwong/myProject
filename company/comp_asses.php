@@ -70,13 +70,14 @@
                             ท่านมีความสำคัญอย่างยิ่งในการพัฒนานิสิตให้มีคุณภาพ เพื่อที่จะได้จบออกไปเป็นบัณฑิตที่มีคุณภาพในสังคม</p>
                         <p> 2. คะแนนประเมินจากหน่วยงานคิดเป็นร้อยละ 50 ของคะแนนในรายวิชาฝึกงาน</p>
 
+                        
                         <div class="col-md-6">
-                            <p>ตอนที่ 1 : ข้อมูลทั่วไปของผู้ใช้นิสิตฝึกงาน</p>&nbsp;
+                            <p><strong> ตอนที่ 1 : ข้อมูลทั่วไปของผู้ใช้นิสิตฝึกงาน</strong></p>&nbsp;
                             <label for="comp_name">ชื่อสถานประกอบการ:</label>&nbsp;
                             <input name="comp_name" id="comp_name" type="text" class="form-control col-md-3" placeholder="ชื่อสถานประกอบการ">
                         </div><br>
                         <div class="row">
-                            <p>ตอนที่ 2 : รายละเอียดนิสิตฝึกงาน</p>
+                            <p><strong>ตอนที่ 2 : รายละเอียดนิสิตฝึกงาน</strong></p>
                             <div class="col">
                                 <label for="stu_id">รหัสนิสิต</label>&nbsp;
                                 <input name="stu_id" id="stu_id" type="text" class="form-control col-md-3" placeholder="รหัสนิสิต">
@@ -91,7 +92,7 @@
                             </div>
                         </div><br>
                     </div><br>
-                    <p>ตอนที่ 3 : ความพึงพอใจของผู้ใช้นิสิตฝึกงาน </p>
+                    <p><strong>ตอนที่ 3 : ความพึงพอใจของผู้ใช้นิสิตฝึกงาน</strong> </p>
                     <p>*** ระดับความพึงพอใจ : มากที่สุด = 5 , มาก = 4 , ปานกลาง = 3 , น้อย = 2 , ควรปรับปรุง = 1 ***</p>
 
                     <table class="table table-bordered table-hover" cellpadding="0" cellspacing="0">
@@ -362,7 +363,7 @@
                     </table>
                     <br>
                     <tr>
-                        <p>ตอนที่ 4 : ความคิดเห็นและข้อเสนอแนะของผู้ใช้นิสิตฝึกงาน</p>
+                        <p><strong>ตอนที่ 4 : ความคิดเห็นและข้อเสนอแนะของผู้ใช้นิสิตฝึกงาน</strong></p>
                         <label for="">1.ความคิดเห็นเพิ่มเติมที่มีต่อนิสิตของคณะที่ฝึกงานในองค์กรของท่าน</label>
                         <textarea type="text" class="form-control" rows="3" name="cs_id28"></textarea><br>
                         <label for="">2.ความคิดเห็นเพิ่มเติมที่มีต่อหลักสูตร / การเรียนการสอนของคณะเทคโนโลยีสารสนเทศฯ</label>

@@ -9,39 +9,51 @@ th{
   width: 10px;
 }
 
-html {
+/* html {
     font-family: 'Athiti', sans-serif;
     line-height: 1.15;
     
-}
+} */
 
 body {
     font-family: 'Athiti', sans-serif;
+    margin-top: 5rem;
     text-align: center;
-    /* background-image: url(../img/bglogin.jpg); */
-    background-size: 100%;
-
-}
-h3{
-    font-family: 'Athiti', sans-serif;
-    font-size: 2.6rem;
-    color: #fff;
-    padding-left: 1rem;
+    color: #d61717;
    
 }
 
    
+
 input {
     padding: 1rem 3rem;
 }
      
 img{
-  width: 8.5rem;
+  width: 4rem;
 }
-#logoict{
+#uplogo{
     width: 100px;
 }
 
+#nextlogo{
+    width: 200px;
+    padding-top: 50px;
+}
+
+.sub-text{
+    font-family:'Athiti', sans-serif ;
+    /* padding-top: 10px; */
+}
+
+.input {
+    display: block;
+}
+
+.form-register {
+    display: flex;
+    padding-left: 5rem;
+}
 
 .success {
     width: 50%;
@@ -67,6 +79,11 @@ img{
     margin-bottom: 20px;
 }
 
+.back-btn{
+    display: flex;
+    justify-content: end;
+}
+   
 #mainNav {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -74,7 +91,7 @@ img{
   }
   #mainNav .navbar-toggler {
     padding: 0.75rem;
-  font-family: 'Athiti', sans-serif;  font-size: 0.75rem;
+    font-family: 'Athiti', sans-serif;  font-size: 0.75rem;
     color: #fff;
     text-transform: uppercase;
     background-color: #212445;
@@ -82,7 +99,7 @@ img{
   }
   #mainNav .navbar-brand {
     color: #fed136;
-  font-family: 'Athiti', sans-serif;  font-weight: 700;
+    font-family: 'Athiti', sans-serif;  font-weight: 700;
     letter-spacing: 0.0625em;
     text-transform: uppercase;
   }
@@ -90,8 +107,8 @@ img{
     height: 1rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
-    font-family: 'Athiti', sans-serif;
-     font-size: 2rem;
+      font-family: 'Athiti', sans-serif;
+     font-size: 1.3rem;
     color: #fff;
     letter-spacing: 0.0625em;
   }
@@ -108,7 +125,7 @@ img{
       transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
     }
     #mainNav .navbar-brand {
-      font-size: 2rem;
+      font-size: 50px;
       transition: font-size 0.3s ease-in-out;
     }
     #mainNav .navbar-brand img {
@@ -117,11 +134,12 @@ img{
     }
     #mainNav.navbar-shrink {
       padding-top: 1rem;
+      font-size: 50px;
       padding-bottom: 1rem;
       background-color: #212529;
     }
     #mainNav.navbar-shrink .navbar-brand {
-      font-size: 2rem;
+      font-size: 50px;
     }
     #mainNav.navbar-shrink .navbar-brand svg,
   #mainNav.navbar-shrink .navbar-brand img {
@@ -129,18 +147,36 @@ img{
     }
     #mainNav .navbar-nav .nav-item {
       color: #495057;
+      font-size: 50px;
       margin-right: 1rem;
     }
     #mainNav .navbar-nav .nav-item:last-child {
       color: #495057;
       margin-right: 0;
+      font-size: 50px;
     }
   }
+
+  .form-inline{
+    padding-left: 6rem;
+  }
+  button{
+    float: right;
+  }
  
+  a:hover{
+    color: #67ebfa;
+  }
+
   #navbarNavDropdown{
     font-family: 'Athiti', sans-serif;
-    font-size: 2.3rem;
-    padding-top: 2rem;
-    padding-right: 5rem;
+    font-size: 1.2rem;
+    padding-right: 4rem;
   
+  }
+  h3{
+    font-family: 'Athiti', sans-serif;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    color: #fff;
   }

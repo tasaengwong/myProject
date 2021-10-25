@@ -25,6 +25,8 @@ $comp_id = $_POST['comp_id'];
 $study = $_POST['study'];
 $sent = $_POST['sent'];
 $sentmail = $_POST['sentmail'];
+$time = date("Y-m-d") ;
+$_POST['time'] = $time;
 
 $user_check = "SELECT * FROM students WHERE stu_id = '$username' LIMIT 1";
 $result = mysqli_query($conn, $user_check);
@@ -35,8 +37,8 @@ if ($user['stu_id'] === $stu_id) {
 } else {
     $passwordenc = md5($password);
 
-$query = " INSERT INTO students (stu_id, password, name, lastname, major, year, date, address, province, amphures, district, zipcode, phone, mail, Job, description, comp_id, study, sent, sentmail)
-        VALUES('$stu_id','$passwordenc','$name', '$lastname','$major','$year','$date',' $address' , '$province', '$amphures', '$district', '$zipcode',
+$query = " INSERT INTO students (stu_id, password, name, lastname, major, year, date, time, address, province, amphures, district, zipcode, phone, mail, Job, description, comp_id, study, sent, sentmail)
+        VALUES('$stu_id','$passwordenc','$name', '$lastname','$major','$year','$date','NOW()',' $address' , '$province', '$amphures', '$district', '$zipcode',
         '$phone', '$mail', '$Job', '$description', '$comp_id', '$study', '$sent', '$sentmail')";
   $result = mysqli_query($conn, $query);
 

@@ -26,9 +26,10 @@ if (!$_SESSION['userid']) {
         <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"> -->
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" > -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../loginuser/style.css?8">
 
     </head>
 
@@ -36,7 +37,7 @@ if (!$_SESSION['userid']) {
         <nav class="navbar navbar-expand-lg navbar-light bg-warning">
             <div class="container-fluid">
 
-                <img src="../img/ict.png" alt="logoict" class="img">
+                <img src="../img/ict.png" alt="logoict2" class="img" id="logoict2">
 
                 <h3>ระบบสารสนเทศการฝึกงาน</h3>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,20 +52,20 @@ if (!$_SESSION['userid']) {
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="../admin/add_acount.php">บัญชีผู้ใช้</a>
                         </li>
+&nbsp;
 
-
-                        <!-- <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
                             <button class="btn btn-info nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-circle"></i> <2?php echo $_SESSION['name']; ?>
+                                <i class="bi bi-person-circle"></i> <?php echo $_SESSION['name']; ?>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item bi bi-arrow-right-square-fill" href="../loginuser/logout.php">&nbsp;LOG-OUT</a></li>
                             </ul>
-                        </li> -->
+                        </li>
 
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" class="btn btn-info nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="bi bi-person-circle"></i> <?php echo $_SESSION['name']; ?>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -72,7 +73,7 @@ if (!$_SESSION['userid']) {
 
                                 </ul>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

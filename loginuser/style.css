@@ -17,20 +17,18 @@
 
     body {
         font-family: 'Athiti', sans-serif;
-        margin-top: 5rem;
+
         text-align: center;
-        color: #d61717;
+        color: #0a0a0a;
        
     }
-   
-       
    
     input {
         padding: 1rem 3rem;
     }
          
     img{
-      width: 4rem;
+      width: 5rem;
     }
     #uplogo{
         width: 100px;
@@ -39,6 +37,9 @@
     #nextlogo{
         width: 200px;
         padding-top: 50px;
+    }
+    #logoict2{
+      width: 70px;
     }
    
     .sub-text{
@@ -170,7 +171,7 @@
    
       #navbarNavDropdown{
         font-family: 'Athiti', sans-serif;
-        font-size: 1.2rem;
+        font-size: 2rem;
         padding-right: 4rem;
       
       }

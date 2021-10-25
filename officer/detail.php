@@ -185,7 +185,7 @@ if (!$_SESSION['userid']) {
                       if ($data['Ostatus'] == 0) {
                         // echo '<p id=' . $data['stu_id'] . '&status="" " class = "text fa fa-spinner">กำลังดำเนินการ</a></p>';
                       } else if ($data['Ostatus'] == 1) {
-                        echo '<p stu_id=' . $data['stu_id'] . '&Ostatus=0"  class = "text text-success fa fa-check">ดำเนินการเรียบร้อย</a></p>';
+                        echo '<p stu_id=' . $data['stu_id'] . '&Ostatus=0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
                       } else {
                         echo '<p stu_id=' . $data['stu_id'] . '&Ostatus=2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
                       }

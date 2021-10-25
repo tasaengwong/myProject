@@ -100,9 +100,29 @@ if (!$_SESSION['userid']) {
                              
                                 <div class="col-sm-6">
                                 <label for="company" class="visually-hidden">สถานประกอบการ:</label>&nbsp;
+<<<<<<< HEAD
+                                <select name="comp_name" class="custom-select col-4 form-select " ng-optin=" x for x in comp_id">
+                                    <option default>----สถานประกอบการ------</option>
+                                    <?php
+                                    $sql = "select * from company ";
+                                    $result = $conn->query($sql);
+                                    while ($row = $result->fetch_assoc()) {
+                                        if ($row['comp_id'] == $_GET['selectcompany']) {
+                                            echo "{$row['comp_name']}<option selected>";
+                                        } else {
+                                            echo "<option>";
+                                        }
+                                        echo "{$row['comp_name']}</option>";
+                                    }
+                                    ?>
+                                </select>
+                                </div>
+                                <br>
+=======
                                 <input name="comp_name" id="comp_name" type="text" class="form-control col-md-3" placeholder="ชื่อสถานประกอบการ">
 
                                 </div><br>
+>>>>>>> 20e57e812338f513529437e24e313a925338fd00
                                 <p>*** ระดับความพึงพอใจ : 5 = มากที่สุด 4 = มาก 3 = ปานกลาง 2 = น้อย 1 = ควรปรับปรุง ***</p>
 
                             </div><br>

@@ -4,7 +4,10 @@
 
 include('ex.php');
 
-$column = array('stu_id', 'name', 'lastname', 'major', 'year', 'comp_name');
+$column = array('stu_id', 'name', 'lastname', 'major', 'year', 'address', 'province', 'amphures', 'district'
+, 'zipcode', 'phone', 'mail', 'Job', 'description', 'study', 'sent', 'sentmail', 'comp_name'
+, 'contract_name', 'comp_address', 'comp_subdis', 'comp_amphure', 'comp_province', 'comp_zipcode', 'comp_phone', 'comp_mail', 'comp_Fax'
+, 'date', 'time');
 
 $query = "SELECT * from students LEFT JOIN  company ON students.comp_id = company.comp_id";
 
@@ -17,6 +20,29 @@ if(isset($_POST['search']['value']))
  OR major LIKE "%'.$_POST['search']['value'].'%" 
  OR year LIKE "%'.$_POST['search']['value'].'%" 
  OR address LIKE "%'.$_POST['search']['value'].'%" 
+ OR province LIKE "%'.$_POST['search']['value'].'%"
+ OR amphures LIKE "%'.$_POST['search']['value'].'%"
+ OR district LIKE "%'.$_POST['search']['value'].'%"
+ OR zipcode LIKE "%'.$_POST['search']['value'].'%"
+ OR phone LIKE "%'.$_POST['search']['value'].'%"
+ OR mail LIKE "%'.$_POST['search']['value'].'%"
+ OR Job LIKE "%'.$_POST['search']['value'].'%"
+ OR description LIKE "%'.$_POST['search']['value'].'%"
+ OR study LIKE "%'.$_POST['search']['value'].'%"
+ OR sent LIKE "%'.$_POST['search']['value'].'%"
+ OR sentmail LIKE "%'.$_POST['search']['value'].'%"
+ OR comp_name LIKE "%'.$_POST['search']['value'].'%"
+ OR contract_name LIKE "%'.$_POST['search']['value'].'%"
+ OR comp_address LIKE "%'.$_POST['search']['value'].'%"
+ OR comp_subdis LIKE "%'.$_POST['search']['value'].'%"
+ OR comp_amphure LIKE "%'.$_POST['search']['value'].'%"
+ OR comp_province LIKE "%'.$_POST['search']['value'].'%"
+ OR comp_zipcode LIKE "%'.$_POST['search']['value'].'%"
+ OR comp_phone LIKE "%'.$_POST['search']['value'].'%"
+ OR comp_mail LIKE "%'.$_POST['search']['value'].'%"
+ OR comp_Fax LIKE "%'.$_POST['search']['value'].'%"
+ OR date LIKE "%'.$_POST['search']['value'].'%"
+ OR time LIKE "%'.$_POST['search']['value'].'%"
  ';
 }
 

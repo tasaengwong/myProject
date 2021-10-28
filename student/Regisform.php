@@ -93,10 +93,10 @@ session_start();
 
         <div class="form-inline col-sm-12">
           <label for="student_id">รหัสนิสิต :</label>&nbsp;
-          <input name="stu_id" id="stu_id" stype="text" class="form-control col-md-2" placeholder="รหัสนิสิต" required>
+          <input name="stu_id" id="stu_id" type="text" class="form-control col-md-2" placeholder="รหัสนิสิต" required>
           &nbsp;&nbsp;
           <label for="student_id">Password :</label>&nbsp;
-          <input name="password" id="password" stype="text" class="form-control col-md-2" placeholder="รหัสสำหรับ log-in " required>
+          <input name="password" id="password" type="password" class="form-control col-md-2" placeholder="รหัสสำหรับ log-in " required>
           &nbsp;<span>กำหนดรหัสผ่านเพื่อใช้สำหรับเข้าใช้งานระบบ</span>
         </div><br>
 

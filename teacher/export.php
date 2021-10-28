@@ -4,7 +4,10 @@
 
 include('ex.php');
 
-$column = array('stu_id', 'name', 'lastname', 'major', 'year', 'comp_name');
+$column = array('stu_id', 'name', 'lastname', 'major', 'year', 'address', 'province', 'amphures', 'district'
+, 'zipcode', 'phone', 'mail', 'Job', 'description', 'study', 'sent', 'sentmail', 'comp_name'
+, 'contract_name', 'comp_address', 'comp_subdis', 'comp_amphure', 'comp_province', 'comp_zipcode', 'comp_phone', 'comp_mail', 'comp_Fax'
+, 'date', 'time');
 
 $query = "SELECT * from students LEFT JOIN  company ON students.comp_id = company.comp_id";
 
@@ -36,6 +39,8 @@ if(isset($_POST['search']['value']))
  OR comp_province LIKE "%'.$_POST['search']['value'].'%"
  OR comp_zipcode LIKE "%'.$_POST['search']['value'].'%"
  OR comp_phone LIKE "%'.$_POST['search']['value'].'%"
+ OR comp_mail LIKE "%'.$_POST['search']['value'].'%"
+ OR comp_Fax LIKE "%'.$_POST['search']['value'].'%"
  OR date LIKE "%'.$_POST['search']['value'].'%"
  OR time LIKE "%'.$_POST['search']['value'].'%"
  

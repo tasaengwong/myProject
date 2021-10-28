@@ -4,7 +4,7 @@
 
 include('ex.php');
 
-$column = array('qs_id', 'stu_id', 'name', 'lastname', 'comp_name', 'es_id1', 'es_id2', 'es_id3', 'es_id4', 'es_id5', 'es_id6', 'es_id7', 'es_id8', 'es_id9', 'es_id10', 'es_id11', 'es_id12');
+$column = array('qs_id', 'stu_id', 'name', 'lastname', 'major', 'comp_name', 'es_id1', 'es_id2', 'es_id3', 'es_id4', 'es_id5', 'es_id6', 'es_id7', 'es_id8', 'es_id9', 'es_id10', 'es_id11', 'es_id12');
 
 $query = "SELECT * from asses";
 
@@ -15,6 +15,7 @@ if(isset($_POST['search']['value']))
  OR stu_id LIKE "%'.$_POST['search']['value'].'%" 
  OR name LIKE "%'.$_POST['search']['value'].'%" 
  OR lastname LIKE "%'.$_POST['search']['value'].'%" 
+ OR major LIKE "%'.$_POST['search']['value'].'%" 
  OR comp_name LIKE "%'.$_POST['search']['value'].'%" 
  OR es_id1 LIKE "%'.$_POST['search']['value'].'%" 
  OR es_id2 LIKE "%'.$_POST['search']['value'].'%" 
@@ -72,7 +73,7 @@ foreach($result as $row)
  $sub_array[] = $row['stu_id'];
  $sub_array[] = $row['name'];
  $sub_array[] = $row['lastname'];
-
+ $sub_array[] = $row['major'];
  $sub_array[] = $row['comp_name'];
  $sub_array[] = $row['es_id1'];
  $sub_array[] = $row['es_id2'];

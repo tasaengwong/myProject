@@ -66,7 +66,7 @@ if (!$_SESSION['userid']) {
                         <!-- <li class="nav-item dropdown">
                             <div class="btn-group" role="group">
                                 <button type="button" class="btn btn-info nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="bi bi-person-circle"></i> <?php echo $_SESSION['name']; ?>
+                                    <i class="bi bi-person-circle"></i> <#?php echo $_SESSION['name']; ?>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li><a class="dropdown-item bi bi-arrow-right-square-fill" href="../loginuser/logout.php">&nbsp;LOG-OUT</a></li>

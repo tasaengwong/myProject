@@ -68,7 +68,7 @@ if (!$_SESSION['userid']) {
         $conn->set_charset('utf8');
         $sql = "select * from asses ";
         $result = $conn->query($sql);
-        while ($row = $result->fetch_assoc()) {
+        while ($row = $result->fetch_assoc()) { }
         ?>
             <div class="container">
                 <div class="row">
@@ -96,11 +96,23 @@ if (!$_SESSION['userid']) {
                                         <label for="lastname">นามสกุล:</label>&nbsp;
                                         <input name="lastname" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล">
                                     </div>
+                                    <div class="col"><label for="major">สาขา:</label>&nbsp;
+                                        <select name="major" class="form-select col-sm-5" ng-optin=" x for x in major">
+                                            <option value="">--สาขา--</option>
+                                            <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
+                                            <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
+                                            <option value="คอมพิวเตอร์ธุรกิจ">คอมพิวเตอร์ธุรกิจ</option>
+                                            <option value="วิศวกรรมซอฟร์แวร์">วิศวกรรมซอฟร์แวร์</option>
+                                            <option value="วิศวกรรมคอมพิวเตอร์">วิศวกรรมคอมพิวเตอร์</option>
+                                            <option value="คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย">คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย</option>
+                                            <option value="ภูมิศาสตร์สารสนเทศ">ภูมิศาสตร์สารสนเทศ</option>
+                                        </select>&nbsp;&nbsp;
+                                    </div>
                                 </div>
-                             
+
                                 <div class="col-sm-6">
-                                <label for="company" class="visually-hidden">สถานประกอบการ:</label>&nbsp;
-                                <input name="comp_name" id="comp_name" type="text" class="form-control col-md-3" placeholder="ชื่อสถานประกอบการ">
+                                    <label for="company" >สถานประกอบการ:</label>&nbsp;
+                                    <input name="comp_name" id="comp_name" type="text" class="form-control col-md-3" placeholder="ชื่อสถานประกอบการ">
 
                                 </div><br>
 
@@ -240,7 +252,7 @@ if (!$_SESSION['userid']) {
                             <button type="submit" name="save" class="btn btn-success"> ส่งแบบประเมิน </button>
                         </form>
                         <br><br>
-                    <?php } ?>
+                  
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@ $stu_id = $_POST['stu_id'];
 $name = $_POST['name'];
 $lastname = $_POST['lastname'];
 $comp_name = $_POST['comp_name'];
-
+$major = $_POST['major'];
 $es_id1 = $_POST['es_id1'];
 $es_id2 = $_POST['es_id2'];
 $es_id3 = $_POST['es_id3'];
@@ -19,8 +19,8 @@ $es_id10 = $_POST['es_id10'];
 $es_id11 = $_POST['es_id11'];
 $es_id12 = $_POST['es_id12'];
 
-$sql = "INSERT INTO asses (stu_id, name, lastname,comp_name, es_id1, es_id2, es_id3, es_id4, es_id5, es_id6, es_id7, es_id8, es_id9, es_id10, es_id11, es_id12)
- VALUE  ('$stu_id','$name','$lastname','$comp_name','$es_id1', '$es_id2', '$es_id3', '$es_id4', '$es_id5', '$es_id6', '$es_id7', '$es_id8', '$es_id9', '$es_id10', '$es_id11', '$es_id12')";
+$sql = "INSERT INTO asses (stu_id, name, lastname,comp_name,major, es_id1, es_id2, es_id3, es_id4, es_id5, es_id6, es_id7, es_id8, es_id9, es_id10, es_id11, es_id12)
+ VALUE  ('$stu_id','$name','$lastname','$comp_name','$major','$es_id1', '$es_id2', '$es_id3', '$es_id4', '$es_id5', '$es_id6', '$es_id7', '$es_id8', '$es_id9', '$es_id10', '$es_id11', '$es_id12')";
 $result = mysqli_query($conn, $sql);
 if ($result){
         header("Location: ../loginuser/user_page.php");

@@ -70,7 +70,7 @@
                             ท่านมีความสำคัญอย่างยิ่งในการพัฒนานิสิตให้มีคุณภาพ เพื่อที่จะได้จบออกไปเป็นบัณฑิตที่มีคุณภาพในสังคม</p>
                         <p> 2. คะแนนประเมินจากหน่วยงานคิดเป็นร้อยละ 50 ของคะแนนในรายวิชาฝึกงาน</p>
 
-                        
+
                         <div class="col-md-6">
                             <p><strong> ตอนที่ 1 : ข้อมูลทั่วไปของผู้ใช้นิสิตฝึกงาน</strong></p>&nbsp;
                             <label for="comp_name">ชื่อสถานประกอบการ:</label>&nbsp;
@@ -89,6 +89,20 @@
                             <div class="col">
                                 <label for="stu_lsn">นามสกุล</label>&nbsp;
                                 <input name="stu_lsn" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล">
+                            </div>
+                            <div class="col">
+                                <label for="major">สาขา:</label>&nbsp;
+                                <select name="major" class="form-select col-sm-5" ng-optin=" x for x in major">
+                                    <option value="">--สาขา--</option>
+                                    <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
+                                    <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
+                                    <option value="คอมพิวเตอร์ธุรกิจ">คอมพิวเตอร์ธุรกิจ</option>
+                                    <option value="วิศวกรรมซอฟร์แวร์">วิศวกรรมซอฟร์แวร์</option>
+                                    <option value="วิศวกรรมคอมพิวเตอร์">วิศวกรรมคอมพิวเตอร์</option>
+                                    <option value="คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย">คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย</option>
+                                    <option value="ภูมิศาสตร์สารสนเทศ">ภูมิศาสตร์สารสนเทศ</option>
+
+                                </select>&nbsp;&nbsp;
                             </div>
                         </div><br>
                     </div><br>
@@ -121,7 +135,7 @@
 
                         </tr>
                         <tr>
-                            <td height="30">&nbsp; 2.มีความเคารพกฎเกณฑ์ และระเบียบของหน่วยงาน  </td>
+                            <td height="30">&nbsp; 2.มีความเคารพกฎเกณฑ์ และระเบียบของหน่วยงาน </td>
                             <td height="30"><input class="form-check-input" type="radio" name="cs_id2" value="5" required /></td>
                             <td height="30"><input class="form-check-input" type="radio" name="cs_id2" value="4" /></td>
                             <td height="30"><input class="form-check-input" type="radio" name="cs_id2" value="3" /></td>
@@ -214,7 +228,7 @@
 
                         </tr>
                         <tr>
-                            <td height="30">&nbsp; 2.มีความสามารถในการรวบรวมข้อมูลต่างๆ และประเมินได้					 </td>
+                            <td height="30">&nbsp; 2.มีความสามารถในการรวบรวมข้อมูลต่างๆ และประเมินได้ </td>
                             <td height="30"><input class="form-check-input" type="radio" name="cs_id12" value="5" required /></td>
                             <td height="30"><input class="form-check-input" type="radio" name="cs_id12" value="4" /></td>
                             <td height="30"><input class="form-check-input" type="radio" name="cs_id12" value="3" /></td>
@@ -287,7 +301,7 @@
 
                         </tr>
                         <tr>
-                            <td height="30">&nbsp; 5.	ยอมรับความคิดเห็นของผู้อื่นที่แตกต่างจากตนเอง </td>
+                            <td height="30">&nbsp; 5. ยอมรับความคิดเห็นของผู้อื่นที่แตกต่างจากตนเอง </td>
                             <td height="30"><input class="form-check-input" type="radio" name="cs_id20" value="5" required /></td>
                             <td height="30"><input class="form-check-input" type="radio" name="cs_id20" value="4" /></td>
                             <td height="30"><input class="form-check-input" type="radio" name="cs_id20" value="3" /></td>

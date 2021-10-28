@@ -119,7 +119,8 @@
                         <div style="height:10px;"></div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <label style="position:relative; top:7px;">หารจัดส่งเอกสาร:&nbsp;<?php echo $erow['sent']; ?></label>
+                                <label style="position:relative; top:7px;">การจัดส่งเอกสาร:&nbsp;<?php echo $erow['sent']; ?></label>
+                                <label style="position:relative; top:7px;"><?php echo $erow['sentmail']; ?></label>
                             </div>
                         </div>
 

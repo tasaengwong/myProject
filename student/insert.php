@@ -25,7 +25,7 @@ $comp_id = $_POST['comp_id'];
 $study = $_POST['study'];
 $sent = $_POST['sent'];
 $sentmail = $_POST['sentmail'];
-$time = date("Y-m-d") ;
+$time = date("d-m-Y") ;
 $_POST['time'] = $time;
 
 $user_check = "SELECT * FROM students WHERE stu_id = '$username' LIMIT 1";

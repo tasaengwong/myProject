@@ -48,8 +48,8 @@ if (!$_SESSION['userid']) {
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="detail.php">รายชื่อนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel.php">Excel ข้อมูลนิสิต</a></li>
-                <li><a class="dropdown-item" href="excel2.php">Excel แบบประเมิณนิสิต</a></li>
-                <li><a class="dropdown-item" href="excel3.php">Excel แบบประเมิณสถานประกอบการ</a></li>
+                <li><a class="dropdown-item" href="excel2.php">Excel แบบประเมินนิสิต</a></li>
+                <li><a class="dropdown-item" href="excel3.php">Excel แบบประเมินสถานประกอบการ</a></li>
               </ul>
             </li>
 
@@ -125,6 +125,7 @@ if (!$_SESSION['userid']) {
             OR year LIKE '%".$strKeyword."%'
             OR date LIKE '%".$strKeyword."%'
             OR time LIKE '%".$strKeyword."%'
+            OR Job LIKE '%".$strKeyword."%'
             OR comp_name LIKE '%".$strKeyword."%'
             ";
 
@@ -134,6 +135,7 @@ if (!$_SESSION['userid']) {
               <table class="table  table-bordered" id="customer_data">
                 <tr class="bg-light">
                   <th>NO.</th>
+                  <th>วันที่ยื่นเรื่อง</th>
                   <th>รหัสนิสิต</th>
                   <th>ชื่อ-นามสกุล</th>
                   <th colspan="2">สาขา</th>
@@ -155,6 +157,7 @@ if (!$_SESSION['userid']) {
 
                   <form>
                     <td><?php echo $i ?></td>
+                    <td><?php echo $data['time']; ?></td>
                     <td><?php echo $data['stu_id']; ?></td>
                     <td><?php echo $data['name']; ?>&nbsp;<?php echo $data['lastname']; ?></td>
                     <td colspan="2"><?php echo $data['major']; ?></td>
@@ -238,7 +241,6 @@ if (!$_SESSION['userid']) {
           </div>
         </div>
     </section>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

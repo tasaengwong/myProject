@@ -83,7 +83,7 @@ if (!$_SESSION['userid']) {
 
             <table class="table" id="txtHint">
               <table class="table table-bordered">
-                <tr class="bg-light">
+                <tr class="bg-light text-center">
                   <th>รหัสนิสิต</th>
                   <th>ชื่อ</th>
                   <th>นามสกุล</th>
@@ -94,12 +94,12 @@ if (!$_SESSION['userid']) {
                 </tr>
                 <?php {
                 ?>
-                  <form class="tabel table-hover">
-                    <td><?php echo $_SESSION['userid']; ?></td>
-                    <td><?php echo $_SESSION['name']; ?></td>
-                    <td><?php echo $_SESSION['lastname']; ?></td>
-                    <td><?php echo $_SESSION['major']; ?></td>
-                    <td><?php echo $_SESSION['year']; ?></td>
+                  <form class="tabel table-hover ">
+                    <td class="text-center"><?php echo $_SESSION['userid']; ?></td>
+                    <td class="text-center"><?php echo $_SESSION['name']; ?></td>
+                    <td class="text-center"><?php echo $_SESSION['lastname']; ?></td>
+                    <td class="text-center"><?php echo $_SESSION['major']; ?></td>
+                    <td class="text-center"><?php echo $_SESSION['year']; ?></td>
 
                   </form>
                   </tr>

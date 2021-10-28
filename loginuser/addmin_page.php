@@ -69,7 +69,7 @@
           <div class="col-sm student-detail">
             <!-- select information -->
             <br><br>
-            <h4>ข้อมูลแอดมิน</h4><br>
+            <h4 class="text-center">ข้อมูลแอดมิน</h4><br>
             <!-- search filter -->
             
             <br>
@@ -77,7 +77,7 @@
 
             <table class="table" id="txtHint">
               <table class="table table-bordered">
-                <tr class="bg-light">
+                <tr class="bg-light text-center">
     
                   <th>ชื่อ</th>
                   <th>นามสกุล</th>
@@ -88,8 +88,8 @@
                 ?>
                   <form>
                                
-                    <td><?php echo $_SESSION['name']; ?></td>
-                    <td><?php echo $_SESSION['lastname']; ?></td>
+                    <td class="text-center"><?php echo $_SESSION['name']; ?></td>
+                    <td class="text-center"><?php echo $_SESSION['lastname']; ?></td>
                     
   
                   </form>

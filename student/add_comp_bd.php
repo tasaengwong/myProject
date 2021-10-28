@@ -18,8 +18,8 @@ $result1 = mysqli_query($conn, $check) or die(mysqli_error($conn));
 $num = mysqli_num_rows($result1);
 if ($num > 0) {
         echo "<script>";
-        echo "alert(' ข้อมูลซ้ำ กรุณาเพิ่มใหม่อีกครั้ง !');";
-        echo "window.history.back();";
+        echo "alert(' สถานประกอบการนี้มีอยู่แล้ว! **ดำเนินการขั้นตอนต่อไป**');";
+        echo "window.location = 'Regisform.php';";
         echo "</script>";
 } else {
 
@@ -29,13 +29,13 @@ if ($num > 0) {
 }
 if ($result) {
         echo "<script type='text/javascript'>";
-        echo "window.location = '../index.html';";
+        echo "window.location = 'Regisform.php';";
         echo "</script>";
 } else {
         //กำหนดเงื่อนไขว่าถ้าไม่สำเร็จให้ขึ้นข้อความและกลับไปหน้าเพิ่ม
         echo "<script type='text/javascript'>";
-        echo "alert('error!');";
-        echo "window.location = 'add-company.php'; ";
+        echo "window.history.back();";
+        // echo "window.location = 'add-company.php'; ";
         echo "</script>";
 }
 $conn->close();

@@ -33,9 +33,14 @@ $result = mysqli_query($conn, $user_check);
 $user = mysqli_fetch_assoc($result);
 
 if ($user['stu_id'] === $stu_id) {
-    echo "<script>alert('Username already exists');</script>";
+    echo "<script type='text/javascript'>";
+    echo "alert ('รหัสนิสิตไม่ถูกต้อง');";
+    echo "</script>";
 } else {
     $passwordenc = md5($password);
+    echo "<script type='text/javascript'>";
+    echo "alert ('รหัสผ่านไม่ถูกต้อง');";
+    echo "</script>";
 
 $query = " INSERT INTO students (stu_id, password, name, lastname, major, year, date, time, address, province, amphures, district, zipcode, phone, mail, Job, description, comp_id, study, sent, sentmail)
         VALUES('$stu_id','$passwordenc','$name', '$lastname','$major','$year','$date','NOW()',' $address' , '$province', '$amphures', '$district', '$zipcode',
@@ -44,10 +49,16 @@ $query = " INSERT INTO students (stu_id, password, name, lastname, major, year, 
 
   if ($result) {
       $_SESSION['success'] = "Insert user successfully";
+      echo "<script>";
+      echo "alert('บันทึกข้อมูลสำเร็จ');";
+      echo "</script>";
       header("Location: ../loginuser/index.php");
   } else {
-      $_SESSION['error'] = "Something went wrong";
-      header("Location: Regisform.php");
+    //   $_SESSION['error'] = "Something went wrong";
+      echo "<script type='text/javascript'>";
+      echo "window.history.back();";
+      echo "alert ('รหัสนิสิตซ้ำ');";
+      echo"</script>";
   }
 }
 

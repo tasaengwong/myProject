@@ -119,6 +119,9 @@ html {
       padding-left: 2rem;
       color: #fff ;
     }
+    h7{
+      color: red;
+    }
 
     /* Global CSS, you probably don't need that */
 .text-center{

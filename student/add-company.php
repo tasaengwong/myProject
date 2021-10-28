@@ -63,43 +63,43 @@ session_start();
       </div><br>
       <div class="form-inline col-sm-10">
         <label for="name">ชื่อสถานประกอบการ:</label>&nbsp;
-        <input name="comp_name" id="comp_name" type="text" class="form-control col-sm-5">
+        <input name="comp_name" id="comp_name" type="text" class="form-control col-sm-5" required>
       </div><br>
 
       <div class="form-inline col-sm-8">
         <label for="name">เรียน:</label>&nbsp;
-        <input name="contract_name" id="industry_contract" type="text" class="form-control col-5" placeholder="ระบุชื่อบุคคลหรือตำแหน่ง">&nbsp;
+        <input name="contract_name" id="industry_contract" type="text" class="form-control col-5" placeholder="ระบุชื่อบุคคลหรือตำแหน่ง" required>&nbsp;
         <span>สำหรับส่งหนังสือขอความอนุเคราะห์</span>
       </div><br>
 
       <div class="form-inline col-sm-10">
         <label for="addr">ที่อยู่:</label>&nbsp;
-        <textarea name="comp_address" id="addr" cols="40" rows="5" class="form-control"></textarea>
+        <textarea name="comp_address" id="addr" cols="40" rows="5" class="form-control" required></textarea>
       </div><br>
 
       <div class="form-inline col-sm-12">
         <label for="subdistrict">ตำบล:</label>&nbsp;
-        <input name="comp_subdis" id="comp_subdis" type="text" class="form-control col-sm-3">&nbsp;
+        <input name="comp_subdis" id="comp_subdis" type="text" class="form-control col-sm-3" required>&nbsp;
         <label for="district">อำเภอ:</label>&nbsp;
-        <input name="comp_amphure" id="comp_amphure" type="text" class="form-control col-sm-3">&nbsp;
+        <input name="comp_amphure" id="comp_amphure" type="text" class="form-control col-sm-3" required>&nbsp;
         <label for="province">จังหวัด:</label>&nbsp;
-        <input name="comp_province" id="comp_provice" type="text" class="form-control col-sm-3">
+        <input name="comp_province" id="comp_provice" type="text" class="form-control col-sm-3" required>
       </div><br>
 
       <div class="form-inline col-sm-12">
         <label for="district">รหัสไปรษณีย์:</label>&nbsp;
-        <input name="comp_zipcode" id="comp_zipcode" type="text" class="form-control col-sm-3" maxlength="5" pattern="[0-9]*">&nbsp;
+        <input name="comp_zipcode" id="comp_zipcode" type="text" class="form-control col-sm-3" maxlength="5" pattern="[0-9]*" required>&nbsp;
       </div><br>
 
       <div class="form-inline col-sm-12">
         <label for="phone">โทรศัพท์มือถือ :</label>&nbsp;
-        <input name="comp_phone" id="comp_phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="10" pattern="[0-9]*">&nbsp;
+        <input name="comp_phone" id="comp_phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="10" pattern="[0-9]*" required>&nbsp;
 
         <label for="email">E-mail :</label>&nbsp;
-        <input name="comp_mail" id="comp_mail" type="email" class="form-control col-sm-3 " placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">&nbsp;
+        <input name="comp_mail" id="comp_mail" type="email" class="form-control col-sm-3 " placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>&nbsp;
 
         <label for="FAx">FAX :</label>&nbsp;
-        <input name="comp_Fax" id="comp_Fax" type="text" class="form-control " placeholder="FAX">
+        <input name="comp_Fax" id="comp_Fax" type="text" class="form-control " placeholder="FAX" >
       </div><br>
      
       <div class="bnt col-10">

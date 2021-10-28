@@ -4,7 +4,7 @@ session_start();
 
 ?> -->
 <!doctype html>
-<html lang="th-TH" ng-app="myApp">
+<html lang="th-TH" >
 
 <head>
   <meta charset="UTF-8">
@@ -13,7 +13,7 @@ session_start();
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="./css/master.css?65">
+  <link rel="stylesheet" href="./css/master.css?88">
 </head>
 
 <body>
@@ -53,8 +53,8 @@ session_start();
       <h4 class="text-center">แบบขอข้อมูลเบื้องต้นการฝึกประสบการณ์วิชาชีพ นักศึกษา<br>คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยพะเยา
       </h4>
       <hr><br>
-      <h6>คำชี้แจง : แบบฟอร์มนี้จัดทำขึ้นเพื่อขอข้อมูลเบื้องต้นการฝึกประสบการณ์วิชาชีพ นักศึกษา</h6><br>
-
+      <h6>คำชี้แจง : แบบฟอร์มนี้จัดทำขึ้นเพื่อขอข้อมูลเบื้องต้นการฝึกประสบการณ์วิชาชีพ นักศึกษา</h6>
+      <h7>**** กรุณาบันทึกข้อมูลสถานประกอบการก่อนยื่นขอฝึกงาน ***</h7><br><br>
       <h5>1.รายละเอียดการฝึกงานและสถานประกอบการ</h5>
       <?php
       $conn = new mysqli("localhost", "root", "", "project103");
@@ -96,8 +96,8 @@ session_start();
           <input name="stu_id" id="stu_id" type="text" class="form-control col-md-2" placeholder="รหัสนิสิต" required>
           &nbsp;&nbsp;
  
-          <label for="password">Password :</label>&nbsp;
-          <input name="password" id="password" type="password" class="form-control col-md-2" placeholder="รหัสสำหรับ log-in "required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+          <label for="password">รหัสผ่าน :</label>&nbsp;
+          <input name="password" id="password" type="password" class="form-control col-md-2" placeholder="รหัสสำหรับ log-in "  required>
 
           &nbsp;<span>กำหนดรหัสผ่านเพื่อใช้สำหรับเข้าใช้งานระบบ</span>
         </div><br>
@@ -105,11 +105,11 @@ session_start();
         <div class="form-inline  col-sm-12">
 
           <label for="name">ชื่อ:</label>&nbsp;
-          <input name="name" id="name" type="text" class="form-control col-md-3" placeholder="ชื่อ">
+          <input name="name" id="name" type="text" class="form-control col-md-3" placeholder="ชื่อ" required>
           &nbsp;
 
           <label for="lastname">นามสกุล:</label>&nbsp;
-          <input name="lastname" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล">
+          <input name="lastname" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล" required>
         </div><br>
 
         <!-- <#?php
@@ -119,7 +119,7 @@ session_start();
 
         <div class="form-inline col-sm-12" method="get">
           <label for="major">สาขา:</label>&nbsp;
-          <select name="major" class="custom-select col-sm-5" ng-optin=" x for x in major">
+          <select name="major" class="custom-select col-sm-5" ng-optin=" x for x in major" required>
             <option value="">--สาขา--</option>
             <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
             <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
@@ -132,9 +132,9 @@ session_start();
           </select>&nbsp;&nbsp;
 
           <label for="year">ชั้นปี:</label>&nbsp;
-          <input name="year" id="year" type="text" class="form-control col-sm-2" placeholder="ชั้นปี" pattern="[0-9]*">&nbsp;&nbsp;
+          <input name="year" id="year" type="text" class="form-control col-sm-2" placeholder="ชั้นปี" pattern="[0-9]*" required>&nbsp;&nbsp;
           <label for="date">ปีการศึกษา:</label>&nbsp;
-          <input name="date" id="date" type="text" class="form-control col-sm-2" placeholder="ปีการศึกษา" pattern="[0-9]*">
+          <input name="date" id="date" type="text" class="form-control col-sm-2" placeholder="ปีการศึกษา" pattern="[0-9]*" required> 
 
         </div><br>
 
@@ -159,18 +159,18 @@ session_start();
           <input name="phone" id="phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="10" required>
           &nbsp;
           <label for="email">E-mail :</label>&nbsp;&nbsp;
-          <input name="mail" id="mail" type="text" class="form-control " placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> required>
+          <input name="mail" id="mail" type="text" class="form-control " placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required> 
         </div><br>
         <div class="form-inline col-sm-6">
           <label for="study">การลงทะเบียนเรียน:</label>&nbsp;
-          <select name="study" id="study" class="form-select col-sm-6" aria-label=".form-select">
+          <select name="study" id="study" class="form-select col-sm-6" aria-label=".form-select" required>
             <option value="ลงทะเบียนฝึกงาน" selected>ลงทะเบียนฝึกงาน</option>
             <option value="ลงทะเบียนเรียนพร้อมฝึกงาน">ลงทะเบียนเรียนพร้อมฝึกงาน</option>
           </select>
         </div><br>
         <div class="form-inline col-sm-12">
           <label for="plan-study">การจัดส่งเอกสาร:</label>&nbsp;
-          <select name="sent" id="sent" class="form-select col-sm-4" aria-label=".form-select">
+          <select name="sent" id="sent" class="form-select col-sm-4" aria-label=".form-select" required>
             <option value="ส่งด้วยตัวเอง" selected>ส่งด้วยตัวเอง</option>
             <option value="คณะเป็นผู้จัดส่ง">คณะเป็นผู้จัดส่ง</option>
             <option value="จัดส่งทางEmail">จัดส่งทางE-mail</option>
@@ -219,7 +219,7 @@ session_start();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-  <script src="./js/scrip.js?4"></script>
+  <!-- <script src="./js/scrip.js?4"></script> -->
 </body>
 
 </html>

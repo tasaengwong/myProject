@@ -88,15 +88,15 @@ session_start();
 
       <div class="form-inline col-sm-12">
         <label for="district">รหัสไปรษณีย์:</label>&nbsp;
-        <input name="comp_zipcode" id="comp_zipcode" type="text" class="form-control col-sm-3">&nbsp;
+        <input name="comp_zipcode" id="comp_zipcode" type="text" class="form-control col-sm-3" maxlength="5" pattern="[0-9]*">&nbsp;
       </div><br>
 
       <div class="form-inline col-sm-12">
         <label for="phone">โทรศัพท์มือถือ :</label>&nbsp;
-        <input name="comp_phone" id="comp_phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="15">&nbsp;
+        <input name="comp_phone" id="comp_phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="10" pattern="[0-9]*">&nbsp;
 
         <label for="email">E-mail :</label>&nbsp;
-        <input name="comp_mail" id="comp_mail" type="text" class="form-control col-sm-3 " placeholder="E-mail">&nbsp;
+        <input name="comp_mail" id="comp_mail" type="email" class="form-control col-sm-3 " placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">&nbsp;
 
         <label for="FAx">FAX :</label>&nbsp;
         <input name="comp_Fax" id="comp_Fax" type="text" class="form-control " placeholder="FAX">

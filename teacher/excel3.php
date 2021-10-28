@@ -57,14 +57,14 @@ if (!$_SESSION['userid']) {
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
           <ul class="navbar-nav col-12 justify-content-end">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../loginuser/off_page.php">หน้าแรก</a>
+              <a class="nav-link active" aria-current="page" href="../loginuser/teacher_page.php">หน้าแรก</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 ข้อมูลนักศึกษา
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="detail.php">รายชื่อนิสิต</a></li>
+                <li><a class="dropdown-item" href="report.php">รายชื่อนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel.php">Excel ข้อมูลนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel2.php">Excel แบบประเมินนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel3.php">Excel แบบประเมินสถานประกอบการ </a></li>

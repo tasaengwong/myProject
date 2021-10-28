@@ -13,19 +13,29 @@ $comp_phone = $_POST['comp_phone'];
 $comp_mail = $_POST['comp_mail'];
 $comp_Fax = $_POST['comp_Fax'];
 
-$sql ="INSERT INTO company ( comp_name, contract_name, comp_address, comp_subdis, comp_amphure, comp_province, comp_zipcode, comp_phone, comp_mail, comp_Fax)
-        VALUES ('$comp_name', '$contract_name', '$comp_address', '$comp_subdis', '$comp_amphure', '$comp_province', '$comp_zipcode', '$comp_phone', '$comp_mail', '$comp_Fax')";
-$result = mysqli_query($conn, $sql);
-if ($result){
-        echo "<script type='text/javascript'>";
-        echo"window.location = '../index.html';";
+$check = "SELECT comp_name FROM company WHERE comp_name = '$comp_name'";
+$result1 = mysqli_query($conn, $check) or die(mysqli_error($conn));
+$num = mysqli_num_rows($result1);
+if ($num > 0) {
+        echo "<script>";
+        echo "alert(' ข้อมูลซ้ำ กรุณาเพิ่มใหม่อีกครั้ง !');";
+        echo "window.history.back();";
         echo "</script>";
-        }
-        else {
+} else {
+
+        $sql = "INSERT INTO company ( comp_name, contract_name, comp_address, comp_subdis, comp_amphure, comp_province, comp_zipcode, comp_phone, comp_mail, comp_Fax)
+        VALUES ('$comp_name', '$contract_name', '$comp_address', '$comp_subdis', '$comp_amphure', '$comp_province', '$comp_zipcode', '$comp_phone', '$comp_mail', '$comp_Fax')";
+        $result = mysqli_query($conn, $sql);
+}
+if ($result) {
+        echo "<script type='text/javascript'>";
+        echo "window.location = '../index.html';";
+        echo "</script>";
+} else {
         //กำหนดเงื่อนไขว่าถ้าไม่สำเร็จให้ขึ้นข้อความและกลับไปหน้าเพิ่ม
         echo "<script type='text/javascript'>";
         echo "alert('error!');";
-        echo"window.location = 'add-company.php'; ";
-        echo"</script>";
-        }
+        echo "window.location = 'add-company.php'; ";
+        echo "</script>";
+}
 $conn->close();

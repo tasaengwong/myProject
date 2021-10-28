@@ -40,7 +40,7 @@ if (!$_SESSION['userid']) {
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
 
   <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
-  <link rel="stylesheet" href="style.css?9">
+  <link rel="stylesheet" href="../officer/css/style.css">
 </head>
  <body>
 
@@ -65,7 +65,7 @@ if (!$_SESSION['userid']) {
                 ข้อมูลนักศึกษา
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="../officer/detail.php">รายชื่อนิสิต</a></li>
+                <li><a class="dropdown-item" href="detail.php">รายชื่อนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel.php">Excel ข้อมูลนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel2.php">Excel แบบประเมินนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel3.php">Excel แบบประเมินสถานประกอบการ </a></li>
@@ -88,7 +88,7 @@ if (!$_SESSION['userid']) {
     </nav>
 
   <div class="container box">
-   <h3 align="center">Export  Excel</h3>
+
    <br />
    <div class="table-responsive">
      

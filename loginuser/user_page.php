@@ -15,8 +15,8 @@ if (!$_SESSION['userid']) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Page</title>
-    <link rel="stylesheet" href="style.css?5">
+    <title>หน้าแรก</title>
+    <link rel="stylesheet" href="../loginuser/css/style.css?2">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   </head>
@@ -75,7 +75,7 @@ if (!$_SESSION['userid']) {
           <div class="col-sm student-detail">
             <!-- select information -->
             <br><br>
-            <h4>ข้อมูลนักศึกษา</h4><br>
+            <h4  class="text-center">ข้อมูลนักศึกษา</h4><br>
             <!-- search filter -->
 
             <br>

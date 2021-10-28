@@ -18,7 +18,7 @@ if (!$_SESSION['userid']) {
     <title>Intern.teacher</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?6">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
   <body>
@@ -80,7 +80,7 @@ if (!$_SESSION['userid']) {
           <div class="col-sm student-detail">
             <!-- select information -->
             <br><br>
-            <h4>ข้อมูลอาจารย์</h4><br>
+            <h4 class="text-center">ข้อมูลอาจารย์</h4><br>
             <!-- search filter -->
 
             <br>
@@ -88,7 +88,7 @@ if (!$_SESSION['userid']) {
 
             <table class="table" id="txtHint">
               <table class="table table-bordered">
-                <tr class="bg-light">
+                <tr class="bg-light text-center">
 
                   <th>ชื่อ</th>
                   <th>นามสกุล</th>
@@ -96,10 +96,10 @@ if (!$_SESSION['userid']) {
                 </tr>
                 <?php {
                 ?>
-                  <form>
+                  <form >
 
-                    <td><?php echo $_SESSION['name']; ?></td>
-                    <td><?php echo $_SESSION['lastname']; ?></td>
+                    <td class="text-center"><?php echo $_SESSION['name']; ?></td>
+                    <td class="text-center"><?php echo $_SESSION['lastname']; ?></td>
 
 
                   </form>

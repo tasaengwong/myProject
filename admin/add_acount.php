@@ -29,7 +29,7 @@ if (!$_SESSION['userid']) {
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="../loginuser/style.css?8">
+        <link rel="stylesheet" href="./css/style.css">
 
     </head>
 

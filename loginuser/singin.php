@@ -47,7 +47,7 @@ session_start();
                     <img src="../img/ictnext.png" alt="next" id="nextlogo">
                 </div>
                 <div class="text-header sub-text">
-                    <h2>ระบบสารสนเทศด้านการฝึกงานและติดตามผล มหาวิทยาลัยพะเยา</h2>
+                    <h2 class="text-center">การพัฒนาระบบสารสนเทศเพื่อการจัดการฝึกงานแบบออนไลน์ </h2>
                     <h4>สำหรับอาจารย์และเจ้าหน้าที่</h4>
                 </div>
 
@@ -69,7 +69,7 @@ session_start();
                         <a href="../index.html" class="btn btn-light">back</a>
                     </div>
                 </form>
-                
+
             </div>
         </div>
     </div>

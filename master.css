@@ -3,8 +3,6 @@
 html {
     font-family: 'Athiti', sans-serif;
     line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
     
     article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -22,7 +20,6 @@ html {
     background-image: url('./img/bglogin.jpg');
     background-repeat: no-repeat;
     background-size:  150% auto;
-    background-attachment: fixed;
     background-blend-mode: normal;
 
    }
@@ -100,31 +97,42 @@ html {
   #navbarNavDropdown{
     font-family: 'Athiti', sans-serif;
     font-size: 1.2rem;
-  padding-bottom: 5rem;
+    padding-bottom: 5rem;
+    font-weight: 400;
   
   }
-  
+  .nav-link:hover{
+    background-color: whitesmoke;
+    border-radius: 25px;
+  }
+  .btnlink{
+   font-size: 20px;
+  }
    img{
        width: 60px;
      
    }
    #ictlogo{
-    width: 80px;
+    width: 90px;
 }
    #uplogo{
-       width: 80px;
+       width: 90px;
    }
    
    #nextlogo{
-       width: 180px;
+       width: 190px;
        padding-top: 50px;
    }
  
-    h2 ,h3{
-       
-        font-size:35px;
-        font-weight: 500;
+    h2 {
+        font-weight: 300;
         color: black;
+    }
+    h4{
+      font-weight: 500;
+      color: black;
+      text-shadow:5px 5px 15px black;
+      text-transform: uppercase;
     }
     
    
@@ -134,4 +142,7 @@ html {
 
 .section{
     padding-top: 30px;
+}
+.form-control {
+  background-clip: padding-box;
 }

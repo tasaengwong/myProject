@@ -16,7 +16,7 @@ if (!$_SESSION['userid']) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/master.css?65">
+    <link rel="stylesheet" href="../student/css/master.css">
   </head>
 
   <body >
@@ -106,7 +106,7 @@ if (!$_SESSION['userid']) {
 
           <div class="form-inline col-sm-12">
             <label for="student_id">รหัสนิสิต :</label>&nbsp;
-            <input name="stu_id" id="stu_id" stype="text" class="form-control col-md-2" placeholder="รหัสนิสิต" required >
+            <input name="stu_id" id="stu_id" stype="text" class="form-control col-md-2" placeholder="รหัสนิสิต"  pattern="[0-9]*" required >
           </div><br>
         
           <div class="form-inline  col-sm-12">
@@ -160,10 +160,10 @@ if (!$_SESSION['userid']) {
 
           <div class="form-inline">
             <label for="phone">โทรศัพท์มือถือ :</label>&nbsp;&nbsp;
-            <input name="phone" id="phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="10" required>
+            <input name="phone" id="phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="10" pattern="[0-9]*" required>
             &nbsp;
             <label for="email">E-mail :</label>&nbsp;&nbsp;
-            <input name="mail" id="mail" type="text" class="form-control " placeholder="E-mail" required>
+            <input name="mail" id="mail" type="email" class="form-control " placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
           </div><br>
           <div class="form-inline col-sm-6">
             <label for="study">การลงทะเบียนเรียน:</label>&nbsp;
@@ -180,7 +180,7 @@ if (!$_SESSION['userid']) {
               <option value="จัดส่งทางEmail">จัดส่งทางE-mail</option>
             </select>&nbsp;
             <label for="sentmail">E-mail:</label>&nbsp;
-            <input type="text" class="form-control col-sm-5" name="sentmail" placeholder="ระบุอีเมลที่ต้องการจัดส่ง">
+            <input type="text" class="form-control col-sm-5" name="sentmail" placeholder="ระบุอีเมลที่ต้องการจัดส่ง" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
           </div><br>
 
           <hr>

@@ -4,7 +4,7 @@ session_start();
 
 ?> -->
 <!doctype html>
-<html lang="th-TH" >
+<html lang="th-TH">
 
 <head>
   <meta charset="UTF-8">
@@ -93,11 +93,11 @@ session_start();
 
         <div class="form-inline col-sm-12">
           <label for="student_id">รหัสนิสิต :</label>&nbsp;
-          <input name="stu_id" id="stu_id" type="text" class="form-control col-md-2" placeholder="รหัสนิสิต" required>
+          <input name="stu_id" id="stu_id" type="text" class="form-control col-md-2" placeholder="รหัสนิสิต" maxlength="8" required>
           &nbsp;&nbsp;
- 
+
           <label for="password">รหัสผ่าน :</label>&nbsp;
-          <input name="password" id="password" type="password" class="form-control col-md-2" placeholder="รหัสสำหรับ log-in "  required>
+          <input name="password" id="password" type="password" class="form-control col-md-2" placeholder="รหัสสำหรับ log-in" required>
 
           &nbsp;<span>กำหนดรหัสผ่านเพื่อใช้สำหรับเข้าใช้งานระบบ</span>
         </div><br>
@@ -134,7 +134,7 @@ session_start();
           <label for="year">ชั้นปี:</label>&nbsp;
           <input name="year" id="year" type="text" class="form-control col-sm-2" placeholder="ชั้นปี" pattern="[0-9]*" required>&nbsp;&nbsp;
           <label for="date">ปีการศึกษา:</label>&nbsp;
-          <input name="date" id="date" type="text" class="form-control col-sm-2" placeholder="ปีการศึกษา" pattern="[0-9]*" required> 
+          <input name="date" id="date" type="text" class="form-control col-sm-2" placeholder="ปีการศึกษา" pattern="[0-9]*" required>
 
         </div><br>
 
@@ -159,7 +159,7 @@ session_start();
           <input name="phone" id="phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="10" required>
           &nbsp;
           <label for="email">E-mail :</label>&nbsp;&nbsp;
-          <input name="mail" id="mail" type="text" class="form-control " placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required> 
+          <input name="mail" id="mail" type="text" class="form-control " placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         </div><br>
         <div class="form-inline col-sm-6">
           <label for="study">การลงทะเบียนเรียน:</label>&nbsp;
@@ -178,6 +178,11 @@ session_start();
           <label for="sentmail">E-mail:</label>&nbsp;
           <input type="text" class="form-control col-sm-5" name="sentmail" placeholder="ระบุอีเมลที่ต้องการจัดส่ง" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
         </div><br>
+        <div class=" form-inline col-sm-12">
+        <label for="time">วัน/เดือน/ปี ที่ลงทะเบียน:</label>
+          <input type="date" id="time" name="time">
+        </div>
+        <br>
 
         <hr>
         <div class="bnt col-10">

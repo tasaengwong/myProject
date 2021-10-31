@@ -14,8 +14,8 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Log-Page</title>
 
-    <link rel="stylesheet" href="style.css?">
-    <link rel="stylesheet" href="main.css?8">
+    <link rel="stylesheet" href="./css/main.css?7">
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -48,7 +48,7 @@ session_start();
                 </div>
                 <div class="text-header sub-text">
                     <h2 class="text-center">การพัฒนาระบบสารสนเทศเพื่อการจัดการฝึกงานแบบออนไลน์ </h2>
-                    <h4>สำหรับอาจารย์และเจ้าหน้าที่</h4>
+                    <h4 class="text-center">สำหรับอาจารย์และเจ้าหน้าที่</h4>
                 </div>
 
             </div>
@@ -62,12 +62,12 @@ session_start();
                             <!-- <label for="password">Password</label> -->
                             <input type="password" class="form-control " name="password" placeholder="Password" required>
                             <br>
-                            <input type="submit" name="submit" value="Login" class="btn btn-primary">
+                            <input type="submit" name="submit" value="Login" class="btn btn-primary" id="logbtn ">
                         </div>
                     </div><br>
-                    <div class=" col-12 back-btn">
+                    <!-- <div class=" col-12 back-btn"> -->
                         <a href="../index.html" class="btn btn-light">back</a>
-                    </div>
+                    <!-- </div> -->
                 </form>
 
             </div>

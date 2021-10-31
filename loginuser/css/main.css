@@ -82,5 +82,10 @@ img{
 
 .back-btn{
     display: flex;
+    justify-content: start;
+}
+
+#logbtn{
+    display: flex;
     justify-content: end;
 }

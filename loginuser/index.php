@@ -14,8 +14,9 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>log-in</title>
 
-    <link rel="stylesheet" href="style.css?">
-    <link rel="stylesheet" href="main.css?8">
+    
+    <link rel="stylesheet" href="./css/main.css?8">
+    <link rel="stylesheet" href="./css/style.css?3">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 

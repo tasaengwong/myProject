@@ -45,10 +45,11 @@ if (!$_SESSION['userid']) {
               นักศึกษา
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="../student/Board.php">ติดตามสถานะ</a></li>
-              <li><a class="dropdown-item" href="../student/Roundtwo.php">ยื่นคำร้องขอฝึกงาน(รอบ 2)</a></li>
-              <li><a class="dropdown-item" href="../student/doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li>
-              <li><a class="dropdown-item" href="../student/form_asses.php">แบบสอบถามนิสิตฝึกงาน</a></li>
+                <li><a class="dropdown-item" href="../student/Board.php">ติดตามสถานะ</a></li>
+                <li><a class="dropdown-item" href="../student/Roundtwocp.php">ยื่นข้อมูลสถานประกอบการ(รอบ 2)</a></li>
+                <li><a class="dropdown-item" href="../student/Roundtwo.php">ยื่นคำร้องขอฝึกงาน(รอบ 2)</a></li>
+                <li><a class="dropdown-item" href="../student/doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li>
+                <li><a class="dropdown-item" href="../student/form_asses.php">แบบสอบถามนิสิตฝึกงาน</a></li>
             </ul>
             <li class="nav-item dropdown">
               <a class="btn btn-info nav-link dropdown-toggle bi bi-person-circle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

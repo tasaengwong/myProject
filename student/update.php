@@ -24,12 +24,12 @@ $status = $_POST['status'];
 $time = date("Y-m-d") ;
 $_POST['time'] = $time;
 
-$sql = "UPDATE students SET stu_id ='$stu_id' , name ='$name' , lastname='$lastname' , phone='$phone' , mail='$mail' , description='$description' , Job ='$Job' , comp_id ='$comp_id' , study='$study' , sent='$sent' , sentmail='$sentmail',time='$time', status='0' WHERE stu_id ='$stu_id';";
+$sql = "UPDATE students SET stu_id ='$stu_id' , name ='$name' , lastname='$lastname' , phone='$phone' , mail='$mail' , description='$description' , Job ='$Job' , comp_id ='$comp_id' , study='$study' , sent='$sent' , sentmail='$sentmail',time='$time', status='0', Ostatus='0', Cstatus='0' WHERE stu_id ='$stu_id';";
        
   $result = mysqli_query($conn, $sql);
   if($conn->query($sql) === TRUE){
     echo "success";
-    header("Location: ../loginuser/user_page.php");
+    header("Location: Board.php");
 }else{
         echo "Error: ".$sql."<br>".$conn->error;
 }

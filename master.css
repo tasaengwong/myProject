@@ -18,9 +18,9 @@ html {
     color: #fffcfc;
     text-align: center;
     background-image: url('./img/bglogin.jpg');
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-size:  150% auto;
-    background-blend-mode: normal;
+    background-blend-mode: normal; */
 
    }
    

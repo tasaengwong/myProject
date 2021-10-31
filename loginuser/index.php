@@ -14,9 +14,8 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>log-in</title>
 
-    
-    <link rel="stylesheet" href="./css/main.css?8">
-    <link rel="stylesheet" href="./css/style.css?3">
+    <link rel="stylesheet" href="./css/main.css?7">
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -62,7 +61,9 @@ session_start();
                             <!-- <label for="password">Password</label> -->
                             <input type="password" class="form-control " name="password" placeholder="Password" required>
                             <br>
+                            <div class="col-12 login-btn">
                             <input type="submit" name="submit" value="Login" class="btn btn-primary">
+                            </div>
                         </div>
                     </div><br>
                     <div class=" col-12 back-btn">

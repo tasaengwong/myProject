@@ -85,7 +85,7 @@ img{
     justify-content: start;
 }
 
-#logbtn{
+.login-btn{
     display: flex;
     justify-content: end;
 }

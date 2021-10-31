@@ -55,14 +55,16 @@ session_start();
             <div class="col-sm-4 ">
                 <form action="singup.php" method="post" class="form-login ">
                     <div class="col-sm-12 row ">
-                        <div class="col-12">
+                        <div class="col-12 ">
                             <!-- <label for="username">UserName</label> -->
                             <input type="text" class="form-control" name="username" placeholder="Username" required>
                             <br>
                             <!-- <label for="password">Password</label> -->
                             <input type="password" class="form-control " name="password" placeholder="Password" required>
                             <br>
-                            <input type="submit" name="submit" value="Login" class="btn btn-primary" id="logbtn ">
+                            <div class="col-12 login-btn">
+                            <input type="submit" name="submit" value="Login" class="btn btn-primary">
+                            </div>
                         </div>
                     </div><br>
                     <!-- <div class=" col-12 back-btn"> -->

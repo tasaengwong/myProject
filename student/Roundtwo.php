@@ -38,8 +38,8 @@ if (!$_SESSION['userid']) {
                 นักศึกษา
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                
                 <li><a class="dropdown-item" href="../student/Board.php">ติดตามสถานะ</a></li>
+                <li><a class="dropdown-item" href="../student/Roundtwocp.php">ยื่นข้อมูลสถานประกอบการ(รอบ 2)</a></li>
                 <li><a class="dropdown-item" href="../student/Roundtwo.php">ยื่นคำร้องขอฝึกงาน(รอบ 2)</a></li>
                 <li><a class="dropdown-item" href="../student/doc-intern.php">เอกสารที่เกี่ยวข้อง</a></li>
                 <li><a class="dropdown-item" href="../student/form_asses.php">แบบสอบถามนิสิตฝึกงาน</a></li>
@@ -62,8 +62,8 @@ if (!$_SESSION['userid']) {
         <h4 class = "text-center">แบบขอข้อมูลเบื้องต้นการฝึกประสบการณ์วิชาชีพ นักศึกษา<br>คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยพะเยา
         </h4>
         <hr><br>
-        <h6>คำชี้แจง : แบบฟอร์มนี้จัดทำขึ้นเพื่อขอข้อมูลเบื้องต้นการฝึกประสบการณ์วิชาชีพ นักศึกษา</h6><br>
-
+        <h6>คำชี้แจง : แบบฟอร์มนี้จัดทำขึ้นเพื่อขอข้อมูลเบื้องต้นการฝึกประสบการณ์วิชาชีพ นักศึกษา</h6>
+        <h7>**** กรุณาบันทึกข้อมูลสถานประกอบการก่อนยื่นขอฝึกงาน ***</h7><br><br>
         <h5>1.รายละเอียดการฝึกงานและสถานประกอบการ</h5>
         <?php
         $conn = new mysqli("localhost", "root", "", "project103");

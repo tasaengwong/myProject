@@ -103,7 +103,10 @@ if (!$_SESSION['userid']) {
 
           <!-- ข้อมูลนักศึกษา -->
           <h5>2.ข้อมูลนักศึกษา</h5><br>
-
+          <div class=" form-inline col-sm-12">
+        <label for="time">วัน/เดือน/ปี ที่ลงทะเบียน:</label>
+          <input type="date" id="time" name="time">
+        </div><br>
           <div class="form-inline col-sm-12">
             <label for="student_id">รหัสนิสิต :</label>&nbsp;
             <input name="stu_id" id="stu_id" stype="text" class="form-control col-md-2" placeholder="รหัสนิสิต"  pattern="[0-9]*" required >

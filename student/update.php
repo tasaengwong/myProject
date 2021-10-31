@@ -1,7 +1,7 @@
 <?php
 
 include "connec.php";
-
+$time = $_POST['time'];
 $stu_id = $_POST['stu_id'];
 $name = $_POST['name'];
 $lastname = $_POST['lastname'];
@@ -21,10 +21,10 @@ $study = $_POST['study'];
 $sent = $_POST['sent'];
 $sentmail = $_POST['sentmail'];
 $status = $_POST['status'];
-$time = date("Y-m-d") ;
-$_POST['time'] = $time;
+$Ostatus = $_POST['Ostatus'];
+$Cstatus = $_POST['Cstatus'];
 
-$sql = "UPDATE students SET stu_id ='$stu_id' , name ='$name' , lastname='$lastname' , phone='$phone' , mail='$mail' , description='$description' , Job ='$Job' , comp_id ='$comp_id' , study='$study' , sent='$sent' , sentmail='$sentmail',time='$time', status='0', Ostatus='0', Cstatus='0' WHERE stu_id ='$stu_id';";
+$sql = "UPDATE students SET time='$time', stu_id ='$stu_id' ,time='$time', name ='$name' , lastname='$lastname' , phone='$phone' , mail='$mail' , description='$description' , Job ='$Job' , comp_id ='$comp_id' , study='$study' , sent='$sent' , sentmail='$sentmail',time='$time', status='0', Ostatus='0', Cstatus='0' WHERE stu_id ='$stu_id';";
        
   $result = mysqli_query($conn, $sql);
   if($conn->query($sql) === TRUE){

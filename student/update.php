@@ -16,7 +16,7 @@ $phone = $_POST['phone'];
 $mail = $_POST['mail'];
 $Job = $_POST['Job'];
 $description = $_POST['description'];
-$comp_id = $_POST['comp_id'];
+$comp_name = $_POST['comp_name'];
 $study = $_POST['study'];
 $sent = $_POST['sent'];
 $sentmail = $_POST['sentmail'];
@@ -24,7 +24,7 @@ $status = $_POST['status'];
 $Ostatus = $_POST['Ostatus'];
 $Cstatus = $_POST['Cstatus'];
 
-$sql = "UPDATE students SET time='$time', stu_id ='$stu_id' ,time='$time', name ='$name' , lastname='$lastname' , phone='$phone' , mail='$mail' , description='$description' , Job ='$Job' , comp_id ='$comp_id' , study='$study' , sent='$sent' , sentmail='$sentmail',time='$time', status='0', Ostatus='0', Cstatus='0' WHERE stu_id ='$stu_id';";
+$sql = "UPDATE students inner join company on students.comp_id = company.comp_id SET time='$time', stu_id ='$stu_id' ,time='$time', name ='$name' , lastname='$lastname' , phone='$phone' , mail='$mail' , description='$description' , Job ='$Job' , comp_name ='$comp_name' , study='$study' , sent='$sent' , sentmail='$sentmail',time='$time', status='0', Ostatus='0', Cstatus='0' WHERE stu_id ='$stu_id';";
        
   $result = mysqli_query($conn, $sql);
   if($conn->query($sql) === TRUE){

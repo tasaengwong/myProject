@@ -170,11 +170,11 @@ if (!$_SESSION['userid']) {
                       <a href="#edit<?php echo $data['stu_id']; ?>" data-toggle="modal" class="btn btn-light bi bi-file-earmark-text"><span class="glyphicon glyphicon-edit"></span></a>
                       <?php include('button.php'); ?>
                     </td>
-
+                    <!-- สถานะการพิจารณาของอาจารย์ -->
                     <td>
                       <?php
                       if ($data['status'] == 0) {
-                        // echo '<p id=' . $data['stu_id'] . '&status="" " class = "text fa fa-spinner">กำลังดำเนินการ</a></p>';
+                        echo '<p stu_id=' . $data['stu_id'] . '&status="" " class = "text text-primary fa fa-spinner">กำลังดำเนินการ</a></p>';
                       } else if ($data['status'] == 1) {
                         echo '<p stu_id=' . $data['stu_id'] . '&status=0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
                       } else {
@@ -182,11 +182,13 @@ if (!$_SESSION['userid']) {
                       }
                       ?>
                     </td>
-                    <!-- close status -->
+                    <!-- ปิดสถานะการพิจารณาของอาจารย์ -->
+
+
                     <td colspan="3">
                       <?php
                       if ($data['Ostatus'] == 0) {
-                        // echo '<p id=' . $data['stu_id'] . '&status="" " class = "text fa fa-spinner">กำลังดำเนินการ</a></p>';
+                        echo '<p stu_id=' . $data['stu_id'] . '&Ostatus="" " class = "text text-primary fa fa-spinner">กำลังดำเนินการ</a></p>';
                       } else if ($data['Ostatus'] == 1) {
                         echo '<p stu_id=' . $data['stu_id'] . '&Ostatus=0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
                       } else {
@@ -196,40 +198,80 @@ if (!$_SESSION['userid']) {
 
                       <?php
                       if ($data['Ostatus'] == 0) {
-                        echo '<p><a href="changeO.php?stu_id=' . $data['stu_id'] . '&Ostatus=1" class = "btn btn-outline-success">อนุมัติ</a></p>';
+                        echo '<p><a href="changeO.php?stu_id=' . $data['stu_id'] . '&Ostatus=1" class = "btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></a></p>';
                       }
                       ?>
 
                       <?php
                       if ($data['Ostatus'] == 0) {
-                        echo '<p><a href="changeO.php?stu_id=' . $data['stu_id'] . '&Ostatus=2" class = "btn btn-outline-danger">ไม่อนุมัติ</a></p>';
+                        echo '<p><a href="changeO.php?stu_id=' . $data['stu_id'] . '&Ostatus=2" class = "btn btn-danger"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a></p>';
                       }
                       ?>
-                    </td>
-                    <!-- close Officer status -->
+                    
 
+                      <!-- ปุ่มเปลี่ยนสถานะหลังกดแล้ว -->
+                    <?php
+                      if ($data['Ostatus'] == 2) {
+                        echo '<p><a href="changeO.php?stu_id=' . $data['stu_id'] . ' &Ostatus=1 "  class = "btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></a></p>';
+                      }
+                      ?>
+                    <?php
+                      if ($data['Ostatus'] == 1) {
+                        echo '<p><a href="changeO.php?stu_id=' . $data['stu_id'] . ' &Ostatus=2 "  class = "btn btn-danger"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a></p>';
+                      }
+                    ?>
+                    <?php
+                      if ($data['Ostatus'] == 1||2) {
+                        echo '<p><a href="changeO.php?stu_id=' . $data['stu_id'] . ' &Ostatus=0 "  class = "btn btn-primary"><i class="fa fa-spinner" aria-hidden="true"></i></a></p>';
+                      }
+                    ?>
+
+                    </td>
+                    <!-- close O status -->
+
+                    <!-- C status -->
                     <td colspan="3">
                       <?php
                       if ($data['Cstatus'] == 0) {
-                        // echo '<p id=' . $data['stu_id'] . '&status="" " class = "text fa fa-spinner">กำลังดำเนินการ</a></p>';
+                        echo '<p stu_id=' . $data['stu_id'] . '&Cstatus="" " class = "text text-primary fa fa-spinner">กำลังดำเนินการ</a></p>';
                       } else if ($data['Cstatus'] == 1) {
                         echo '<p stu_id=' . $data['stu_id'] . '&Cstatus=0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
                       } else {
                         echo '<p stu_id=' . $data['stu_id'] . '&Cstatus=2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
                       }
                       ?>
+
+                      
                       <?php
                       if ($data['Cstatus'] == 0) {
-                        echo '<p><a href="changeC.php?stu_id=' . $data['stu_id'] . '&Cstatus=1" class = "btn btn-outline-success">อนุมัติ</a></p>';
+                        echo '<p><a href="changeC.php?stu_id=' . $data['stu_id'] . '&Cstatus=1" class = "btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></a></p>';
                       }
                       ?>
                       <?php
                       if ($data['Cstatus'] == 0) {
-                        echo '<p><a href="changeC.php?stu_id=' . $data['stu_id'] . '&Cstatus=2" class = "btn btn-outline-danger">ไม่อนุมัติ</a></p>';
+                        echo '<p><a href="changeC.php?stu_id=' . $data['stu_id'] . '&Cstatus=2" class = "btn btn-danger"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a></p>';
                       }
                       ?>
+
+
+                    <!-- ปุ่มเปลี่ยนสถานะหลังกดแล้ว -->
+                    <?php
+                      if ($data['Cstatus'] == 2) {
+                        echo '<p><a href="changeC.php?stu_id=' . $data['stu_id'] . ' &Cstatus=1 "  class = "btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></a></p>';
+                      }
+                      ?>
+                    <?php
+                      if ($data['Cstatus'] == 1) {
+                        echo '<p><a href="changeC.php?stu_id=' . $data['stu_id'] . ' &Cstatus=2 "  class = "btn btn-danger"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a></p>';
+                      }
+                    ?>
+                    <?php
+                      if ($data['Cstatus'] == 1||2) {
+                        echo '<p><a href="changeC.php?stu_id=' . $data['stu_id'] . ' &Cstatus=0 "  class = "btn btn-primary"><i class="fa fa-spinner" aria-hidden="true"></i></a></p>';
+                      }
+                    ?>
                     </td>
-                    <!-- close Company status -->
+                    <!-- close C status -->
 
                   </form>
                   </tr>

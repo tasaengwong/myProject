@@ -63,8 +63,8 @@ session_start();
       <form action="insert.php" method="POST" enctype="multipart/form-data" name="add">
         <div class="form-inline col-sm-12" method="get">
           <label for="company">สถานประกอบการ:</label>&nbsp;
-          <select name="comp_id" class="custom-select col-sm-6" ng-optin=" x for x in comp_id">
-            <option default>----สถานประกอบการ------</option>
+          <select name="comp_id" required class="custom-select col-sm-6" ng-optin=" x for x in comp_id">
+            <option value="">เลือกสถานประกอบการ</option>
             <?php
             $sql = "select * from company ";
             $result = $conn->query($sql);
@@ -81,9 +81,9 @@ session_start();
         </div><br>
         <div class="form-inline col-sm-12">
           <label for="Job">ตำแหน่งที่ฝึก:</label>&nbsp;
-          <input type="text" class="form-control col-sm-4" name="Job">&nbsp;&nbsp;
+          <input type="text" class="form-control col-sm-4" name="Job" required>&nbsp;&nbsp;
           <label for="description">รายละเอียดหรือลักษณะงาน:</label>&nbsp;
-          <textarea name="description" id="description" cols="40" rows="2" class="form-control"></textarea>
+          <textarea name="description" id="description" cols="40" rows="2" class="form-control" required></textarea>
 
         </div><br>
 
@@ -93,13 +93,12 @@ session_start();
 
         <div class="form-inline col-sm-12">
           <label for="student_id">รหัสนิสิต :</label>&nbsp;
-          <input name="stu_id" id="stu_id" type="text" class="form-control col-md-2" placeholder="รหัสนิสิต" maxlength="8" required>
+          <input name="stu_id" id="stu_id" type="text" class="form-control col-md-2" placeholder="รหัสนิสิต" maxlength="8" pattern="[0-9]*" required>
           &nbsp;&nbsp;
 
           <label for="password">รหัสผ่าน :</label>&nbsp;
-          <input name="password" id="password" type="password" class="form-control col-md-2" placeholder="รหัสสำหรับ log-in" required>
-
-          &nbsp;<span>กำหนดรหัสผ่านเพื่อใช้สำหรับเข้าใช้งานระบบ</span>
+          <input name="password" id="password" type="password" class="form-control col-md-2" placeholder="รหัสสำหรับ log-in" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required title="ต้องมีตัวเลขอย่างน้อยหนึ่งตัวและตัวพิมพ์ใหญ่และตัวพิมพ์เล็กหนึ่งตัวและอักขระอย่างน้อย 8 ตัว">
+          &nbsp;<span>กำหนดรหัสผ่านเพื่อเข้าสู่ระบบ</span>
         </div><br>
 
         <div class="form-inline  col-sm-12">
@@ -119,8 +118,8 @@ session_start();
 
         <div class="form-inline col-sm-12" method="get">
           <label for="major">สาขา:</label>&nbsp;
-          <select name="major" class="custom-select col-sm-5" ng-optin=" x for x in major" required>
-            <option value="">--สาขา--</option>
+          <select name="major" required class="custom-select col-sm-5" ng-optin=" x for x in major" required>
+            <option value="">เลือกสาขา</option>
             <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
             <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
             <option value="คอมพิวเตอร์ธุรกิจ">คอมพิวเตอร์ธุรกิจ</option>
@@ -140,47 +139,49 @@ session_start();
 
         <div class=" form-inline col-sm-12">
           <label for="studentAddress">ที่อยู่: </label>&nbsp;
-          <textarea name="address" id="address" cols="40" rows="4" class="form-control col-md-4 " rows="3"></textarea>
+          <textarea name="address" id="address" cols="40" rows="4" class="form-control col-md-4 " rows="3" required></textarea>
         </div>&nbsp;&nbsp;&nbsp;
 
         <div class="form-inline col-sm-12">
           <label for="provinces">จังหวัด: </label>&nbsp;
-          <input class="form-control col-md-2" name="province"></input>&nbsp;
+          <input class="form-control col-md-2" name="province" required></input>&nbsp;
           <label for="amphuer">อำเภอ: </label>&nbsp;
-          <input class="form-control col-md-2 " name="amphures"></input>&nbsp;
+          <input class="form-control col-md-2 " name="amphures" required></input>&nbsp;
           <label for="district">ตำบล: </label>&nbsp;
-          <input class="form-control col-md-2 " name="district"></input>&nbsp;
+          <input class="form-control col-md-2 " name="district" required></input>&nbsp;
           <label for="zipcode">รหัสไปรษณีย์: </label>&nbsp;
-          <input class="form-control col-md-2 " name="zipcode" pattern="[0-9]*"></input>&nbsp;
+          <input class="form-control col-md-2 " name="zipcode" maxlength="5" pattern="[0-9]*" required></input>&nbsp;
         </div><br>
 
         <div class="form-inline">
           <label for="phone">โทรศัพท์มือถือ :</label>&nbsp;&nbsp;
-          <input name="phone" id="phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="10" pattern="[0-9]*" required>
+          <input name="phone" id="phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="10" pattern="0+[0-9]*" required>
           &nbsp;
           <label for="email">E-mail :</label>&nbsp;&nbsp;
           <input name="mail" id="mail" type="text" class="form-control " placeholder="Example@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         </div><br>
         <div class="form-inline col-sm-6">
           <label for="study">การลงทะเบียนเรียน:</label>&nbsp;
-          <select name="study" id="study" class="form-select col-sm-6" aria-label=".form-select" required>
-            <option value="ลงทะเบียนฝึกงาน" selected>ลงทะเบียนฝึกงาน</option>
+          <select name="study" id="study" required class="form-select col-sm-6" aria-label=".form-select" required>
+            <option value="">เลือกลงทะเบียน</option>
+            <option value="ลงทะเบียนฝึกงาน">ลงทะเบียนฝึกงาน</option>
             <option value="ลงทะเบียนเรียนพร้อมฝึกงาน">ลงทะเบียนเรียนพร้อมฝึกงาน</option>
           </select>
         </div><br>
         <div class="form-inline col-sm-12">
           <label for="plan-study">การจัดส่งเอกสาร:</label>&nbsp;
-          <select name="sent" id="sent" class="form-select col-sm-4" aria-label=".form-select" required>
-            <option value="ส่งด้วยตัวเอง" selected>ส่งด้วยตัวเอง</option>
-            <option value="คณะเป็นผู้จัดส่ง">คณะเป็นผู้จัดส่ง</option>
-            <option value="จัดส่งทางEmail">จัดส่งทางE-mail</option>
+          <select name="sent" id="sent" required class="form-select col-sm-4" aria-label=".form-select">
+              <option value="">เลือกการจัดส่ง</option>
+              <option value="ส่งด้วยตัวเอง">ส่งด้วยตัวเอง</option>
+              <option value="คณะเป็นผู้จัดส่ง">คณะเป็นผู้จัดส่ง</option>
+              <option value="จัดส่งทางEmail">จัดส่งทางE-mail</option>
           </select>&nbsp;
           <label for="sentmail">E-mail:</label>&nbsp;
           <input type="text" class="form-control col-sm-5" name="sentmail" placeholder="ระบุอีเมลที่ต้องการจัดส่ง" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
         </div><br>
         <div class=" form-inline col-sm-12">
         <label for="time">วัน/เดือน/ปี ที่ลงทะเบียน:</label>
-          <input type="date" id="time" name="time">
+          <input type="date" id="time" name="time" required>
         </div>
         <br>
 

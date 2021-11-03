@@ -84,22 +84,21 @@ if (!$_SESSION['userid']) {
                                     ความคิดเห็นของท่านมีประโยชน์อย่างยิ่งในการปรับปรุงและพัฒนาคุณภาพการจัดฝึกงานของนิสิตในรุ่นต่อ ๆ ไป</p>
 
                                 <div class="col-md-4">
-
-                                    <label for="student_id">รหัสนิสิต : </label>&nbsp;
+                                    <label for="student_id">รหัสนิสิต :</label>&nbsp;
                                     <input name="stu_id" id="stu_id" stype="text" class="form-control " placeholder="รหัสนิสิต"  value=" <?php echo $_SESSION['userid']; ?>" readonly>
                                 </div><br>
                                 <div class="row">
                                     <div class="col">
                                         <label for="name">ชื่อ:</label>&nbsp;
-                                        <input name="name" id="name" type="text" class="form-control col-md-3" placeholder="ชื่อ" value=" <?php echo $_SESSION['name']; ?>">
+                                        <input name="name" id="name" type="text" class="form-control col-md-3" placeholder="ชื่อ" value=" <?php echo $_SESSION['name']; ?>" readonly>
                                     </div>
                                     <div class="col">
                                         <label for="lastname">นามสกุล:</label>&nbsp;
-                                        <input name="lastname" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล" value=" <?php echo $_SESSION['lastname']; ?>">
+                                        <input name="lastname" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล" value=" <?php echo $_SESSION['lastname']; ?>" readonly>
                                     </div>
                                     <div class="col">
                                         <label for="major">สาขา:</label>&nbsp;
-                                        <input name="major" id="major" type="text" class="form-control col-md-4" placeholder="สาขา" value=" <?php echo $_SESSION['major']; ?>">
+                                        <input name="major" id="major" type="text" class="form-control col-md-4" placeholder="สาขา" value=" <?php echo $_SESSION['major']; ?>" readonly>
 
                                     </div>
                                 </div>

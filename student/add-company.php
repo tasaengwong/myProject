@@ -99,7 +99,7 @@ session_start();
         <input name="comp_mail" id="comp_mail" type="email" class="form-control col-sm-3 " placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>&nbsp;
 
         <label for="FAx">FAX :</label>&nbsp;
-        <input name="comp_Fax" id="comp_Fax" type="text" class="form-control " placeholder="FAX" >
+        <input name="comp_Fax" id="comp_Fax" type="text" class="form-control " placeholder="FAX" pattern="[0-9]*">
       </div><br>
      
       <div class="bnt col-10">

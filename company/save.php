@@ -49,19 +49,14 @@ cs_id25, cs_id26, cs_id27, cs_id28, cs_id29, cs_id30)
 '$cs_id17', '$cs_id18', '$cs_id19', '$cs_id20','$cs_id21', '$cs_id22', '$cs_id23', '$cs_id24', 
 '$cs_id25', '$cs_id26', '$cs_id27', '$cs_id28', '$cs_id29', '$cs_id30')";
 $result = mysqli_query($conn, $sql);
-<<<<<<< HEAD
-if ($result) {
-       
-        header("Location: ../company/comp_asses.php");
-} else {
-=======
+
 if ($result){
         header("Location: ../index.html");
     
 
         }
         else {
->>>>>>> b2b4f8fd17e0e4156463eaffb98e767a04215553
+
         //กำหนดเงื่อนไขว่าถ้าไม่สำเร็จให้ขึ้นข้อความและกลับไปหน้าเพิ่ม
         header("Location: ../company/comp_asses.php");
        

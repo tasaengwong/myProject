@@ -180,7 +180,7 @@ if (!$_SESSION['userid']) {
                     <td>
                       <?php
                       if ($data['status'] == 0) {
-                        echo '<p id=' . $data['stu_id'] . '&status="" " class = "text text-primary fa fa-spinner">กำลังดำเนินการ</a></p>';
+                        echo '<p stu_id=' . $data['stu_id'] . '&status="" " class = "text text-primary fa fa-spinner">กำลังดำเนินการ</a></p>';
                       } else if ($data['status'] == 1) {
                         echo '<p stu_id=' . $data['stu_id'] . '&status="0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
                       } else {
@@ -202,7 +202,7 @@ if (!$_SESSION['userid']) {
                       if ($data['status'] == 0) {
                         echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=2 "  class = "btn btn-danger"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a></p>';
                       }
-                      ?>
+                      ?> 
 
                     <?php
                       if ($data['status'] == 2) {

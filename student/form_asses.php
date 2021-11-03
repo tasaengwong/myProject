@@ -85,8 +85,8 @@ if (!$_SESSION['userid']) {
 
                                 <div class="col-md-4">
 
-                                    <label for="student_id">รหัสนิสิต :</label>&nbsp;
-                                    <input name="stu_id" id="stu_id" stype="text" class="form-control " placeholder="รหัสนิสิต"  value=" <?php echo $_SESSION['userid']; ?>" required>
+                                    <label for="student_id">รหัสนิสิต : </label>&nbsp;
+                                    <input name="stu_id" id="stu_id" stype="text" class="form-control " placeholder="รหัสนิสิต"  value=" <?php echo $_SESSION['userid']; ?>" readonly>
                                 </div><br>
                                 <div class="row">
                                     <div class="col">

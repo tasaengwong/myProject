@@ -87,7 +87,7 @@ foreach($result as $row)
  $sub_array[] = $row['es_id10'];
  $sub_array[] = $row['es_id11'];
  $sub_array[] = $row['es_id12'];
-//  $sub_array[] = $row['sum'];
+//  $sub_array[] = $row;
 
  $data[] = $sub_array;
 }

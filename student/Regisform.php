@@ -151,15 +151,15 @@ session_start();
           <label for="district">ตำบล: </label>&nbsp;
           <input class="form-control col-md-2 " name="district"></input>&nbsp;
           <label for="zipcode">รหัสไปรษณีย์: </label>&nbsp;
-          <input class="form-control col-md-2 " name="zipcode"></input>&nbsp;
+          <input class="form-control col-md-2 " name="zipcode" pattern="[0-9]*"></input>&nbsp;
         </div><br>
 
         <div class="form-inline">
           <label for="phone">โทรศัพท์มือถือ :</label>&nbsp;&nbsp;
-          <input name="phone" id="phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="10" required>
+          <input name="phone" id="phone" type="text" class="form-control " placeholder="เบอร์ติดต่อ" maxlength="10" pattern="[0-9]*" required>
           &nbsp;
           <label for="email">E-mail :</label>&nbsp;&nbsp;
-          <input name="mail" id="mail" type="text" class="form-control " placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+          <input name="mail" id="mail" type="text" class="form-control " placeholder="Example@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         </div><br>
         <div class="form-inline col-sm-6">
           <label for="study">การลงทะเบียนเรียน:</label>&nbsp;

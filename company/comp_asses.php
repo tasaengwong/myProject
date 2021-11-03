@@ -68,32 +68,32 @@
                         <p>1. แบบสำรวจนี้เป็นการสำรวจความพึงพอใจของผู้ใช้นิสิตฝึกงานคณะ ICT ตามที่ได้ไปฝึกปฏิบัติงาน ณ หน่วยงานของท่าน
                             ประเมินโดยอาศัยคุณลักษณะของนิสิตตามกรอบมาตรฐานคุณวุฒิแห่งชาติ 5 ด้าน ของนิสิตฝึกงาน ความคิดเห็นของ
                             ท่านมีความสำคัญอย่างยิ่งในการพัฒนานิสิตให้มีคุณภาพ เพื่อที่จะได้จบออกไปเป็นบัณฑิตที่มีคุณภาพในสังคม</p>
-                        <p> 2. คะแนนประเมินจากหน่วยงานคิดเป็นร้อยละ 50 ของคะแนนในรายวิชาฝึกงาน</p>
+                        <p>2. คะแนนประเมินจากหน่วยงานคิดเป็นร้อยละ 50 ของคะแนนในรายวิชาฝึกงาน</p>
 
 
                         <div class="col-md-6">
                             <p><strong> ตอนที่ 1 : ข้อมูลทั่วไปของผู้ใช้นิสิตฝึกงาน</strong></p>&nbsp;
                             <label for="comp_name">ชื่อสถานประกอบการ:</label>&nbsp;
-                            <input name="comp_name" id="comp_name" type="text" class="form-control col-md-3" placeholder="ชื่อสถานประกอบการ">
+                            <input name="comp_name" id="comp_name" type="text" class="form-control col-md-3" placeholder="ชื่อสถานประกอบการ" required>
                         </div><br>
                         <div class="row">
                             <p><strong>ตอนที่ 2 : รายละเอียดนิสิตฝึกงาน</strong></p>
                             <div class="col">
                                 <label for="stu_id">รหัสนิสิต</label>&nbsp;
-                                <input name="stu_id" id="stu_id" type="text" class="form-control col-md-3" placeholder="รหัสนิสิต">
+                                <input name="stu_id" id="stu_id" type="text" class="form-control col-md-3" placeholder="รหัสนิสิต" maxlength="8" pattern="[0-9]*" required> 
                             </div>
                             <div class="col">
                                 <label for="stu_n">ชื่อ</label>&nbsp;
-                                <input name="stu_n" id="name" type="text" class="form-control col-md-3" placeholder="ชื่อ">
+                                <input name="stu_n" id="name" type="text" class="form-control col-md-3" placeholder="ชื่อ" required>
                             </div>
                             <div class="col">
                                 <label for="stu_lsn">นามสกุล</label>&nbsp;
-                                <input name="stu_lsn" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล">
+                                <input name="stu_lsn" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล" required>
                             </div>
                             <div class="col">
                                 <label for="major">สาขา:</label>&nbsp;
-                                <select name="major" class="form-select col-sm-5" ng-optin=" x for x in major">
-                                    <option value="">--สาขา--</option>
+                                <select name="major" required class="form-select col-sm-5" ng-optin=" x for x in major">
+                                    <option value="">เลือกสาขา</option>
                                     <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
                                     <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
                                     <option value="คอมพิวเตอร์ธุรกิจ">คอมพิวเตอร์ธุรกิจ</option>
@@ -101,7 +101,6 @@
                                     <option value="วิศวกรรมคอมพิวเตอร์">วิศวกรรมคอมพิวเตอร์</option>
                                     <option value="คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย">คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย</option>
                                     <option value="ภูมิศาสตร์สารสนเทศ">ภูมิศาสตร์สารสนเทศ</option>
-
                                 </select>&nbsp;&nbsp;
                             </div>
                         </div><br>

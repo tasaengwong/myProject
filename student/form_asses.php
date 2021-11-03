@@ -86,28 +86,21 @@ if (!$_SESSION['userid']) {
                                 <div class="col-md-4">
 
                                     <label for="student_id">รหัสนิสิต :</label>&nbsp;
-                                    <input name="stu_id" id="stu_id" stype="text" class="form-control " placeholder="รหัสนิสิต" required>
+                                    <input name="stu_id" id="stu_id" stype="text" class="form-control " placeholder="รหัสนิสิต"  value=" <?php echo $_SESSION['userid']; ?>" required>
                                 </div><br>
                                 <div class="row">
                                     <div class="col">
                                         <label for="name">ชื่อ:</label>&nbsp;
-                                        <input name="name" id="name" type="text" class="form-control col-md-3" placeholder="ชื่อ">
+                                        <input name="name" id="name" type="text" class="form-control col-md-3" placeholder="ชื่อ" value=" <?php echo $_SESSION['name']; ?>">
                                     </div>
                                     <div class="col">
                                         <label for="lastname">นามสกุล:</label>&nbsp;
-                                        <input name="lastname" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล">
+                                        <input name="lastname" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล" value=" <?php echo $_SESSION['lastname']; ?>">
                                     </div>
-                                    <div class="col"><label for="major">สาขา:</label>&nbsp;
-                                        <select name="major" class="form-select col-sm-5" ng-optin=" x for x in major">
-                                            <option value="">--สาขา--</option>
-                                            <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
-                                            <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
-                                            <option value="คอมพิวเตอร์ธุรกิจ">คอมพิวเตอร์ธุรกิจ</option>
-                                            <option value="วิศวกรรมซอฟร์แวร์">วิศวกรรมซอฟร์แวร์</option>
-                                            <option value="วิศวกรรมคอมพิวเตอร์">วิศวกรรมคอมพิวเตอร์</option>
-                                            <option value="คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย">คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย</option>
-                                            <option value="ภูมิศาสตร์สารสนเทศ">ภูมิศาสตร์สารสนเทศ</option>
-                                        </select>&nbsp;&nbsp;
+                                    <div class="col">
+                                        <label for="major">สาขา:</label>&nbsp;
+                                        <input name="major" id="major" type="text" class="form-control col-md-4" placeholder="สาขา" value=" <?php echo $_SESSION['major']; ?>">
+
                                     </div>
                                 </div>
 

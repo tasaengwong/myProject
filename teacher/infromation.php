@@ -150,8 +150,8 @@ if (!$_SESSION['userid']) {
                   <th>ตำแหน่งงาน</th>
                   <th>วันที่ยื่นเรื่อง</th>
                   <th>เพิ่มเติม</th>
-                  <th colspan="6">สถานะ</th>
-
+                  <th>สถานะ</th>
+                  <th colspan="2"></th>
 
                 </tr>
                 <?php
@@ -177,10 +177,10 @@ if (!$_SESSION['userid']) {
                     </td>
 
 
-                    <td >
+                    <td>
                       <?php
                       if ($data['status'] == 0) {
-                        // echo '<p id=' . $data['stu_id'] . '&status="" " class = "text fa fa-spinner">กำลังดำเนินการ</a></p>';
+                        echo '<p id=' . $data['stu_id'] . '&status="" " class = "text text-primary fa fa-spinner">กำลังดำเนินการ</a></p>';
                       } else if ($data['status'] == 1) {
                         echo '<p stu_id=' . $data['stu_id'] . '&status="0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
                       } else {
@@ -188,17 +188,39 @@ if (!$_SESSION['userid']) {
                       }
                       ?>
                    
-                      <?php
+                      
+                    </td>
+
+                    <td>
+                    <?php
                       if ($data['status'] == 0) {
-                        echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=1 " class = "btn btn-outline-success">อนุมัติ</a></p>';
+                        echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=1 " class = "btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></a></p>';
                       }
                       ?>
                    
                       <?php
                       if ($data['status'] == 0) {
-                        echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=2 "  class = "btn btn-outline-danger">ไม่อนุมัติ</a></p>';
+                        echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=2 "  class = "btn btn-danger"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a></p>';
                       }
                       ?>
+
+                    <?php
+                      if ($data['status'] == 2) {
+                        echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=1 "  class = "btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></a></p>';
+                      }
+                      ?>
+                    <?php
+                      if ($data['status'] == 1) {
+                        echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=2 "  class = "btn btn-danger"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a></p>';
+                      }
+                    ?>
+                    <?php
+                      if ($data['status'] == 1||2) {
+                        echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=0 "  class = "btn btn-primary"><i class="fa fa-spinner" aria-hidden="true"></i></a></p>';
+                      }
+                    ?>
+                     
+                      
                     </td>
 
                   </form>

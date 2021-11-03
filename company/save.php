@@ -50,13 +50,13 @@ cs_id25, cs_id26, cs_id27, cs_id28, cs_id29, cs_id30)
 '$cs_id25', '$cs_id26', '$cs_id27', '$cs_id28', '$cs_id29', '$cs_id30')";
 $result = mysqli_query($conn, $sql);
 if ($result){
-        header("Location: ../company/comp_asses.php");
+        header("Location: ../index.html");
     
-       
+
         }
         else {
         //กำหนดเงื่อนไขว่าถ้าไม่สำเร็จให้ขึ้นข้อความและกลับไปหน้าเพิ่ม
-        header("Location: ../index.html");
+        header("Location: ../company/comp_asses.php");
        
         }
 $conn->close();

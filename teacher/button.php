@@ -32,6 +32,7 @@
                             <div class="col-lg-9">
                                 <label>สาขา:&nbsp;<?php echo $erow['major']; ?></label>&nbsp;
                                 <label>ชั้นปี:&nbsp;<?php echo $erow['year']; ?></label>
+                                <label>ปีการศึกษา:&nbsp;<?php echo $erow['date']; ?></label>
                             </div>
                         </div>
 
@@ -93,6 +94,23 @@
                             <div class="col-lg-12">
                                 <label style="position:relative; top:7px;">สถานประกอบการ:&nbsp;<?php echo $erow['comp_name']; ?></label>
                             </div>
+                        </div>
+                        <div style="height:10px;"></div>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <label>ตำบล:&nbsp;<?php echo $erow['comp_subdis']; ?></label>
+                                <label>อำเภอ:&nbsp;<?php echo $erow['comp_amphure']; ?></label>
+                                <label>จังหวัด:&nbsp;<?php echo $erow['comp_province']; ?></label>
+                               
+                            </div>
+
+                        </div>
+                        <div style="height:10px;"></div>
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <label>รหัสไปรษณีย์:&nbsp;<?php echo $erow['comp_zipcode']; ?></label>
+                            </div>
+
                         </div>
 
                         <div style="height:10px;"></div>

@@ -105,7 +105,7 @@ if (!$_SESSION['userid']) {
 
                                 <div class="col-sm-6">
                                     <label for="company" >สถานประกอบการ:</label>&nbsp;
-                                    <input name="comp_name" id="comp_name" type="text" class="form-control col-md-3" placeholder="ชื่อสถานประกอบการ">
+                                    <input name="comp_name" id="comp_name" type="text" class="form-control col-md-3" placeholder="ชื่อสถานประกอบการ" required>
 
                                 </div><br>
 

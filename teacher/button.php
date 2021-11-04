@@ -144,7 +144,7 @@
                         <div style="height:10px;"></div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <label style="position:relative; top:7px;">Email สภานประกอบการ:&nbsp;<?php echo $erow['sentmail']; ?></label>
+                                <label style="position:relative; top:7px;">Email สถานประกอบการ:&nbsp;<?php echo $erow['sentmail']; ?></label>
                             </div>
                         </div>
 

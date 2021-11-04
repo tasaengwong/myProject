@@ -24,8 +24,13 @@ $es_id12 = $_POST['es_id12'];
 $sum4 = $es_id10+ $es_id11+ $es_id12;
 $total1 = $es_id1+$es_id2+$es_id3+$es_id4+$es_id5+$es_id6+$es_id7+$es_id8+$es_id9+$es_id10+$es_id11+$es_id12;
 
+<<<<<<< HEAD
 $sql = "INSERT INTO asses (stu_id, name, lastname,comp_name,major, es_id1, es_id2, sum1, es_id3, es_id4, es_id5, es_id6, es_id7,sum2, es_id8, es_id9, sum3, es_id10, es_id11, es_id12, sum4, total1)
  VALUE  ('$stu_id','$name','$lastname','$comp_name','$major','$es_id1', '$es_id2','$sum1', '$es_id3', '$es_id4', '$es_id5', '$es_id6', '$es_id7', '$sum2','$es_id8', '$es_id9','$sum3', '$es_id10', '$es_id11', '$es_id12','$sum4', '$total1')";
+=======
+$sql = "INSERT INTO asses (stu_id, name, lastname, comp_name, major, es_id1, es_id2, sum1, es_id3, es_id4, es_id5, es_id6, es_id7,sum2, es_id8, es_id9, sum3, es_id10, es_id11, es_id12, sum4, total1)
+ VALUE ('$stu_id', '$name', '$lastname', '$comp_name', '$major', '$es_id1', '$es_id2', '$sum1', '$es_id3', '$es_id4', '$es_id5', '$es_id6', '$es_id7', '$sum2', '$es_id8', '$es_id9', $sum3, '$es_id10', '$es_id11', '$es_id12', '$sum4', '$total1')";
+>>>>>>> 96f404199e34571274d9ff002baa24fc56c48500
 
 
 $result = mysqli_query($conn, $sql);

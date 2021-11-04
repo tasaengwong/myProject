@@ -77,16 +77,21 @@ foreach($result as $row)
  $sub_array[] = $row['comp_name'];
  $sub_array[] = $row['es_id1'];
  $sub_array[] = $row['es_id2'];
+ $sub_array[] = $row['sum1'];
  $sub_array[] = $row['es_id3'];
  $sub_array[] = $row['es_id4'];
  $sub_array[] = $row['es_id5'];
  $sub_array[] = $row['es_id6'];
  $sub_array[] = $row['es_id7'];
+ $sub_array[] = $row['sum2'];
  $sub_array[] = $row['es_id8'];
  $sub_array[] = $row['es_id9'];
+ $sub_array[] = $row['sum3'];
  $sub_array[] = $row['es_id10'];
  $sub_array[] = $row['es_id11'];
  $sub_array[] = $row['es_id12'];
+ $sub_array[] = $row['sum4'];
+ $sub_array[] = $row['total1'];
 //  $sub_array[] = $row;
 
  $data[] = $sub_array;

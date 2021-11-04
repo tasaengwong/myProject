@@ -68,29 +68,41 @@ foreach($result as $row)
  $sub_array[] = $row['cs_id2'];
  $sub_array[] = $row['cs_id3'];
  $sub_array[] = $row['cs_id4'];
+ $sub_array[] = $row['sum1'];
+ 
  $sub_array[] = $row['cs_id5'];
  $sub_array[] = $row['cs_id6'];
  $sub_array[] = $row['cs_id7'];
  $sub_array[] = $row['cs_id8'];
  $sub_array[] = $row['cs_id9'];
  $sub_array[] = $row['cs_id10'];
+ $sub_array[] = $row['sum1'];
+
  $sub_array[] = $row['cs_id11'];
  $sub_array[] = $row['cs_id12'];
  $sub_array[] = $row['cs_id13'];
  $sub_array[] = $row['cs_id14'];
  $sub_array[] = $row['cs_id15'];
+ $sub_array[] = $row['sum1'];
+
  $sub_array[] = $row['cs_id16'];
  $sub_array[] = $row['cs_id17'];
  $sub_array[] = $row['cs_id18'];
  $sub_array[] = $row['cs_id19'];
  $sub_array[] = $row['cs_id20'];
+ $sub_array[] = $row['sum1'];
+
  $sub_array[] = $row['cs_id21'];
  $sub_array[] = $row['cs_id22'];
  $sub_array[] = $row['cs_id23'];
  $sub_array[] = $row['cs_id24'];
+ $sub_array[] = $row['sum1'];
+
  $sub_array[] = $row['cs_id25'];
  $sub_array[] = $row['cs_id26'];
  $sub_array[] = $row['cs_id27'];
+ $sub_array[] = $row['sum1'];
+
  $sub_array[] = $row['cs_id28'];
  $sub_array[] = $row['cs_id29'];
  $sub_array[] = $row['cs_id30'];

@@ -107,16 +107,21 @@ if (!$_SESSION['userid']) {
               <th>สถานประกอบการ</th>
               <th>คำถาม1</th>
               <th>คำถาม2</th>
+              <th>คะแนนรวมด้านที่ 1</th>
               <th>คำถาม3</th>
               <th>คำถาม4</th>
               <th>คำถาม5</th>
               <th>คำถาม6</th>
               <th>คำถาม7</th>
+              <th>คะแนนรวมด้านที่ 2</th>
               <th>คำถาม8</th>
               <th>คำถาม9</th>
+              <th>คะแนนรวมด้านที่ 3</th>
               <th>คำถาม10</th>
               <th>คำถาม11</th>
               <th>คำถาม12</th>
+              <th>คะแนนรวมด้านที่ 4</th>
+              <th>คะแนนรวมทุกด้าน</th>
               <!-- <@?php // Make a MySQL Connection 
               $conn = new mysqli("localhost", "root", "", "project103");
               $conn->set_charset('utf8');

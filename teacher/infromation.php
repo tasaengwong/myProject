@@ -110,7 +110,7 @@ if (!$_SESSION['userid']) {
             <!-- search filter -->
 
             <form name="frmSearch" method="post" action="<?php echo $_SERVER['SCRIPT_NAME'];?>">
-            <table class="float-right"  width="" border="1">
+            <table class="float-right"  >
               <tr>
                 <th>ค้นหา
                 <input name="txtKeyword" type="text" id="txtKeyword" value="<?php echo $strKeyword;?>">

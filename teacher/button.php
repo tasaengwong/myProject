@@ -9,7 +9,9 @@
             </div>
             <div class="modal-body">
                 <?php
-                $edit = mysqli_query($conn, "select * from students left join company on students.comp_id = company.comp_id where stu_id='" . $data['stu_id'] . "'");
+                $edit = mysqli_query($conn, "SELECT * from students 
+                LEFT JOIN company ON students.comp_id = company.comp_id 
+                LEFT JOIN major on students.major_id = major.major_id where stu_id='" . $data['stu_id'] . "'");
                 $erow = mysqli_fetch_array($edit);
                 ?>
                 <div class="container-fluid">
@@ -30,7 +32,7 @@
                         <div style="height:10px;"></div>
                         <div class="row">
                             <div class="col-lg-9">
-                                <label>สาขา:&nbsp;<?php echo $erow['major']; ?></label>&nbsp;
+                                <label>สาขา:&nbsp;<?php echo $erow['major_name']; ?></label>&nbsp;
                                 <label>ชั้นปี:&nbsp;<?php echo $erow['year']; ?></label>
                                 <label>ปีการศึกษา:&nbsp;<?php echo $erow['date']; ?></label>
                             </div>

@@ -93,8 +93,11 @@ if (!$_SESSION['userid']) {
     // $sql = "SELECT * from students 
     // LEFT JOIN company ON students.comp_id = company.comp_id 
     // LEFT JOIN major on students.major_id = major.major_id ";
+    $major_id=$_SESSION['major_id'];
+    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id LEFT JOIN major on students.major_id = major.major_id  where userid='$major_id' ";
+    
 
-    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id LEFT JOIN major on students.major_id = major.major_id where major_id = $_SESSION['major']; ";
+    // $sql=mysqli_query($conn,"select * from students where userid='$major_id'");
 
     $query = mysqli_query($conn, $sql);
     ?>

@@ -66,8 +66,9 @@ if (!$_SESSION['userid']) {
 
     <?php
     require('connection.php');
-    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id";
+    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id LEFT JOIN major on students.major_id = major.major_id ";
     $result = $con->query($sql);
+
     ?>
 
     <section>
@@ -93,20 +94,22 @@ if (!$_SESSION['userid']) {
 
 
                 </tr>
-                <?php {
+                <?php
+              
+                $data = mysqli_fetch_array($result) 
                 ?>
+              
                   <form class="tabel table-hover ">
                     <td class="text-center"><?php echo $_SESSION['userid']; ?></td>
                     <td class="text-center"><?php echo $_SESSION['name']; ?></td>
                     <td class="text-center"><?php echo $_SESSION['lastname']; ?></td>
-                    <td class="text-center"><?php echo $_SESSION['major']; ?></td>
+                    <td class="text-center"><?php echo $data['major_name']; ?></td>
                     <td class="text-center"><?php echo $_SESSION['year']; ?></td>
 
                   </form>
                   </tr>
-                <?php
-                }
-                ?>
+              
+                
               </table>
             </table>
           </div>

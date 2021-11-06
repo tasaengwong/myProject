@@ -22,7 +22,7 @@ if (!$_SESSION['userid']) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/style.css?9">
+    <link rel="stylesheet" href="./css/style.css?5">
 
 
   </head>
@@ -66,34 +66,38 @@ if (!$_SESSION['userid']) {
                 <li><a class="dropdown-item bi bi-arrow-right-square-fill" href="../loginuser/logout.php">&nbsp;LOG-OUT</a></li>
               </ul>
             </li>
+
           </ul>
         </div>
       </div>
     </nav>
 
     <?php
-    ini_set('display_errors', 1);
-    error_reporting(~0);
+      ini_set('display_errors', 1);
+      error_reporting(~0);
 
-    $strKeyword = null;
+      $strKeyword = null;
 
-    if (isset($_POST["txtKeyword"])) {
-      $strKeyword = $_POST["txtKeyword"];
-    }
+      if(isset($_POST["txtKeyword"]))
+      {
+        $strKeyword = $_POST["txtKeyword"];
+      }
     ?>
     <?php
     $serverName = "localhost";
     $userName = "root";
     $userPassword = "";
     $dbName = "project103";
-    $conn = mysqli_connect($serverName, $userName, $userPassword, $dbName);
+    $conn = mysqli_connect($serverName,$userName,$userPassword,$dbName);
 
-    $major_id=$_SESSION['major_id'];
-    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id LEFT JOIN major on students.major_id = major.major_id  where userid='$major_id' ";
-    
-    // $sql=mysqli_query($conn,"select * from students where userid='$major_id'");
+    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id 
+    WHERE stu_id LIKE '%".$strKeyword."%' 
+    OR name LIKE '%".$strKeyword."%' 
+    OR lastname LIKE '%".$strKeyword."%' 
+    OR major LIKE '%".$strKeyword."%' 
+    OR year LIKE '%".$strKeyword."%'";
 
-    $query = mysqli_query($conn, $sql);
+    $query = mysqli_query($conn,$sql);
     ?>
 
     <section>
@@ -105,34 +109,31 @@ if (!$_SESSION['userid']) {
             <h4>รายชื่อนิสิต</h4><br>
             <!-- search filter -->
 
-            <form name="frmSearch" method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
-              <table class="float-right">
-                <tr>
-                  <th>ค้นหา
-                    <input name="txtKeyword" type="text" id="txtKeyword" value="<?php echo $strKeyword; ?>">
-                    <input type="submit" value="Search">
-                  </th>
-                </tr>
-              </table>
-            </form>
+            <form name="frmSearch" method="post" action="<?php echo $_SERVER['SCRIPT_NAME'];?>">
+            <table class="float-right"  >
+              <tr>
+                <th>ค้นหา
+                <input name="txtKeyword" type="text" id="txtKeyword" value="<?php echo $strKeyword;?>">
+                <input type="submit" value="Search"></th>
+              </tr>
+            </table>
+           </form>
 
             <br>
 
             <?php
-            $sql = "SELECT * from students 
-            LEFT JOIN company ON students.comp_id = company.comp_id  
-            LEFT JOIN major on students.major_id = major.major_id 
-            WHERE stu_id LIKE '%" . $strKeyword . "%' 
-            OR name LIKE '%" . $strKeyword . "%' 
-            OR lastname LIKE '%" . $strKeyword . "%' 
-            OR major_name LIKE '%" . $strKeyword . "%' 
-            OR year LIKE '%" . $strKeyword . "%'
-            OR date LIKE '%" . $strKeyword . "%'
-            OR time LIKE '%" . $strKeyword . "%'
-            OR comp_name LIKE '%" . $strKeyword . "%'
+            $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id 
+            WHERE stu_id LIKE '%".$strKeyword."%' 
+            OR name LIKE '%".$strKeyword."%' 
+            OR lastname LIKE '%".$strKeyword."%' 
+            OR major LIKE '%".$strKeyword."%' 
+            OR year LIKE '%".$strKeyword."%'
+            OR date LIKE '%".$strKeyword."%'
+            OR time LIKE '%".$strKeyword."%'
+            OR comp_name LIKE '%".$strKeyword."%'
             ";
 
-            $query = mysqli_query($conn, $sql);
+            $query = mysqli_query($conn,$sql);
             ?>
 
             <table class="table" id="txtHint">
@@ -155,7 +156,7 @@ if (!$_SESSION['userid']) {
                 </tr>
                 <?php
                 $i = 0;
-                while ($data = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                while($data=mysqli_fetch_array($query,MYSQLI_ASSOC)) {
                   $i++;
                 ?>
 
@@ -164,14 +165,14 @@ if (!$_SESSION['userid']) {
                     <td><?php echo $data['stu_id']; ?></td>
                     <td><?php echo $data['name']; ?></td>
                     <td><?php echo $data['lastname']; ?></td>
-                    <td><?php echo $data['major_name']; ?></td>
+                    <td><?php echo $data['major']; ?></td>
                     <td><?php echo $data['year']; ?></td>
                     <td><?php echo $data['date']; ?></td>
                     <td><?php echo $data['comp_name']; ?></td>
                     <td><?php echo $data['Job']; ?></td>
                     <td><?php echo $data['time']; ?></td>
                     <td>
-                      <a href="#edit<?php echo $data['stu_id']; ?>" data-toggle="modal" class="btn btn-light bi bi-file-earmark-text"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a href="#edit<?php echo $data['stu_id']; ?>" data-toggle="modal" class="btn btn-light bi bi-file-earmark-text"><span class="glyphicon glyphicon-edit"></span></a>
                       <?php include('button.php'); ?>
                     </td>
 
@@ -186,40 +187,40 @@ if (!$_SESSION['userid']) {
                         echo '<p stu_id=' . $data['stu_id'] . '&status="2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
                       }
                       ?>
-
-
+                   
+                      
                     </td>
 
                     <td>
-                      <?php
+                    <?php
                       if ($data['status'] == 0) {
                         echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=1 " class = "btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></a></p>';
                       }
                       ?>
-
+                   
                       <?php
                       if ($data['status'] == 0) {
                         echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=2 "  class = "btn btn-danger"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a></p>';
                       }
-                      ?>
+                      ?> 
 
-                      <?php
+                    <?php
                       if ($data['status'] == 2) {
                         echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=1 "  class = "btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></a></p>';
                       }
                       ?>
-                      <?php
+                    <?php
                       if ($data['status'] == 1) {
                         echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=2 "  class = "btn btn-danger"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a></p>';
                       }
-                      ?>
-                      <?php
-                      if ($data['status'] == 1 || 2) {
+                    ?>
+                    <?php
+                      if ($data['status'] == 1||2) {
                         echo '<p><a href="change.php?stu_id=' . $data['stu_id'] . ' &status=0 "  class = "btn btn-primary"><i class="fa fa-spinner" aria-hidden="true"></i></a></p>';
                       }
-                      ?>
-
-
+                    ?>
+                     
+                      
                     </td>
 
                   </form>
@@ -263,8 +264,8 @@ if (!$_SESSION['userid']) {
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-  <?php
-  mysqli_close($conn);
+<?php 
+mysqli_close($conn);
 } ?>
 
   </body>

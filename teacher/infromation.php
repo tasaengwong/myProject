@@ -2,8 +2,9 @@
 
 session_start();
 
-if (!$_SESSION['userid']) {
+if (!$_SESSION['userid'] ) {
   header("Location: singin.php");
+  
 } else {
 
 ?>
@@ -66,7 +67,6 @@ if (!$_SESSION['userid']) {
                 <li><a class="dropdown-item bi bi-arrow-right-square-fill" href="../loginuser/logout.php">&nbsp;LOG-OUT</a></li>
               </ul>
             </li>
-
           </ul>
         </div>
       </div>
@@ -89,13 +89,15 @@ if (!$_SESSION['userid']) {
     $userPassword = "";
     $dbName = "project103";
     $conn = mysqli_connect($serverName,$userName,$userPassword,$dbName);
+    
 
-    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id 
-    WHERE stu_id LIKE '%".$strKeyword."%' 
-    OR name LIKE '%".$strKeyword."%' 
-    OR lastname LIKE '%".$strKeyword."%' 
-    OR major LIKE '%".$strKeyword."%' 
-    OR year LIKE '%".$strKeyword."%'";
+
+    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id  LEFT JOIN major on students.major_id = major.major_id";
+    //  LIKE '%".$strKeyword."%' 
+    // OR name LIKE '%".$strKeyword."%' 
+    //OR lastname LIKE '%".$strKeyword."%' 
+    //  OR major LIKE '%".$strKeyword."%' 
+    //  OR year LIKE '%".$strKeyword."%'";
 
     $query = mysqli_query($conn,$sql);
     ?>
@@ -122,7 +124,7 @@ if (!$_SESSION['userid']) {
             <br>
 
             <?php
-            $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id 
+            $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id  left join major on students.major_id = major.major_id 
             WHERE stu_id LIKE '%".$strKeyword."%' 
             OR name LIKE '%".$strKeyword."%' 
             OR lastname LIKE '%".$strKeyword."%' 
@@ -165,7 +167,7 @@ if (!$_SESSION['userid']) {
                     <td><?php echo $data['stu_id']; ?></td>
                     <td><?php echo $data['name']; ?></td>
                     <td><?php echo $data['lastname']; ?></td>
-                    <td><?php echo $data['major']; ?></td>
+                    <td><?php echo $data['major_name']; ?></td>
                     <td><?php echo $data['year']; ?></td>
                     <td><?php echo $data['date']; ?></td>
                     <td><?php echo $data['comp_name']; ?></td>

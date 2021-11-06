@@ -58,8 +58,6 @@ html {
   
   @media (min-width: 992px) {
     #mainNav {
-      /* padding-top: 1rem;
-      padding-bottom: 1rem; */
       border: none;
       background-color: transparent;
       transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
@@ -92,7 +90,9 @@ html {
       color: #495057;
       margin-right: 0;
     }
+    
   }
+  
  
   #navbarNavDropdown{
     font-family: 'Athiti', sans-serif;

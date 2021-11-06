@@ -9,7 +9,7 @@ $stu_id = $_POST['stu_id'];
 $password = $_POST['password'];
 $name = $_POST['name'];
 $lastname = $_POST['lastname'];
-$major = $_POST['major'];
+$major_id = $_POST['major_id'];
 $year = $_POST['year'];
 $date = $_POST['date'];
 $time = $_POST['time'];
@@ -44,8 +44,8 @@ if ($user['stu_id'] === $stu_id) {
     echo "alert ('รหัสผ่านไม่ถูกต้อง');";
     echo "</script>";
 
-$query = " INSERT INTO students (stu_id, password, name, lastname, major, year, date, time, address, province, amphures, district, zipcode, phone, mail, Job, description, comp_id, study, sent, sentmail)
-        VALUES('$stu_id','$passwordenc','$name', '$lastname','$major','$year','$date','$time',' $address' , '$province', '$amphures', '$district', '$zipcode',
+$query = " INSERT INTO students (stu_id, password, name, lastname, major_id, year, date, time, address, province, amphures, district, zipcode, phone, mail, Job, description, comp_id, study, sent, sentmail)
+        VALUES('$stu_id','$passwordenc','$name', '$lastname','$major_id','$year','$date','$time',' $address' , '$province', '$amphures', '$district', '$zipcode',
         '$phone', '$mail', '$Job', '$description', '$comp_id', '$study', '$sent', '$sentmail')";
   $result = mysqli_query($conn, $query);
 

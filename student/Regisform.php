@@ -116,9 +116,9 @@ session_start();
           $conn->set_charset('utf8');
           ?> -->
 
-        <div class="form-inline col-sm-12" method="get">
+        <div class="form-inline col-sm-12" method="post">
           <label for="major">สาขา:</label>&nbsp;
-          <select name="major" required class="custom-select col-sm-5" ng-optin=" x for x in major" required>
+          <!-- <select name="major" required class="custom-select col-sm-5" ng-optin=" x for x in major" required>
             <option value="">เลือกสาขา</option>
             <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
             <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
@@ -128,7 +128,22 @@ session_start();
             <option value="คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย">คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย</option>
             <option value="ภูมิศาสตร์สารสนเทศ">ภูมิศาสตร์สารสนเทศ</option>
 
-          </select>&nbsp;&nbsp;
+          </select>&nbsp;&nbsp; -->
+          <select name="major_id" required class="custom-select col-sm-6" ng-optin=" x for x in major_id">
+            <option value="">เลือกสาขา</option>
+            <?php
+            $sql = "select * from major ";
+            $result = $conn->query($sql);
+            while ($row = $result->fetch_assoc()) {
+              if ($row['major_id'] == $_GET['selectmajor']) {
+                echo "{$row['major_id']}&nbsp;{$row['major_name']}<option selected>";
+              } else {
+                echo "<option>";
+              }
+              echo "{$row['major_id']}&nbsp;{$row['major_name']}</option>";
+            }
+            ?>
+          </select>
 
           <label for="year">ชั้นปี:</label>&nbsp;
           <input name="year" id="year" type="text" class="form-control col-sm-2" placeholder="ชั้นปี" pattern="[0-9]*" required>&nbsp;&nbsp;

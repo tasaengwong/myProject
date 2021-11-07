@@ -12,7 +12,7 @@
 					$drow=mysqli_fetch_array($del);
 				?>
 				<div class="container-fluid">
-					<h5>Are you sure to delete <strong><?php echo ucwords($row['major_name']); ?></strong> from the list? This method cannot be undone.</center></h5> 
+					<h5>คุณต้องการที่จะลบ <strong><?php echo ucwords($row['major_name']); ?></strong>ใช่หรือไม่!!</center></h5> 
                 </div> 
 				</div>
                 <div class="modal-footer">

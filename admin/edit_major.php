@@ -42,14 +42,6 @@
 				<form method="POST" action="editm.php?major_id=<?php echo $erow['major_id']; ?>">
                 <div class="row">
 					
-					<div class="row">
-						<div class="col-lg-2">
-							<label style="position:relative; top:7px;">ID:</label>
-						</div>
-						<div class="col-lg-10">
-							<input type="text" name="major_id" class="form-control" value="<?php echo $erow['major_id']; ?>">
-						</div>
-					</div>
 					<div style="height:10px;"></div>
 					<div class="row">
 						<div class="col-lg-2">

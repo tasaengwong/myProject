@@ -44,6 +44,15 @@
 					
 					<div class="row">
 						<div class="col-lg-2">
+							<label style="position:relative; top:7px;">Username:</label>
+						</div>
+						<div class="col-lg-10">
+							<input type="text" name="username" class="form-control" value="<?php echo $erow['username']; ?>">
+						</div>
+					</div>
+					<div style="height:10px;"></div>
+					<div class="row">
+						<div class="col-lg-2">
 							<label style="position:relative; top:7px;">ชื่อ:</label>
 						</div>
 						<div class="col-lg-10">

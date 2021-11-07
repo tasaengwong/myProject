@@ -47,7 +47,7 @@
 							</div>
 						</div>
 
-						<?php
+						<!-- <#?php
 						$conn = new mysqli("localhost", "root", "", "project103");
 						$conn->set_charset('utf8');
 						?>
@@ -59,7 +59,7 @@
 							<div class="col-lg-10" method="post">
 								<select name="major_id" class="form-select  ">
 									<option value="">เลือกสาขา</option>
-									<?php
+									<#?php
 									$sql = "select * from major ";
 									$result = $conn->query($sql);
 									while ($row = $result->fetch_assoc()) {
@@ -73,9 +73,9 @@
 									?>
 								</select>
 							</div><br>
-						</div>
+						</div> -->
 
-						<div style="height:10px;"></div>
+						<!-- <div style="height:10px;"></div>
 						<div class="row">
 							<div class="col-lg-2">
 								<label class="control-label" style="position:relative; top:7px;">userlevel:</label>
@@ -83,9 +83,25 @@
 							<div class="col-lg-10">
 								<input type="text" class="form-control" name="userlevel">
 							</div>
+						</div> -->
+
+						<div style="height:10px;"></div>
+						<div class="row">
+							<div class="col-lg-2">
+         						<label for="userlevel" class="control-label" style="position:relative; top:7px;">userlevel:</label>
+						 	</div>
+							<div class="col-lg-10"> 
+								<select name="userlevel" id="userlevel" required class="form-select col-sm-4" aria-label=".form-select">
+									<option value="">สถานะผู้เข้าใช้</option>
+									<option value="admin">admin</option>
+									<option value="teacher">teacher</option>
+									<option value="officer">officer</option>
+								</select>&nbsp;
+							</div>
 						</div>
-				</div>
-			</div>
+
+						<div style="height:20px;"></div>			
+
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
 				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>

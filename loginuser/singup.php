@@ -21,7 +21,7 @@
             $_SESSION['name'] = $row['firstname'];
             $_SESSION['lastname'] = $row['lastname'];
             $_SESSION['userlevel'] = $row['userlevel'];
-            $_SESSION['major_id'] = $row['major_id'];
+            // $_SESSION['major_id'] = $row['major_id'];
 
             if ($_SESSION['userlevel'] ==  'teacher' ) {
                 header("Location: teacher_page.php");

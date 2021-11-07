@@ -59,9 +59,12 @@ if (!$_SESSION['userid']) {
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="../loginuser/teacher_page.php">หน้าแรก</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./infromation.php">รายชื่อนิสิต</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                ข้อมูลนักศึกษา
+                รายงาน
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="report.php">รายชื่อนิสิต</a></li>

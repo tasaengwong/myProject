@@ -33,7 +33,7 @@
             $_SESSION['username'] = $row['username'];
             $_SESSION['Ostatus'] = $row['Ostatus'];
             $_SESSION['C_status'] = $row['Cstatus'];
-
+            $_SESSION['comp'] = $row['comp_id'];
             if ($_SESSION['userid'] ==  $username ) {
                 header("Location: user_page.php");
             }

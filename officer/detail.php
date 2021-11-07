@@ -86,12 +86,7 @@ if (!$_SESSION['userid']) {
     $dbName = "project103";
     $conn = mysqli_connect($serverName,$userName,$userPassword,$dbName);
 
-    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id 
-    WHERE stu_id LIKE '%".$strKeyword."%' 
-    OR name LIKE '%".$strKeyword."%' 
-    OR lastname LIKE '%".$strKeyword."%' 
-    OR major LIKE '%".$strKeyword."%' 
-    OR year LIKE '%".$strKeyword."%'";
+    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id";
 
     $query = mysqli_query($conn,$sql);
     ?>
@@ -118,7 +113,11 @@ if (!$_SESSION['userid']) {
 
            <?php
             $sql = "SELECT * from students LEFT JOIN  company ON students.comp_id = company.comp_id LEFT JOIN  major ON students.major_id = major.major_id
-            ";
+            WHERE stu_id LIKE '%".$strKeyword."%' 
+            OR name LIKE '%".$strKeyword."%' 
+            OR lastname LIKE '%".$strKeyword."%' 
+            OR major_name LIKE '%".$strKeyword."%' 
+            OR year LIKE '%".$strKeyword."%'";
 
             $query = mysqli_query($conn,$sql);
             ?>

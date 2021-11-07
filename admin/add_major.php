@@ -12,14 +12,7 @@
 				<div class="container-fluid">
 					<form method="POST" action="db_newm.php">
 						<div style="height:10px;"></div>
-						<div class="row">
-							<div class="col-lg-2">
-								<label class="control-label" style="position:relative; top:7px;">ID:</label>
-							</div>
-							<div class="col-lg-10">
-								<input type="text" class="form-control" name="major_id">
-							</div>
-						</div>
+					
 						<div style="height:10px;"></div>
 						<div class="row">
 							<div class="col-lg-2">

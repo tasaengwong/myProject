@@ -44,7 +44,7 @@ if (!$_SESSION['userid']) {
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="../admin/add_acount.php">บัญชีผู้ใช้</a></li>
                 <li><a class="dropdown-item" href="../admin/emajor.php">ข้อมูลสาขา</a></li>
-
+                <li><a class="dropdown-item" href="../admin/add_company.php">ข้อมูลสถานประกอบการ</a></li>
               </ul>
             </li>
 

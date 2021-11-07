@@ -74,21 +74,27 @@ if (!$_SESSION['userid']) {
             </div>
         </nav>
 
-        <div class="container">
+        <div>
             <div style="height:50px;"></div>
-            <div class="well" style="margin:auto; padding:auto; width:80%;">
+            <div class="well" style="margin:auto; padding:auto; width:auto;">
                 <span style="font-size:30px; color:blue">
 
                 </span>
-                <span class="pull-left"><a href="#addnew" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a></span>
+                <span class="pull-left"><a href="#addcomp" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a></span>
                 <div style="height:50px;"></div>
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
-                        <th>username</th>
-                        <th>ชื่อ</th>
-                        <th>นามสกุล</th>
-
-                        <th>สถานะ</th>
+                        <!-- <th>รหัสสถานประกอบการ</th> -->
+                        <th>ชื่อบริษัท</th>
+                        <th>เรียน</th>
+                        <th>ที่อยู่</th>
+                        <th>ตำบล</th>
+                        <th>อำเภอ</th>
+                        <th>จังหวัด</th>
+                        <th>รหัสไปรษณี</th>
+                        <th>เบอร์โทร</th>
+                        <th>Email</th>
+                        <th>FAX</th>
                         <th>Action</th>
                     </thead>
                     <tbody>
@@ -96,19 +102,25 @@ if (!$_SESSION['userid']) {
                         include('connection.php');
 
 
-                        $query = mysqli_query($con, "select * from `user`");
+                        $query = mysqli_query($con, "select * from `company`");
                         while ($row = mysqli_fetch_array($query)) {
                         ?>
                             <tr>
-                                <td><?php echo ucwords($row['username']); ?></td>
-                                <td><?php echo ucwords($row['firstname']); ?></td>
-                                <td><?php echo ucwords($row['lastname']); ?></td>
-                                <!-- <td><#?php echo ucwords($row['major_name']); ?></td> -->
-                                <td><?php echo $row['userlevel']; ?></td>
+                                <td><?php echo ucwords($row['comp_name']); ?></td>
+                                <td><?php echo ucwords($row['contract_name']); ?></td>
+                                <td><?php echo ucwords($row['comp_address']); ?></td>
+                                <td><?php echo ucwords($row['comp_subdis']); ?></td>
+                                <td><?php echo ucwords($row['comp_amphure']); ?></td>
+                                <td><?php echo ucwords($row['comp_province']); ?></td>
+                                <td><?php echo ucwords($row['comp_zipcode']); ?></td>
+                                <td><?php echo ucwords($row['comp_phone']); ?></td>
+                                <td><?php echo ucwords($row['comp_mail']); ?></td>
+                                <td><?php echo ucwords($row['comp_Fax']); ?></td>
+                                
                                 <td>
-                                    <a href="#edit<?php echo $row['username']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> ||
-                                    <a href="#del<?php echo $row['username']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
-                                    <?php include('button.php'); ?>
+                                    <a href="#edit<?php echo $row['comp_id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                                    <a href="#del<?php echo $row['comp_id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                    <?php include('comp_button.php'); ?>
                                 </td>
                             </tr>
                         <?php
@@ -118,7 +130,7 @@ if (!$_SESSION['userid']) {
                     </tbody>
                 </table>
             </div>
-            <?php include('add_modal.php'); ?>
+            <?php include('comp_modal.php'); ?>
         </div>
 
 

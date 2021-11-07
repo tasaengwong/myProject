@@ -8,7 +8,7 @@ if (!$_SESSION['userid']) {
 
 ?>
   <!DOCTYPE html>
-  <html lang="en" ng-app="myApp">
+  <html lang="en" >
 
   <head>
     <meta charset="UTF-8">

@@ -93,18 +93,18 @@ if (!$_SESSION['userid']) {
         {
           $.post("data.php", function(data) {
             console.log(data);
-            let major = [];
+            let major_name = [];
             let count = [];
             // let count1 = [];
             for (let i in data) {
 
-              major.push(data[i].major);
+              major_name.push(data[i].major_name);
               count.push(data[i].count);
               // count1.push(data[i].count);
             }
 
             let chartdata = {
-              labels: major,
+              labels: major_name,
               datasets: [{
                 label: ['จำนวน'],
 

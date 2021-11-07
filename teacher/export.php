@@ -4,12 +4,12 @@
 
 include('ex.php');
 
-$column = array('stu_id', 'name', 'lastname', 'major', 'year', 'address', 'province', 'amphures', 'district'
+$column = array('stu_id', 'name', 'lastname', 'major_name', 'year', 'address', 'province', 'amphures', 'district'
 , 'zipcode', 'phone', 'mail', 'Job', 'description', 'study', 'sent', 'sentmail', 'comp_name'
 , 'contract_name', 'comp_address', 'comp_subdis', 'comp_amphure', 'comp_province', 'comp_zipcode', 'comp_phone', 'comp_mail', 'comp_Fax'
 , 'date', 'time');
 
-$query = "SELECT * from students LEFT JOIN  company ON students.comp_id = company.comp_id";
+$query = "SELECT * from students LEFT JOIN  company ON students.comp_id = company.comp_id LEFT JOIN  major ON students.major_id = major.major_id";
 
 if(isset($_POST['search']['value']))
 {
@@ -17,7 +17,7 @@ if(isset($_POST['search']['value']))
  WHERE stu_id LIKE "%'.$_POST['search']['value'].'%" 
  OR name LIKE "%'.$_POST['search']['value'].'%" 
  OR lastname LIKE "%'.$_POST['search']['value'].'%" 
- OR major LIKE "%'.$_POST['search']['value'].'%" 
+ OR major_name LIKE "%'.$_POST['search']['value'].'%" 
  OR year LIKE "%'.$_POST['search']['value'].'%" 
  OR address LIKE "%'.$_POST['search']['value'].'%" 
  OR province LIKE "%'.$_POST['search']['value'].'%"
@@ -86,7 +86,7 @@ foreach($result as $row)
  $sub_array[] = $row['stu_id'];
  $sub_array[] = $row['name'];
  $sub_array[] = $row['lastname'];
- $sub_array[] = $row['major'];
+ $sub_array[] = $row['major_name'];
  $sub_array[] = $row['year'];
  $sub_array[] = $row['date'];
  $sub_array[] = $row['time'];

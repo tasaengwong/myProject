@@ -47,18 +47,19 @@ if (!$_SESSION['userid']) {
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav col-12 justify-content-end">
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../loginuser/addmin_page.php">หน้าแรก</a>   
-                         </li>
+                            <a class="nav-link active" aria-current="page" href="../loginuser/addmin_page.php">หน้าแรก</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            จัดการข้อมูล
+                                จัดการข้อมูล
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="../admin/add_acount.php">บัญชีผู้ใช้</a></li>
                                 <li><a class="dropdown-item" href="../admin/emajor.php">ข้อมูลสาขา</a></li>
 
-                            </ul></li>
-                            <li class="nav-item dropdown">
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
                             <button class="btn btn-info nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-person-circle"></i> <?php echo $_SESSION['name']; ?>
                             </button>
@@ -85,7 +86,7 @@ if (!$_SESSION['userid']) {
                         <th>username</th>
                         <th>ชื่อ</th>
                         <th>นามสกุล</th>
-                    
+
                         <th>สถานะ</th>
                         <th>Action</th>
                     </thead>
@@ -94,7 +95,8 @@ if (!$_SESSION['userid']) {
                         include('connection.php');
 
 
-                        $query = mysqli_query($con, "select * from `user`");                        while ($row = mysqli_fetch_array($query)) {
+                        $query = mysqli_query($con, "select * from `user`");
+                        while ($row = mysqli_fetch_array($query)) {
                         ?>
                             <tr>
                                 <td><?php echo ucwords($row['username']); ?></td>

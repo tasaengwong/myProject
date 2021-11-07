@@ -92,7 +92,7 @@ if (!$_SESSION['userid']) {
                         <th>username</th>
                         <th>ชื่อ</th>
                         <th>นามสกุล</th>
-                        <th>สาขา</th>
+                    
                         <th>สถานะ</th>
                         <th>Action</th>
                     </thead>
@@ -101,14 +101,13 @@ if (!$_SESSION['userid']) {
                         include('connection.php');
 
 
-                        $query = mysqli_query($con, "SELECT user.username, user.firstname, user.lastname, userlevel,major.major_name FROM user LEFT JOIN major ON user.major_id = major.major_id");
-                        while ($row = mysqli_fetch_array($query)) {
+                        $query = mysqli_query($con, "select * from `user`");                        while ($row = mysqli_fetch_array($query)) {
                         ?>
                             <tr>
                                 <td><?php echo ucwords($row['username']); ?></td>
                                 <td><?php echo ucwords($row['firstname']); ?></td>
                                 <td><?php echo ucwords($row['lastname']); ?></td>
-                                <td><?php echo ucwords($row['major_name']); ?></td>
+                                <!-- <td><#?php echo ucwords($row['major_name']); ?></td> -->
                                 <td><?php echo $row['userlevel']; ?></td>
                                 <td>
                                     <a href="#edit<?php echo $row['username']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> ||

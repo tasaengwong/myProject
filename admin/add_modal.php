@@ -16,7 +16,7 @@
 								<label class="control-label" style="position:relative; top:7px;">Username:</label>
 							</div>
 							<div class="col-lg-10">
-								<input type="text" class="form-control" name="username">
+								<input type="text" class="form-control" name="username" required>
 							</div>
 						</div>
 						<div style="height:10px;"></div>
@@ -25,7 +25,7 @@
 								<label class="control-label" style="position:relative; top:7px;">password:</label>
 							</div>
 							<div class="col-lg-10">
-								<input type="text" class="form-control" name="password">
+								<input type="password" class="form-control" name="password" required>
 							</div>
 						</div>
 						<div style="height:10px;"></div>
@@ -34,7 +34,7 @@
 								<label class="control-label" style="position:relative; top:7px;">Firstname:</label>
 							</div>
 							<div class="col-lg-10">
-								<input type="text" class="form-control" name="firstname">
+								<input type="text" class="form-control" name="firstname" required>
 							</div>
 						</div>
 						<div style="height:10px;"></div>
@@ -43,7 +43,7 @@
 								<label class="control-label" style="position:relative; top:7px;">Lastname:</label>
 							</div>
 							<div class="col-lg-10">
-								<input type="text" class="form-control" name="lastname">
+								<input type="text" class="form-control" name="lastname" required>
 							</div>
 						</div>
 

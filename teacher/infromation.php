@@ -17,12 +17,12 @@ if (!$_SESSION['userid']) {
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/style.css?9">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/style.css?12">
 
 
   </head>
@@ -88,10 +88,10 @@ if (!$_SESSION['userid']) {
     $dbName = "project103";
     $conn = mysqli_connect($serverName, $userName, $userPassword, $dbName);
 
-    // $major_id=$_SESSION['major_id'];
+   
     $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id LEFT JOIN major on students.major_id = major.major_id  ";
     
-    // $sql=mysqli_query($conn,"select * from students where userid='$major_id'");
+
 
     $query = mysqli_query($conn, $sql);
     ?>
@@ -181,7 +181,7 @@ if (!$_SESSION['userid']) {
                       if ($data['status'] == 0) {
                         echo '<p stu_id=' . $data['stu_id'] . '&status="" " class = "text text-primary fa fa-spinner">กำลังดำเนินการ</a></p>';
                       } else if ($data['status'] == 1) {
-                        echo '<p stu_id=' . $data['stu_id'] . '&status="0"  class = "text text-success fa fa-check">อนุมัติ</a></p>';
+                        echo '<p stu_id=' . $data['stu_id'] . '&status="0"  class = "text text-success bi bi-check"">อนุมัติ</a></p>';
                       } else {
                         echo '<p stu_id=' . $data['stu_id'] . '&status="2"  class = "text text-danger fa fa-times">ไม่อนุมัติ</p>';
                       }

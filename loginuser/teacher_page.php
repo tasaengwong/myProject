@@ -46,6 +46,7 @@ if (!$_SESSION['userid']) {
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="../teacher/report.php">ข้อมูลนักศึกษา</a></li>
+                <li><a class="dropdown-item" href="../teacher/teac_as.php">แบบประเมินสถานประกอบการ</a></li>
                 <li><a class="dropdown-item" href="../teacher/excel.php">Excel ข้อมูลนิสิต</a></li>
                 <li><a class="dropdown-item" href="../teacher/excel2.php">Excel แบบประเมินนิสิต</a></li>
                 <li><a class="dropdown-item" href="../teacher/excel3.php">Excel แบบประเมินสถานประกอบการ </a></li>

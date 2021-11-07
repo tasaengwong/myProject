@@ -88,8 +88,8 @@ if (!$_SESSION['userid']) {
     $dbName = "project103";
     $conn = mysqli_connect($serverName, $userName, $userPassword, $dbName);
 
-    $major_id=$_SESSION['major_id'];
-    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id LEFT JOIN major on students.major_id = major.major_id  where userid='$major_id' ";
+    // $major_id=$_SESSION['major_id'];
+    $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id LEFT JOIN major on students.major_id = major.major_id  ";
     
     // $sql=mysqli_query($conn,"select * from students where userid='$major_id'");
 

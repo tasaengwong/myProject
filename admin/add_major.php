@@ -10,7 +10,7 @@
 			</div>
 			<div class="modal-body">
 				<div class="container-fluid">
-					<form method="POST" action="addnewm.php">
+					<form method="POST" action="db_newm.php">
 						<div style="height:10px;"></div>
 						<div class="row">
 							<div class="col-lg-2">

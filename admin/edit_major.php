@@ -17,7 +17,7 @@
 				</div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                    <a href="delete.php?major_id=<?php echo $row['major_name']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                    <a href="deletem.php?major_id=<?php echo $row['major_id']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
                 </div>
  
             </div>
@@ -39,7 +39,7 @@
 					$erow=mysqli_fetch_array($edit);
 				?>
 				<div class="container-fluid">
-				<form method="POST" action="edit.php?major_id=<?php echo $erow['major_id']; ?>">
+				<form method="POST" action="editm.php?major_id=<?php echo $erow['major_id']; ?>">
                 <div class="row">
 					
 					<div class="row">

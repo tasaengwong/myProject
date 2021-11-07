@@ -117,16 +117,7 @@ if (!$_SESSION['userid']) {
            <br><br>
 
            <?php
-            $sql = "SELECT  * FROM students LEFT JOIN company ON students.comp_id = company.comp_id 
-            WHERE stu_id LIKE '%".$strKeyword."%' 
-            OR name LIKE '%".$strKeyword."%' 
-            OR lastname LIKE '%".$strKeyword."%' 
-            OR major LIKE '%".$strKeyword."%' 
-            OR year LIKE '%".$strKeyword."%'
-            OR date LIKE '%".$strKeyword."%'
-            OR time LIKE '%".$strKeyword."%'
-            OR Job LIKE '%".$strKeyword."%'
-            OR comp_name LIKE '%".$strKeyword."%'
+            $sql = "SELECT * from students LEFT JOIN  company ON students.comp_id = company.comp_id LEFT JOIN  major ON students.major_id = major.major_id
             ";
 
             $query = mysqli_query($conn,$sql);
@@ -160,7 +151,7 @@ if (!$_SESSION['userid']) {
                     <td><?php echo $data['time']; ?></td>
                     <td><?php echo $data['stu_id']; ?></td>
                     <td><?php echo $data['name']; ?>&nbsp;<?php echo $data['lastname']; ?></td>
-                    <td colspan="2"><?php echo $data['major']; ?></td>
+                    <td colspan="2"><?php echo $data['major_name']; ?></td>
                     <td><?php echo $data['year']; ?></td>
                     <td colspan="2"><?php echo $data['comp_name']; ?></td>
                     <td><?php echo $data['Job']; ?></td>

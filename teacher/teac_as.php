@@ -46,6 +46,7 @@ if (!$_SESSION['userid']) {
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="report.php">ข้อมูลนักศึกษา</a></li>
+                <li><a class="dropdown-item" href="../teacher/teac_as.php">แบบประเมินสถานประกอบการ</a></li>
                 <li><a class="dropdown-item" href="excel.php">Excel ข้อมูลนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel2.php">Excel แบบประเมินนิสิต</a></li>
                 <li><a class="dropdown-item" href="excel3.php">Excel แบบประเมินสถานประกอบการ </a></li>
@@ -65,14 +66,15 @@ if (!$_SESSION['userid']) {
         </div>
       </div>
     </nav>
-
+    
         <br>
         <?php
         $conn = new mysqli("localhost", "root", "", "project103");
         $conn->set_charset('utf8');
-        $sql = "select * from major ";
+        $major_id = $_SESSION['major'] ;
+        $sql = "select * from user left join major ON user.major_id = major.major_id WHERE user.major_id ='$major_id'";
         $result = $conn->query($sql);
-        $row = $result->fetch_assoc() { 
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC) 
         ?>
             <div class="container">
                 <div class="row">
@@ -101,13 +103,11 @@ if (!$_SESSION['userid']) {
                                     </div>
                                     <div class="col">
                                         <label for="major">สาขา:</label>&nbsp;
-                                        <input name="major" id="major" type="text" class="form-control col-md-4" placeholder="สาขา" value=" <?php echo $_SESSION['major_name']; ?>" readonly>
+                                        <input name="major" id="major" type="text" class="form-control col-md-4" placeholder="สาขา" value=" <?php echo $row['major_name']; ?>" readonly>
 
                                     </div>
                                 </div>
-                                <?php } ?>
-
-
+<!-- <2?php } ?> -->
                                 <div class="col-sm-6">
                                     <label for="company" >สถานประกอบการ:</label>&nbsp;
                                     <input name="comp_name" id="comp_name" type="text" class="form-control col-md-3" placeholder="ชื่อสถานประกอบการ" required>
@@ -254,6 +254,7 @@ if (!$_SESSION['userid']) {
                     </div>
                 </div>
             </div>
+
 
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

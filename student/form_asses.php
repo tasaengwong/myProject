@@ -67,9 +67,10 @@ if (!$_SESSION['userid']) {
         <?php
         $conn = new mysqli("localhost", "root", "", "project103");
         $conn->set_charset('utf8');
-        $sql = "select * from asses ";
+        $major_id = $_SESSION['major'] ;
+        $sql = "select * from students left join major ON students.major_id = major.major_id WHERE students.major_id ='$major_id'";
         $result = $conn->query($sql);
-        while ($row = $result->fetch_assoc()) { }
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC) 
         ?>
             <div class="container">
                 <div class="row">
@@ -98,7 +99,7 @@ if (!$_SESSION['userid']) {
                                     </div>
                                     <div class="col">
                                         <label for="major">สาขา:</label>&nbsp;
-                                        <input name="major" id="major" type="text" class="form-control col-md-4" placeholder="สาขา" value=" <?php echo $_SESSION['major']; ?>" readonly>
+                                        <input name="major" id="major" type="text" class="form-control col-md-4" placeholder="สาขา" value=" <?php echo $row['major_name']; ?>" readonly>
 
                                     </div>
                                 </div>

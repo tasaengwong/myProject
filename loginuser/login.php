@@ -20,7 +20,7 @@
             $_SESSION['userid'] = $row['stu_id']; 
             $_SESSION['name'] = $row['name'];
             $_SESSION['lastname'] = $row['lastname'];
-            $_SESSION['major'] = $row['major'];
+            $_SESSION['major'] = $row['major_id'];
             $_SESSION['year'] = $row['year'];
             $_SESSION['address'] = $row['address'];
             $_SESSION['province'] = $row['province'];

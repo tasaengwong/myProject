@@ -83,31 +83,26 @@ if (!$_SESSION['userid']) {
                 <div style="height:50px;"></div>
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
-                        <th>username</th>
-                        <th>ชื่อ</th>
-                        <th>นามสกุล</th>
 
-                        <th>สถานะ</th>
-                        <th>Action</th>
+                        <th>ชื่อสาขา</th>
+                        <th></th>
                     </thead>
                     <tbody>
                         <?php
                         include('connection.php');
 
 
-                        $query = mysqli_query($con, "select * from `user`");
+                        $query = mysqli_query($con, "SELECT * from major");
                         while ($row = mysqli_fetch_array($query)) {
                         ?>
                             <tr>
-                                <td><?php echo ucwords($row['username']); ?></td>
-                                <td><?php echo ucwords($row['firstname']); ?></td>
-                                <td><?php echo ucwords($row['lastname']); ?></td>
-                                <!-- <td><#?php echo ucwords($row['major_name']); ?></td> -->
-                                <td><?php echo $row['userlevel']; ?></td>
+
+                                <td><?php echo ucwords($row['major_name']); ?></td>
+
                                 <td>
-                                    <a href="#edit<?php echo $row['username']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> ||
-                                    <a href="#del<?php echo $row['username']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
-                                    <?php include('button.php'); ?>
+                                    <a href="#edit<?php echo $row['major_id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> ||
+                                    <a href="#del<?php echo $row['major_id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                    <?php include('edit_major.php'); ?>
                                 </td>
                             </tr>
                         <?php
@@ -117,7 +112,7 @@ if (!$_SESSION['userid']) {
                     </tbody>
                 </table>
             </div>
-            <?php include('add_modal.php'); ?>
+            <?php include('add_major.php'); ?>
         </div>
 
 

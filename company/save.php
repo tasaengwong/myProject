@@ -6,7 +6,7 @@ $comp_name = $_POST['comp_name'];
 $stu_id = $_POST['stu_id'];
 $stu_n = $_POST['stu_n'];
 $stu_lsn = $_POST['stu_lsn'];
-$major = $_POST['major'];
+$major_name = $_POST['major_name'];
 $cs_id1 = $_POST['cs_id1'];
 $cs_id2 = $_POST['cs_id2'];
 $cs_id3 = $_POST['cs_id3'];
@@ -51,7 +51,7 @@ $sql = "INSERT INTO asses_comp (
         stu_id, 
         stu_n, 
         stu_lsn,
-         major,
+         major_name,
         cs_id1, cs_id2, 
         cs_id3, cs_id4, 
         sum1,
@@ -77,7 +77,7 @@ $sql = "INSERT INTO asses_comp (
         cs_id28, cs_id29, 
         cs_id30, 
         total)
-        VALUE  ('$comp_name', '$stu_id','$stu_n','$stu_lsn', '$major',
+        VALUE  ('$comp_name', '$stu_id','$stu_n','$stu_lsn', '$major_name',
         '$cs_id1', '$cs_id2', '$cs_id3', '$cs_id4',
         '$sum1', 
         '$cs_id5', '$cs_id6', '$cs_id7', '$cs_id8',

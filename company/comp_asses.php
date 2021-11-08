@@ -80,7 +80,7 @@
                             <p><strong>ตอนที่ 2 : รายละเอียดนิสิตฝึกงาน</strong></p>
                             <div class="col">
                                 <label for="stu_id">รหัสนิสิต</label>&nbsp;
-                                <input name="stu_id" id="stu_id" type="text" class="form-control col-md-3" placeholder="รหัสนิสิต" maxlength="8" pattern="[0-9]*" required> 
+                                <input name="stu_id" id="stu_id" type="text" class="form-control col-md-3" placeholder="รหัสนิสิต" maxlength="8" pattern="[0-9]*" required>
                             </div>
                             <div class="col">
                                 <label for="stu_n">ชื่อ</label>&nbsp;
@@ -90,17 +90,27 @@
                                 <label for="stu_lsn">นามสกุล</label>&nbsp;
                                 <input name="stu_lsn" id="lastname" type="text" class="form-control col-md-3" placeholder="นามสกุล" required>
                             </div>
-                            <div class="col">
+
+                            <?php
+                            $conn = new mysqli("localhost", "root", "", "project103");
+                            $conn->set_charset('utf8');
+                            ?>
+                            <div class="col" method="post">
                                 <label for="major">สาขา:</label>&nbsp;
-                                <select name="major" required class="form-select col-sm-5" ng-optin=" x for x in major">
+                                <select name="major_name" required class="form-select col-sm-6" ng-optin=" x for x in major_name">
                                     <option value="">เลือกสาขา</option>
-                                    <option value="เทคโนโลยีสารสนเทศ">เทคโนโลยีสารสนเทศ</option>
-                                    <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
-                                    <option value="คอมพิวเตอร์ธุรกิจ">คอมพิวเตอร์ธุรกิจ</option>
-                                    <option value="วิศวกรรมซอฟร์แวร์">วิศวกรรมซอฟร์แวร์</option>
-                                    <option value="วิศวกรรมคอมพิวเตอร์">วิศวกรรมคอมพิวเตอร์</option>
-                                    <option value="คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย">คอมพิวเตอร์กราฟฟิกและมัลติมีเดีย</option>
-                                    <option value="ภูมิศาสตร์สารสนเทศ">ภูมิศาสตร์สารสนเทศ</option>
+                                    <?php
+                                    $sql = "select * from major ";
+                                    $result = $conn->query($sql);
+                                    while ($row = $result->fetch_assoc()) {
+                                        if ($row['major_name'] == $_GET['selectmajor']) {
+                                            echo "{$row['major_name']}<option selected>";
+                                        } else {
+                                            echo "<option>";
+                                        }
+                                        echo "{$row['major_name']}</option>";
+                                    } 
+                                    ?>
                                 </select>&nbsp;&nbsp;
                             </div>
                         </div><br>

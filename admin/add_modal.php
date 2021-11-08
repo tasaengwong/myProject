@@ -47,7 +47,7 @@
 							</div>
 						</div>
 
-						<!-- <#?php
+						<?php
 						$conn = new mysqli("localhost", "root", "", "project103");
 						$conn->set_charset('utf8');
 						?>
@@ -57,9 +57,9 @@
 								<label class="control-label" style="position:relative; top:7px;">สาขา:</label>;
 							</div>
 							<div class="col-lg-10" method="post">
-								<select name="major_id" class="form-select  ">
+							<select name="major_id" class="form-select col-sm-6" aria-label=".form-select-lg" ng-optin=" x for x in major_id">
 									<option value="">เลือกสาขา</option>
-									<#?php
+									<?php
 									$sql = "select * from major ";
 									$result = $conn->query($sql);
 									while ($row = $result->fetch_assoc()) {
@@ -73,7 +73,7 @@
 									?>
 								</select>
 							</div><br>
-						</div> -->
+						</div>
 
 						<!-- <div style="height:10px;"></div>
 						<div class="row">
@@ -91,7 +91,7 @@
          						<label for="userlevel" class="control-label" style="position:relative; top:7px;">userlevel:</label>
 						 	</div>
 							<div class="col-lg-10"> 
-								<select name="userlevel" id="userlevel" required class="form-select col-sm-4" aria-label=".form-select">
+								<select name="userlevel" id="userlevel" class="form-select col-sm-4" aria-label=".form-select" require>
 									<option value="">สถานะผู้เข้าใช้</option>
 									<option value="admin">admin</option>
 									<option value="teacher">teacher</option>

@@ -35,7 +35,7 @@
                 </div>
                 <div class="modal-body">
 				<?php
-					$edit=mysqli_query($con,"select * from user where username='".$row['username']."'");
+					$edit=mysqli_query($con,"select * from user LEFT JOIN major on user.major_id = major.major_id  where username='".$row['username']."'");
 					$erow=mysqli_fetch_array($edit);
 				?>
 				<div class="container-fluid">
@@ -66,6 +66,15 @@
 						</div>
 						<div class="col-lg-10">
 							<input type="text" name="lastname" class="form-control" value="<?php echo $erow['lastname']; ?>">
+						</div>
+					</div>
+					<div style="height:10px;"></div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label style="position:relative; top:7px;">สาขา:</label>
+						</div>
+						<div class="col-lg-10">
+							<input type="text" name="major_id" class="form-control" value="<?php echo $erow['major_name']; ?>">
 						</div>
 					</div>
 					<div style="height:10px;"></div>

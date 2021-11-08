@@ -4,7 +4,7 @@
 
 include('ex.php');
 
-$column = array('csq_id ', 'stu_id', 'stu_n', 'stu_lsn', 'major', 'comp_name', 'cs_id1', 'cs_id2', 'cs_id3', 'cs_id4', 'cs_id5', 'cs_id6', 'cs_id7', 'cs_id8', 'cs_id9', 'cs_id10', 'cs_id11', 'cs_id12', 'cs_id13', 'cs_id14', 'cs_id15', 'cs_id16', 'cs_id17', 'cs_id18', 'cs_id19', 'cs_id20', 'cs_id21', 'cs_id22', 'cs_id23', 'cs_id24', 'cs_id25', 'cs_id26', 'cs_id27', 'cs_id28', 'cs_id29', 'cs_id30');
+$column = array('csq_id ', 'stu_id', 'stu_n', 'stu_lsn', 'major_name', 'comp_name', 'cs_id1', 'cs_id2', 'cs_id3', 'cs_id4', 'cs_id5', 'cs_id6', 'cs_id7', 'cs_id8', 'cs_id9', 'cs_id10', 'cs_id11', 'cs_id12', 'cs_id13', 'cs_id14', 'cs_id15', 'cs_id16', 'cs_id17', 'cs_id18', 'cs_id19', 'cs_id20', 'cs_id21', 'cs_id22', 'cs_id23', 'cs_id24', 'cs_id25', 'cs_id26', 'cs_id27', 'cs_id28', 'cs_id29', 'cs_id30');
 
 $query = "SELECT * from asses_comp";
 
@@ -15,7 +15,7 @@ if(isset($_POST['search']['value']))
  OR stu_id LIKE "%'.$_POST['search']['value'].'%" 
  OR stu_n LIKE "%'.$_POST['search']['value'].'%" 
  OR stu_lsn LIKE "%'.$_POST['search']['value'].'%"
- OR major LIKE "%'.$_POST['search']['value'].'%"  
+ OR major_name LIKE "%'.$_POST['search']['value'].'%"  
  OR comp_name LIKE "%'.$_POST['search']['value'].'%" 
  ';
 }
@@ -60,7 +60,7 @@ foreach($result as $row)
  $sub_array[] = $row['stu_id'];
  $sub_array[] = $row['stu_n'];
  $sub_array[] = $row['stu_lsn'];
- $sub_array[] = $row['major'];
+ $sub_array[] = $row['major_name'];
  $sub_array[] = $row['comp_name'];
 
  $sub_array[] = $row['cs_id1'];

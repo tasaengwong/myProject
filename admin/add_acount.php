@@ -29,7 +29,7 @@ if (!$_SESSION['userid']) {
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/style.css?9">
 
     </head>
 
@@ -87,7 +87,7 @@ if (!$_SESSION['userid']) {
                         <th>username</th>
                         <th>ชื่อ</th>
                         <th>นามสกุล</th>
-
+                        <th>สาขา</th>
                         <th>สถานะ</th>
                         <th>Action</th>
                     </thead>
@@ -96,14 +96,14 @@ if (!$_SESSION['userid']) {
                         include('connection.php');
 
 
-                        $query = mysqli_query($con, "select * from `user`");
+                        $query = mysqli_query($con, "select * from user left join major on user.major_id = major.major_id");
                         while ($row = mysqli_fetch_array($query)) {
                         ?>
                             <tr>
                                 <td><?php echo ucwords($row['username']); ?></td>
                                 <td><?php echo ucwords($row['firstname']); ?></td>
                                 <td><?php echo ucwords($row['lastname']); ?></td>
-                                <!-- <td><#?php echo ucwords($row['major_name']); ?></td> -->
+                                <td><?php echo ucwords($row['major_name']); ?></td>
                                 <td><?php echo $row['userlevel']; ?></td>
                                 <td>
                                     <a href="#edit<?php echo $row['username']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> ||

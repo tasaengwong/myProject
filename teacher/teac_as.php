@@ -79,14 +79,14 @@ if (!$_SESSION['userid']) {
         <div class="container">
             <div class="row">
                 <div class="header">
-                    <h2 class="text-center">แบบสอบถามนิสิตฝึกงาน</h2>
+                    <h2 class="text-center">แบบประเมินสถานประกอบการสำหรับอาจารย์นิเทศการฝึกงาน</h2>
                     <hr>
                 </div>
                 <div class="col-md-10 "><br>
                     <form action="save.php" name="form_asses" method="post" class="justify-content-center">
                         <div class="description">
-                            <p><strong>คำชี้แจง :</strong> แบบสำรวจนี้จัดทำขึ้นเพื่อสอบถามข้อมูลการฝึกงานของนิสิตฝึกงาน คณะเทคโนโลยีสารสนเทศและการสื่อสาร
-                                ความคิดเห็นของท่านมีประโยชน์อย่างยิ่งในการปรับปรุงและพัฒนาคุณภาพการจัดฝึกงานของนิสิตในรุ่นต่อ ๆ ไป</p>
+                            <p><strong>คำชี้แจง :</strong> แบบสำรวจนี้จัดทำขึ้นเพื่อประเมินสถานประกอบการสำหรับอาจารย์นิเทศการฝึกงาน คณะเทคโนโลยีสารสนเทศและการสื่อสาร
+                                </p>
 
 
                             <div class="row">

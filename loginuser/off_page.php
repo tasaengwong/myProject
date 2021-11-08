@@ -47,7 +47,9 @@ if (!$_SESSION['userid']) {
                                 <li><a class="dropdown-item" href="../officer/excel.php">Excel ข้อมูลนิสิต</a></li>
                                 <li><a class="dropdown-item" href="../officer/excel2.php">Excel แบบประเมินนิสิต</a></li>
                                 <li><a class="dropdown-item" href="../officer/excel3.php">Excel แบบประเมินสถานประกอบการ</a></li>
-                            </ul>
+                                <li><a class="dropdown-item" href="../officer/excel4.php">Excel แบบประเมินอาจารย์นิเทศก์ฝึกงาน</a></li>
+
+                              </ul>
                         </li>
 
                         <li class="nav-item dropdown">

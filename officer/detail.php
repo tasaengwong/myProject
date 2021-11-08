@@ -43,13 +43,14 @@ if (!$_SESSION['userid']) {
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                ข้อมูลนักศึกษา
+                 ข้อมูลนักศึกษา
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="detail.php">รายชื่อนิสิต</a></li>
-                <li><a class="dropdown-item" href="excel.php">Excel ข้อมูลนิสิต</a></li>
-                <li><a class="dropdown-item" href="excel2.php">Excel แบบประเมินนิสิต</a></li>
-                <li><a class="dropdown-item" href="excel3.php">Excel แบบประเมินสถานประกอบการ</a></li>
+                <li><a class="dropdown-item" href="../officer/detail.php">รายชื่อนิสิต</a></li>
+                <li><a class="dropdown-item" href="../officer/excel.php">Excel ข้อมูลนิสิต</a></li>
+                <li><a class="dropdown-item" href="../officer/excel2.php">Excel แบบประเมินนิสิต</a></li>
+                <li><a class="dropdown-item" href="../officer/excel3.php">Excel แบบประเมินสถานประกอบการ</a></li>
+                <li><a class="dropdown-item" href="../officer/excel4.php">Excel แบบประเมินอาจารย์นิเทศก์ฝึกงาน</a></li>
               </ul>
             </li>
 

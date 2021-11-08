@@ -40,7 +40,7 @@ if (!$_SESSION['userid']) {
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
 
   <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
-  <link rel="stylesheet" href="../officer/css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
  <body>
 
@@ -57,18 +57,23 @@ if (!$_SESSION['userid']) {
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
           <ul class="navbar-nav col-12 justify-content-end">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../loginuser/off_page.php">หน้าแรก</a>
+              <a class="nav-link active" aria-current="page" href="../loginuser/teacher_page.php">หน้าแรก</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./infromation.php">รายชื่อนิสิต</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 ข้อมูลนักศึกษา
+                รายงาน
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="../officer/detail.php">รายชื่อนิสิต</a></li>
-                <li><a class="dropdown-item" href="../officer/excel.php">Excel ข้อมูลนิสิต</a></li>
-                <li><a class="dropdown-item" href="../officer/excel2.php">Excel แบบประเมินนิสิต</a></li>
-                <li><a class="dropdown-item" href="../officer/excel3.php">Excel แบบประเมินสถานประกอบการ</a></li>
-                <li><a class="dropdown-item" href="../officer/excel4.php">Excel แบบประเมินอาจารย์นิเทศก์ฝึกงาน</a></li>
+                <li><a class="dropdown-item" href="report.php">รายชื่อนิสิต</a></li>
+                <li><a class="dropdown-item" href="../teacher/teac_as.php">แบบประเมินอาจารย์นิเทศก์ฝึกงาน</a></li>
+                <li><a class="dropdown-item" href="excel.php">Excel ข้อมูลนิสิต</a></li>
+                <li><a class="dropdown-item" href="excel2.php">Excel แบบประเมินนิสิต</a></li>
+                <li><a class="dropdown-item" href="excel3.php">Excel แบบประเมินสถานประกอบการ </a></li>
+                <li><a class="dropdown-item" href="excel4.php">Excel แบบประเมินอาจารย์นิเทศก์ฝึกงาน </a></li>
+
               </ul>
             </li>
 
@@ -88,58 +93,21 @@ if (!$_SESSION['userid']) {
     </nav>
 
   <div class="container box">
-
-   <br  />
+   <h3 align="center">Export  Excel</h3>
+   <br />
    <div class="table-responsive">
      
     <table id="customer_data" class="table table-bordered table-striped">
      <thead>
       <tr> 
       
-      <th>รหัสนิสิต</th>
        <th>ชื่อ</th>
        <th>นามสกุล</th>
        <th>สาขา</th>
        <th>สถานประกอบการ</th>
-       
-       <th>คำถาม1</th>
-       <th>คำถาม2</th>
-       <th>คำถาม3</th>
-       <th>คำถาม4</th>
-       <th>คะแนนรวมด้านที่ 1</th>
-       <th>คำถาม5</th>
-       <th>คำถาม6</th>
-       <th>คำถาม7</th>
-       <th>คำถาม8</th>
-       <th>คำถาม9</th>
-       <th>คำถาม10</th>
-       <th>คะแนนรวมด้านที่ 2</th>
-       <th>คำถาม11</th>
-       <th>คำถาม12</th>
-       <th>คำถาม13</th>
-       <th>คำถาม14</th>
-       <th>คำถาม15</th>
-       <th>คะแนนรวมด้านที่ 3</th>
-       <th>คำถาม16</th>
-       <th>คำถาม17</th>
-       <th>คำถาม18</th>
-       <th>คำถาม19</th>
-       <th>คำถาม20</th>
-       <th>คะแนนรวมด้านที่ 4</th>
-       <th>คำถาม21</th>
-       <th>คำถาม22</th>
-       <th>คำถาม23</th>
-       <th>คำถาม24</th>
-       <th>คะแนนรวมด้านที่ 5</th>
-       <th>คำถาม25</th>
-       <th>คำถาม26</th>
-       <th>คำถาม27</th>
-       <th>คะแนนรวมด้านที่ 6</th>
-       <th>คะแนนรวมทุกด้าน</th>
-       <th>1. ความคิดเห็นเพิ่มเติม</th>
-       <th>2.	ความคิดเห็นเพิ่มเติมที่มีต่อหลักสูตร</th>
-       <th>3. ข้อคิดเพิ่มเติมอื่น ๆ</th>
-
+       <th>ระดับความพอใจ</th>
+       <th>ท่านคิดว่าอยากให้คณะฯ เพิ่มเติมองค์ความรู้ด้านใดบ้างให้กับนิสิต เพื่อให้นิสิตสามารถปฏิบัติงานได้ตามงานที่มอบหมาย</th>
+       <th>ความคิดเห็นหรือข้อเสนอแนะเพิ่มเติม</th>
       </tr>
      </thead>
 
@@ -155,7 +123,7 @@ if (!$_SESSION['userid']) {
    "processing" : true,
    "serverSide" : true,
    "ajax" : {
-    url:"export3.php",
+    url:"export4.php",
     type:"POST"
    },
    dom: 'lBfrtip',

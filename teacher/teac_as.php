@@ -87,8 +87,7 @@ if (!$_SESSION['userid']) {
                     <form action="save.php" name="form_asses" method="post" class="justify-content-center">
                         <div class="description">
                             <p><strong>คำชี้แจง :</strong> แบบสำรวจนี้จัดทำขึ้นเพื่อประเมินสถานประกอบการสำหรับอาจารย์นิเทศการฝึกงาน คณะเทคโนโลยีสารสนเทศและการสื่อสาร
-                                </p>
-
+                            </p>
 
                             <div class="row">
                                 <div class="col">
@@ -105,11 +104,26 @@ if (!$_SESSION['userid']) {
 
                                 </div>
                             </div>
-    
-                            <div class="col-sm-6">
-                                <label for="company">สถานประกอบการ:</label>&nbsp;
-                                <input name="comp_name" id="comp_name" type="text" class="form-control col-md-3" placeholder="ชื่อสถานประกอบการ" required>
 
+<br>
+                                <div class="form-inline col-sm-12" method="get">
+                                    <label for="company">สถานประกอบการ:</label>&nbsp;
+                                    <select name="comp_id" required class="custom-select col-sm-6" ng-optin=" x for x in comp_id">
+                                        <option value="">เลือกสถานประกอบการ</option>
+                                        <?php
+                                        $sql = "select * from company ";
+                                        $result = $conn->query($sql);
+                                        while ($row = $result->fetch_assoc()) {
+                                            if ($row['comp_id'] == $_GET['selectcompany']) {
+                                                echo "{$row['comp_id']}&nbsp;{$row['comp_name']}<option selected>";
+                                            } else {
+                                                echo "<option>";
+                                            }
+                                            echo "{$row['comp_id']}&nbsp;{$row['comp_name']}</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                
                             </div><br>
 
                             <p>*** ระดับความพึงพอใจ : 5 = มากที่สุด 4 = มาก 3 = ปานกลาง 2 = น้อย 1 = ควรปรับปรุง ***</p>
@@ -141,15 +155,15 @@ if (!$_SESSION['userid']) {
                                 <td height="30"><input class="form-check-input" type="radio" name="qs_id1" value="1" /></td>
 
                             </tr>
-                       
+
                         </table>
                         <tr>
-                                <label for="">2.ท่านคิดว่าอยากให้คณะฯ เพิ่มเติมองค์ความรู้ด้านใดบ้างให้กับนิสิต เพื่อให้นิสิตสามารถปฏิบัติงานได้ตามงานที่มอบหมาย</label>
-                                <textarea type="text" class="form-control" rows="3" name="qs_id2"></textarea><br>
-                                <label for="">3.ความคิดเห็นหรือข้อเสนอแนะเพิ่มเติม</label>
-                                <textarea type="text" class="form-control" rows="3" name="qs_id3"></textarea><br>
+                            <label for="">2.ท่านคิดว่าอยากให้คณะฯ เพิ่มเติมองค์ความรู้ด้านใดบ้างให้กับนิสิต เพื่อให้นิสิตสามารถปฏิบัติงานได้ตามงานที่มอบหมาย</label>
+                            <textarea type="text" class="form-control" rows="3" name="qs_id2"></textarea><br>
+                            <label for="">3.ความคิดเห็นหรือข้อเสนอแนะเพิ่มเติม</label>
+                            <textarea type="text" class="form-control" rows="3" name="qs_id3"></textarea><br>
 
-                            </tr>
+                        </tr>
                         <button type="submit" name="save" class="btn btn-success"> ส่งแบบประเมิน </button>
                     </form>
                     <br><br>

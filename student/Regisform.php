@@ -69,12 +69,12 @@ session_start();
             $sql = "select * from company ";
             $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
-              if ($row['comp_id'] == $_GET['selectcompany']) {
-                echo "{$row['comp_id']}&nbsp;{$row['comp_name']}<option selected>";
+              if ($row['comp_name'] == $_GET['selectcompany']) {
+                echo "{$row['comp_name']}<option selected>";
               } else {
                 echo "<option>";
               }
-              echo "{$row['comp_id']}&nbsp;{$row['comp_name']}</option>";
+              echo "{$row['comp_name']}</option>";
             }
             ?>
           </select>

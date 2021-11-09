@@ -105,8 +105,8 @@ if (!$_SESSION['userid']) {
                                 </div>
                             </div>
 
-<br>
-                                <div class="form-inline col-sm-12" method="get">
+                            <br>
+                                <div class="col" method="get">
                                     <label for="company">สถานประกอบการ:</label>&nbsp;
                                     <select name="comp_id" required class="custom-select col-sm-6" ng-optin=" x for x in comp_id">
                                         <option value="">เลือกสถานประกอบการ</option>
@@ -123,8 +123,7 @@ if (!$_SESSION['userid']) {
                                         }
                                         ?>
                                     </select>
-                                
-                            </div><br>
+                                </div><br>
 
                             <p>*** ระดับความพึงพอใจ : 5 = มากที่สุด 4 = มาก 3 = ปานกลาง 2 = น้อย 1 = ควรปรับปรุง ***</p>
 

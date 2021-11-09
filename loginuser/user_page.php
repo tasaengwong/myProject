@@ -67,11 +67,7 @@ if (!$_SESSION['userid']) {
     <?php
     require('connection.php');
     $major_id = $_SESSION['major'] ;
-<<<<<<< HEAD
     $sql = "SELECT * from students LEFT JOIN company ON students.comp_id = company.comp_id LEFT JOIN major on students.major_id = major.major_id WHERE students.major_id ='$major_id' ";
-=======
-    $sql = "select * from students left join major ON students.major_id = major.major_id WHERE students.major_id ='$major_id'";
->>>>>>> 9503aa096a0547e28f62f704ea22fb065e3ca382
     $result = $con->query($sql);
 
     ?>

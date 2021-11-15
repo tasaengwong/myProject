@@ -38,11 +38,13 @@ if ($user['stu_id'] === $stu_id) {
     echo "<script type='text/javascript'>";
     echo "alert ('รหัสนิสิตไม่ถูกต้อง');";
     echo "</script>";
+    echo "Error: ".$user_check."<br>".$conn->error;
 } else {
     $passwordenc = md5($password);
     echo "<script type='text/javascript'>";
     echo "alert ('รหัสผ่านไม่ถูกต้อง');";
     echo "</script>";
+    echo "Error: ".$user_check."<br>".$conn->error;
 
 $query = " INSERT INTO students (stu_id, password, name, lastname, major_id, year, date, time, address, province, amphures, district, zipcode, phone, mail, Job, description, comp_id, study, sent, sentmail)
         VALUES('$stu_id','$passwordenc','$name', '$lastname','$major_id','$year','$date','$time',' $address' , '$province', '$amphures', '$district', '$zipcode',

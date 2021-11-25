@@ -97,7 +97,8 @@ session_start();
           &nbsp;&nbsp;
 
           <label for="password">รหัสผ่าน :</label>&nbsp;
-          <input name="password" id="password" type="text" class="form-control col-md-2" placeholder="รหัสสำหรับ log-in" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required title="ต้องมีตัวเลขอย่างน้อยหนึ่งตัวและตัวพิมพ์ใหญ่และตัวพิมพ์เล็กหนึ่งตัวและอักขระอย่างน้อย 8 ตัว">
+          <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required title="ต้องมีตัวเลขอย่างน้อยหนึ่งตัวและตัวพิมพ์ใหญ่และตัวพิมพ์เล็กหนึ่งตัวและอักขระอย่างน้อย 8 ตัว" -->
+          <input name="password" id="password" type="text" class="form-control col-md-2" placeholder="รหัสสำหรับ log-in">  
           &nbsp;<span>กำหนดรหัสผ่านเพื่อเข้าสู่ระบบ</span>
         </div><br>
 
